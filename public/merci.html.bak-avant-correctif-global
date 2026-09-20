@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta content="50" name="site-version"/>
+<script>window.addEventListener("pageshow",function(e){if(e.persisted){window.location.reload();}});</script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Demande envoyée | Sans Gluten Food Solutions</title>
+<meta content="noindex,follow" name="robots"/>
+<style>body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;background:linear-gradient(180deg,#fff,#fbf7ef);color:#123f30;min-height:100vh;display:grid;place-items:center}.card{width:min(90%,720px);text-align:center;padding:58px 34px;background:#fff;border:1px solid #e1d4b6;border-radius:32px;box-shadow:0 18px 60px rgba(13,90,61,.08)}img{width:250px;height:auto;margin:0 auto 28px;display:block}h1{font-size:clamp(2.7rem,7vw,5rem);line-height:.95;letter-spacing:-.05em;margin:0 0 24px}p{font-size:1.16rem;line-height:1.55;color:#687870}.btn{display:inline-flex;margin-top:20px;padding:14px 24px;border-radius:999px;background:#0d5a3d;color:#fff;text-decoration:none;font-weight:700}</style>
+
+
+
+
+
+
+<link href="/assets/sgfs-tab-icon-v45-20260919.png?v=45" rel="icon" type="image/png"/><link href="/assets/sgfs-apple-touch-v45-20260919.png?v=45" rel="apple-touch-icon" sizes="180x180"/><link href="/site-v45.webmanifest?v=45" rel="manifest"/><script src="/favicon-v45.js?v=45"></script><script defer src="/language-v54.js?v=54"></script>
+<!-- SGFS_HIDE_GOOGLE_TRANSLATE_TOPBAR -->
+<style>
+/* Masque uniquement le bandeau supérieur Google Traduction */
+iframe.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.goog-te-banner-frame.skiptranslate,
+body > .skiptranslate > iframe,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb,
+.VIpgJd-ZVi9od-ORHb table {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html,
+body,
+body.translated-ltr,
+body.translated-rtl {
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+</style>
+
+
+</head><body><main class="card"><img alt="Sans Gluten Food Solutions" src="/assets/sgfs-logo-horizontal-v26.png?v=37"/><h1>Merci, votre demande est envoyée.</h1><p>Nous avons bien reçu votre demande concernant le Mix Universel 500 g. Nous vous recontacterons pour les modalités de l’échantillon payant.</p><a class="btn" href="/?v=53">Retour au site</a></main>
+
+<!-- SGFS_FRANCE_FLAG_FIX_V2 -->
+<style>
+.sgfs-france-real-flag {
+  display:inline-block !important;
+  font-size:22px !important;
+  line-height:1 !important;
+  width:auto !important;
+  height:auto !important;
+  margin-right:12px !important;
+  vertical-align:-2px !important;
+}
+</style>
+<script>
+(function () {
+  function normalize(s) {
+    return (s || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function removeLikelyStripe(labelEl) {
+    var parent = labelEl && labelEl.parentElement;
+    if (!parent) return;
+
+    var prev = labelEl.previousElementSibling;
+    if (prev) {
+      var t = normalize(prev.textContent);
+      var r = prev.getBoundingClientRect();
+      if (
+        t === '' ||
+        r.width <= 90 ||
+        /flag|france|stripe|liseret|line|bar|divider|separator|icon/i.test((prev.className || '').toString())
+      ) {
+        prev.style.setProperty('display', 'none', 'important');
+      }
+    }
+
+    Array.from(parent.children).forEach(function (el) {
+      if (el === labelEl) return;
+      var t = normalize(el.textContent);
+      var r = el.getBoundingClientRect();
+      var cls = (el.className || '').toString();
+      var style = getComputedStyle(el);
+
+      var smallEmptyVisual = t === '' && r.width <= 100 && r.height <= 35;
+      var suspiciousClass = /stripe|liseret|divider|separator|france-flag|flag-line|tricolor/i.test(cls);
+      var suspiciousGradient =
+        (style.backgroundImage || '').includes('linear-gradient') &&
+        r.width <= 120 && r.height <= 40;
+
+      if (smallEmptyVisual || suspiciousClass || suspiciousGradient) {
+        el.style.setProperty('display', 'none', 'important');
+      }
+    });
+  }
+
+  function patchFrance() {
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      var txt = normalize(node.nodeValue);
+      if (txt === 'Fabriqué en France') {
+        var label = node.parentElement;
+        if (!label) continue;
+
+        removeLikelyStripe(label);
+
+        if (!label.querySelector('.sgfs-france-real-flag')) {
+          var flag = document.createElement('span');
+          flag.className = 'sgfs-france-real-flag';
+          flag.setAttribute('aria-hidden', 'true');
+          flag.textContent = '🇫🇷';
+          label.insertBefore(flag, label.firstChild);
+        }
+
+        label.style.setProperty('display', 'inline-flex', 'important');
+        label.style.setProperty('align-items', 'center', 'important');
+        label.dataset.sgfsFranceFlagV2 = '1';
+        return true;
+      }
+    }
+    return false;
+  }
+
+  patchFrance();
+
+  var obs = new MutationObserver(function () {
+    patchFrance();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+
+  setTimeout(patchFrance, 300);
+  setTimeout(patchFrance, 1000);
+  setTimeout(patchFrance, 2500);
+})();
+</script>
+<!-- /SGFS_FRANCE_FLAG_FIX_V2 -->
+
+</body></html>

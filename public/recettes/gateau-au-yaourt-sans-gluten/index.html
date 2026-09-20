@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+<!-- SGFS_FAVICON_LOCK_START -->
+<link id="sgfs-favicon-primary" rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/assets/sgfs-s-epi-final-20260919-224536.ico">
+<link id="sgfs-apple-touch-primary" rel="apple-touch-icon" sizes="180x180" href="/assets/sgfs-s-epi-final-20260919-224536-180.png">
+<script id="sgfs-favicon-lock-script">
+(function() {
+  const wanted = "/assets/sgfs-s-epi-final-20260919-224536.ico";
+  function normalizeRel(v) {
+    return (v || "").trim().toLowerCase().replace(/\s+/g, " ");
+  }
+  function enforceSGFSFavicon() {
+    const head = document.head;
+    if (!head) return;
+
+    Array.from(head.querySelectorAll("link[rel]")).forEach(function(link) {
+      const rel = normalizeRel(link.getAttribute("rel"));
+      const isTabIcon = rel === "icon" || rel === "shortcut icon" || rel === "mask-icon";
+      if (isTabIcon && link.id !== "sgfs-favicon-primary") {
+        link.remove();
+      }
+    });
+
+    let primary = document.getElementById("sgfs-favicon-primary");
+    if (!primary) {
+      primary = document.createElement("link");
+      primary.id = "sgfs-favicon-primary";
+      primary.rel = "icon";
+      primary.type = "image/x-icon";
+      primary.sizes = "16x16 32x32";
+      primary.href = wanted;
+      head.prepend(primary);
+    } else if (primary.getAttribute("href") !== wanted) {
+      primary.setAttribute("href", wanted);
+    }
+  }
+
+  enforceSGFSFavicon();
+
+  const observer = new MutationObserver(function() {
+    enforceSGFSFavicon();
+  });
+  observer.observe(document.head, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["rel", "href"]
+  });
+})();
+</script>
+<!-- SGFS_FAVICON_LOCK_END -->
+
+<link rel="manifest" href="/sgfs-manifest-exact-20260919205750.webmanifest?v=20260919205750">
+
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<meta content="50" name="site-version"/>
+<title>Gâteau au yaourt sans gluten au Mix SGFS | Recette</title>
+<meta content="Recette de gâteau au yaourt sans gluten avec 3 pots de Mix SGFS, 1 pot de yaourt, 2 pots de sucre, 3 œufs et 1/2 pot d’huile. Test validé : 40 min à 180 °C." name="description"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="Sans Gluten Food Solutions" name="author"/>
+<link href="https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten" rel="canonical"/>
+<link href="https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten" hreflang="fr-FR" rel="alternate"/>
+<link href="https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten" hreflang="x-default" rel="alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="fr_FR" property="og:locale"/>
+<meta content="Sans Gluten Food Solutions" property="og:site_name"/>
+<meta content="Gâteau au yaourt sans gluten au Mix SGFS" property="og:title"/>
+<meta content="Une recette simple au pot de yaourt avec 3 pots de Mix SGFS, 3 œufs et une cuisson testée 40 minutes à 180 °C." property="og:description"/>
+<meta content="https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten" property="og:url"/>
+<meta content="https://sansglutenfoodsolutions.com/assets/og-gateau-yaourt-sans-gluten-v46.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Gâteau au yaourt sans gluten doré et découpé" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Gâteau au yaourt sans gluten au Mix SGFS" name="twitter:title"/>
+<meta content="Recette au pot de yaourt avec 3 pots de Mix SGFS et cuisson 40 minutes à 180 °C." name="twitter:description"/>
+<meta content="https://sansglutenfoodsolutions.com/assets/og-gateau-yaourt-sans-gluten-v46.jpg" name="twitter:image"/>
+<link as="image" fetchpriority="high" href="/assets/gateau-au-yaourt-sans-gluten-sgfs.webp" rel="preload"/>
+<link href="/styles-v54.css" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://sansglutenfoodsolutions.com/#organization",
+      "name":"Sans Gluten Food Solutions",
+      "url":"https://sansglutenfoodsolutions.com/",
+      "logo":{"@type":"ImageObject","url":"https://sansglutenfoodsolutions.com/assets/sgfs-logo-horizontal-v26.png"}
+    },
+    {
+      "@type":"Recipe",
+      "@id":"https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten#recipe",
+      "name":"Gâteau au yaourt sans gluten au Mix SGFS",
+      "description":"Gâteau au yaourt sans gluten préparé avec 1 pot de yaourt nature de 125 g, 2 pots de sucre, 3 pots de Mix SGFS, 1/2 pot d’huile de tournesol, 3 œufs et 1 sachet de poudre à lever sans gluten.",
+      "image":[
+        "https://sansglutenfoodsolutions.com/assets/og-gateau-yaourt-sans-gluten-v46.jpg",
+        "https://sansglutenfoodsolutions.com/assets/gateau-au-yaourt-sans-gluten-sgfs.webp"
+      ],
+      "author":{"@id":"https://sansglutenfoodsolutions.com/#organization"},
+      "datePublished":"2026-09-19",
+      "cookTime":"PT40M",
+      "recipeYield":"1 gâteau au yaourt",
+      "recipeCategory":"Gâteau",
+      "suitableForDiet":"https://schema.org/GlutenFreeDiet",
+      "keywords":"gâteau au yaourt sans gluten, recette gâteau sans gluten, gâteau au yaourt Mix SGFS, pâtisserie sans gluten",
+      "recipeIngredient":[
+        "1 pot de yaourt nature (125 g)",
+        "2 pots de sucre",
+        "3 pots de Mix SGFS",
+        "1/2 pot d’huile de tournesol",
+        "3 œufs",
+        "1 sachet de poudre à lever sans gluten"
+      ],
+      "recipeInstructions":[
+        {"@type":"HowToStep","position":1,"text":"Préchauffer le four à 180 °C."},
+        {"@type":"HowToStep","position":2,"text":"Verser le yaourt dans un saladier et conserver le pot vide : il sert de mesure."},
+        {"@type":"HowToStep","position":3,"text":"Ajouter les 2 pots de sucre puis les 3 œufs. Fouetter jusqu’à obtenir un mélange homogène."},
+        {"@type":"HowToStep","position":4,"text":"Ajouter progressivement les 3 pots de Mix SGFS et le sachet de poudre à lever sans gluten."},
+        {"@type":"HowToStep","position":5,"text":"Incorporer le 1/2 pot d’huile de tournesol et mélanger juste assez pour obtenir une pâte lisse."},
+        {"@type":"HowToStep","position":6,"text":"Verser dans un moule légèrement graissé."},
+        {"@type":"HowToStep","position":7,"text":"Cuire 40 minutes à 180 °C. Vérifier avec la pointe d’un couteau : elle doit ressortir sèche ou avec quelques miettes humides."},
+        {"@type":"HowToStep","position":8,"text":"Laisser reposer 10 minutes dans le moule, puis démouler et refroidir sur une grille."}
+      ]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Accueil","item":"https://sansglutenfoodsolutions.com/"},
+        {"@type":"ListItem","position":2,"name":"Recettes","item":"https://sansglutenfoodsolutions.com/recettes"},
+        {"@type":"ListItem","position":3,"name":"Gâteau au yaourt sans gluten","item":"https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten"}
+      ]
+    }
+  ]
+}
+</script>
+<script src="/favicon-v45.js?v=45"></script>
+<script defer src="/language-v54.js?v=54"></script>
+
+
+<style>
+/* Masque le bandeau supérieur Google Traduction sans JavaScript */
+iframe.goog-te-banner-frame,
+iframe.goog-te-banner-frame.skiptranslate,
+iframe.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.goog-te-banner-frame.skiptranslate,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html,
+body,
+body.translated-ltr,
+body.translated-rtl {
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+</style>
+<!-- /SGFS_SAFE_FIX_20260919 -->
+
+</head>
+<body id="top">
+<header class="site-header"><div class="nav-shell"><a aria-label="Accueil Sans Gluten Food Solutions" class="nav-logo" href="/?v=53"><img alt="Sans Gluten Food Solutions" height="194" src="/assets/sgfs-logo-horizontal-v26.png?v=46" width="621"/></a><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-toggle" id="navToggle">☰</button><nav aria-label="Navigation principale" class="nav-links" id="navLinks"><a href="/mix-sans-gluten">Le mix</a><a aria-current="page" href="/recettes">Recettes</a><a href="/professionnels">Professionnels</a><a href="/echantillon-mix-sans-gluten">Échantillons</a><a href="/a-propos">À propos</a><div class="language-picker" title="Traduire le site"><span aria-hidden="true" class="language-flag">🇫🇷</span><select aria-label="Traduire le site" class="language-select" data-sgfs-language-safe="1" data-sgfs-lang-final="1"><option value="fr" selected>FR</option><option value="en">EN</option></select></div></nav></div></header>
+<main>
+<nav aria-label="Fil d’Ariane" class="breadcrumbs"><a href="/">Accueil</a><span>›</span><a href="/recettes">Recettes</a><span>›</span><span aria-current="page">Gâteau au yaourt sans gluten</span></nav>
+<section class="recipe-detail-hero"><div class="recipe-detail-shell"><div class="recipe-detail-copy"><p class="eyebrow">Recette validée avec le Mix Universel SGFS</p><h1>Gâteau au yaourt sans gluten.</h1><p class="recipe-detail-lead">La recette classique au pot de yaourt, adaptée au Mix SGFS : <strong>3 pots de Mix</strong>, 1 pot de yaourt nature, 2 pots de sucre, 3 œufs et 1/2 pot d’huile.</p><div aria-label="Informations recette" class="recipe-meta"><span><strong>3 pots</strong> de Mix SGFS</span><span><strong>3 œufs</strong></span><span><strong>180 °C</strong> au four</span><span><strong>40 min</strong> de cuisson testée</span></div><div class="hero-actions"><a class="button button-primary" href="#recette">Voir la recette</a><a class="button button-ghost" href="/mix-sans-gluten">Découvrir le mix</a></div></div><figure class="recipe-detail-visual"><img alt="Gâteau au yaourt sans gluten doré, découpé et présenté sur une assiette" fetchpriority="high" height="1080" src="/assets/gateau-au-yaourt-sans-gluten-sgfs.webp" width="1440"/></figure></div></section>
+<section class="recipe-detail-section" id="recette"><div class="recipe-detail-content"><aside class="recipe-ingredients-card"><p class="eyebrow">Ingrédients</p><h2>Pour 1 gâteau au yaourt</h2><ul class="recipe-ingredient-list"><li><span>Yaourt nature</span><strong>1 pot · 125 g</strong></li><li><span>Sucre</span><strong>2 pots</strong></li><li><span>Mix SGFS</span><strong>3 pots</strong></li><li><span>Huile de tournesol</span><strong>1/2 pot</strong></li><li><span>Œufs</span><strong>3</strong></li><li><span>Poudre à lever sans gluten</span><strong>1 sachet</strong></li></ul><div class="recipe-tip"><strong>Le pot sert de mesure</strong><p>Conservez le pot de yaourt vide. Pour le Mix SGFS, remplissez le pot à ras, sans tasser, puis répétez 3 fois.</p></div></aside><div class="recipe-steps-panel"><p class="eyebrow">Préparation</p><h2>La recette pas à pas</h2><ol class="recipe-step-list"><li><span>1</span><p>Préchauffer le four à <strong>180 °C</strong>.</p></li><li><span>2</span><p>Verser le yaourt dans un saladier et conserver le pot vide : il servira de mesure.</p></li><li><span>3</span><p>Ajouter les <strong>2 pots de sucre</strong> puis les <strong>3 œufs</strong>. Fouetter jusqu’à obtenir un mélange homogène.</p></li><li><span>4</span><p>Ajouter progressivement les <strong>3 pots de Mix SGFS</strong> et le sachet de poudre à lever sans gluten.</p></li><li><span>5</span><p>Incorporer le <strong>1/2 pot d’huile de tournesol</strong> et mélanger juste assez pour obtenir une pâte lisse.</p></li><li><span>6</span><p>Verser dans un moule légèrement graissé.</p></li><li><span>7</span><p>Cuire environ <strong>40 minutes à 180 °C</strong>. Vérifier avec la pointe d’un couteau : elle doit ressortir sèche ou avec quelques miettes humides.</p></li><li><span>8</span><p>Laisser reposer <strong>10 minutes</strong> dans le moule, puis démouler et refroidir sur une grille.</p></li></ol><div class="recipe-tip"><strong>Cuisson du test validé</strong><p>La fiche de test portait une base imprimée à 175 °C pendant 30 à 40 minutes ; l’essai validé a été annoté à <strong>180 °C pendant 40 minutes</strong>. C’est ce repère testé qui est publié ici.</p></div></div></div></section>
+<section class="recipe-seo-section"><div class="seo-wrap split"><div><p class="eyebrow">Un classique sans gluten</p><h2>Le gâteau au yaourt avec le Mix Universel.</h2><p>Cette recette utilise le pot de yaourt comme unité de mesure et remplace la farine classique par 3 pots de Mix SGFS. Retrouvez aussi les recettes déjà publiées de cookies, crêpes et génoise sans gluten.</p><div class="hero-actions"><a class="button button-primary" href="/recettes">Voir toutes les recettes</a><a class="button button-ghost" href="/echantillon-mix-sans-gluten">Demander un échantillon</a></div></div><div class="seo-callout"><strong>Mix Universel BIO sans gluten 500 g</strong><p>5 ingrédients, sans maïs, sans légumineuses, sans additifs ajoutés et sans conservateurs ajoutés. <a href="/mix-sans-gluten">Voir la page du Mix Universel</a>.</p></div></div></section>
+<section class="faq-section"><div class="section-head center"><p class="eyebrow">Questions fréquentes</p><h2>Réussir le gâteau au yaourt.</h2></div><div class="faq-list"><details><summary>Quel pot utiliser pour mesurer les ingrédients ?</summary><p>Utilisez le pot vide du yaourt de 125 g. Pour le Mix SGFS, remplissez-le à ras sans tasser.</p></details><details><summary>Quelle cuisson a été validée pour cette recette ?</summary><p>Le test validé a été réalisé à 180 °C pendant environ 40 minutes.</p></details><details><summary>Comment vérifier la cuisson ?</summary><p>Plantez la pointe d’un couteau au centre : elle doit ressortir sèche ou avec seulement quelques miettes humides.</p></details></div></section>
+</main>
+<footer><div class="footer-inner"><div class="footer-brand"><img alt="Sans Gluten Food Solutions" class="footer-logo" height="194" src="/assets/sgfs-logo-horizontal-v26.png?v=46" width="621"/></div><small>© <span id="year"></span> Sans Gluten Food Solutions. Tous droits réservés.</small><div class="footer-links"><a href="/en/" hreflang="en">English / Europe</a><a href="/confidentialite">Confidentialité</a><a href="mailto:benoit.rey@sansglutenfoodsolutions.com">Contact</a><a class="back-to-top" href="#top">↑ Haut de page</a></div></div></footer>
+<script src="/app-v42.js" type="module"></script>
+
+
+
+<style>
+.sgfs-france-real-flag {
+  display:inline-block !important;
+  font-size:22px !important;
+  line-height:1 !important;
+  width:auto !important;
+  height:auto !important;
+  margin-right:12px !important;
+  vertical-align:-2px !important;
+}
+</style>
+<script>
+(function () {
+  function normalize(s) {
+    return (s || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function removeLikelyStripe(labelEl) {
+    var parent = labelEl && labelEl.parentElement;
+    if (!parent) return;
+
+    var prev = labelEl.previousElementSibling;
+    if (prev) {
+      var t = normalize(prev.textContent);
+      var r = prev.getBoundingClientRect();
+      if (
+        t === '' ||
+        r.width <= 90 ||
+        /flag|france|stripe|liseret|line|bar|divider|separator|icon/i.test((prev.className || '').toString())
+      ) {
+        prev.style.setProperty('display', 'none', 'important');
+      }
+    }
+
+    Array.from(parent.children).forEach(function (el) {
+      if (el === labelEl) return;
+      var t = normalize(el.textContent);
+      var r = el.getBoundingClientRect();
+      var cls = (el.className || '').toString();
+      var style = getComputedStyle(el);
+
+      var smallEmptyVisual = t === '' && r.width <= 100 && r.height <= 35;
+      var suspiciousClass = /stripe|liseret|divider|separator|france-flag|flag-line|tricolor/i.test(cls);
+      var suspiciousGradient =
+        (style.backgroundImage || '').includes('linear-gradient') &&
+        r.width <= 120 && r.height <= 40;
+
+      if (smallEmptyVisual || suspiciousClass || suspiciousGradient) {
+        el.style.setProperty('display', 'none', 'important');
+      }
+    });
+  }
+
+  function patchFrance() {
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      var txt = normalize(node.nodeValue);
+      if (txt === 'Fabriqué en France') {
+        var label = node.parentElement;
+        if (!label) continue;
+
+        removeLikelyStripe(label);
+
+        if (!label.querySelector('.sgfs-france-real-flag')) {
+          var flag = document.createElement('span');
+          flag.className = 'sgfs-france-real-flag';
+          flag.setAttribute('aria-hidden', 'true');
+          flag.textContent = '🇫🇷';
+          label.insertBefore(flag, label.firstChild);
+        }
+
+        label.style.setProperty('display', 'inline-flex', 'important');
+        label.style.setProperty('align-items', 'center', 'important');
+        label.dataset.sgfsFranceFlagV2 = '1';
+        return true;
+      }
+    }
+    return false;
+  }
+
+  patchFrance();
+
+  var obs = new MutationObserver(function () {
+    patchFrance();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+
+  setTimeout(patchFrance, 300);
+  setTimeout(patchFrance, 1000);
+  setTimeout(patchFrance, 2500);
+})();
+</script>
+<!-- /SGFS_FRANCE_FLAG_FIX_V2 -->
+
+
+
+
+<style>
+.sgfs-fr-flag-vertical{
+  display:inline-block !important;
+  width:24px !important;
+  height:16px !important;
+  min-width:24px !important;
+  border-radius:2px !important;
+  margin-right:10px !important;
+  vertical-align:-2px !important;
+  background:linear-gradient(
+    to right,
+    #0055A4 0%,
+    #0055A4 33.333%,
+    #FFFFFF 33.333%,
+    #FFFFFF 66.666%,
+    #EF4135 66.666%,
+    #EF4135 100%
+  ) !important;
+  border:1px solid rgba(0,0,0,.08) !important;
+  box-sizing:border-box !important;
+  flex:0 0 24px !important;
+}
+</style>
+
+<script>
+(function(){
+  function norm(s){
+    return (s || '').replace(/\s+/g,' ').trim();
+  }
+
+  function replaceTextInNode(root, fromRe, toText){
+    if(!root) return;
+    var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+    var n;
+    while((n=walker.nextNode())){
+      if(fromRe.test(n.nodeValue)){
+        n.nodeValue=n.nodeValue.replace(fromRe,toText);
+      }
+    }
+  }
+
+  function removeCompositionParagraph(){
+    var ps=Array.from(document.querySelectorAll('p'));
+    ps.forEach(function(p){
+      var t=norm(p.textContent);
+      if(
+        t.indexOf('Une liste volontairement courte et lisible')===0 &&
+        t.indexOf('proportions')!==-1
+      ){
+        p.remove();
+      }
+    });
+  }
+
+  function patchFrenchFlags(){
+    var labels=['Fabriqué en France','Fabrication française'];
+
+    labels.forEach(function(labelText){
+      var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+      var n;
+      while((n=walker.nextNode())){
+        if(norm(n.nodeValue)!==labelText) continue;
+
+        var label=n.parentElement;
+        if(!label || label.querySelector('.sgfs-fr-flag-vertical')) continue;
+
+        var searchRoot=label;
+        for(var up=0; up<3 && searchRoot.parentElement; up++){
+          searchRoot=searchRoot.parentElement;
+        }
+
+        Array.from(searchRoot.querySelectorAll('*')).forEach(function(el){
+          if(el===label || label.contains(el)) return;
+          var txt=norm(el.textContent);
+          var r=el.getBoundingClientRect();
+          var st=getComputedStyle(el);
+          var cls=(el.className||'').toString();
+
+          var emptySmall = txt==='' && r.width>10 && r.width<=100 && r.height>2 && r.height<=35;
+          var horizontalTricolor =
+            (st.backgroundImage||'').indexOf('linear-gradient')!==-1 &&
+            r.width>=20 && r.width<=100 && r.height<=30;
+          var suspicious=/flag|france|tricolor|tricolore|liseret|stripe/i.test(cls);
+
+          if(emptySmall && (horizontalTricolor || suspicious)){
+            el.style.setProperty('display','none','important');
+          }
+        });
+
+        var flag=document.createElement('span');
+        flag.className='sgfs-fr-flag-vertical';
+        flag.setAttribute('aria-label','Drapeau français');
+        label.insertBefore(flag,label.firstChild);
+
+        label.style.setProperty('display','inline-flex','important');
+        label.style.setProperty('align-items','center','important');
+      }
+    });
+  }
+
+  function patchCrepes(){
+    var bodyText=norm(document.body ? document.body.textContent : '');
+    if(
+      bodyText.indexOf('Nombre de crêpes')===-1 ||
+      bodyText.indexOf('28 cm')===-1
+    ) return;
+
+    var labels=Array.from(document.querySelectorAll('label,p,div,span,strong'));
+    var label=labels.find(function(el){
+      return norm(el.textContent)==='Nombre de crêpes';
+    });
+
+    var input=null;
+    if(label){
+      var container=label.parentElement;
+      for(var i=0;i<4 && container && !input;i++,container=container.parentElement){
+        input=container.querySelector('input[type="number"]');
+      }
+    }
+    if(!input){
+      input=document.querySelector('input[type="number"]');
+    }
+
+    if(input){
+      if(String(input.value)!=='20'){
+        var proto=window.HTMLInputElement && window.HTMLInputElement.prototype;
+        var desc=proto && Object.getOwnPropertyDescriptor(proto,'value');
+        if(desc && desc.set){
+          desc.set.call(input,'20');
+        }else{
+          input.value='20';
+        }
+        input.setAttribute('value','20');
+        input.dispatchEvent(new Event('input',{bubbles:true}));
+        input.dispatchEvent(new Event('change',{bubbles:true}));
+      }
+    }
+
+    replaceTextInNode(document.body,/Pour\s+3\s+crêpes\b/g,'Pour 20 crêpes');
+    replaceTextInNode(document.body,/pour\s+3\s+crêpes\b/g,'pour 20 crêpes');
+  }
+
+  function run(){
+    removeCompositionParagraph();
+    patchFrenchFlags();
+    patchCrepes();
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',run,{once:true});
+  }else{
+    run();
+  }
+
+  setTimeout(run,250);
+  setTimeout(run,900);
+})();
+</script>
+<!-- /SGFS_FIX_INGREDIENTS_CREPE_FLAG_20260919 -->
+
+
+
+<script>
+(function(){
+  function bind(){
+    var sel=document.querySelector('select[data-sgfs-language-safe="1"]');
+    if(!sel || sel.dataset.bound==="1") return;
+
+    sel.dataset.bound="1";
+
+    sel.addEventListener("change",function(){
+      var p=location.pathname.replace(/^\/en(?=\/|$)/,"") || "/";
+
+      if(sel.value==="en"){
+        location.href=(p==="/")?"/en/":"/en"+p;
+      }else{
+        location.href=p;
+      }
+    });
+  }
+
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",bind,{once:true});
+  }else{
+    bind();
+  }
+})();
+</script>
+<!-- /SGFS_LANGUAGE_SELECT_SAFE_FINAL -->
+
+
+<!-- SGFS_LANG_FINAL_PATCH -->
+<script>
+(function(){
+  function pathToFr(pathname){
+    var p = pathname || "/";
+    p = p.replace(/^\/en(?=\/|$)/, "");
+    return p || "/";
+  }
+  function pathToEn(pathname){
+    var p = pathToFr(pathname);
+    return p === "/" ? "/en/" : "/en" + p;
+  }
+  function bindSelector(sel){
+    if(!sel || sel.dataset.sgfsBound === "1") return;
+    sel.dataset.sgfsBound = "1";
+    sel.addEventListener("change", function(){
+      var v = (sel.value || "").toLowerCase();
+      if(v === "en"){
+        window.location.href = pathToEn(window.location.pathname);
+      }else{
+        window.location.href = pathToFr(window.location.pathname);
+      }
+    });
+  }
+  function cleanupWrapper(sel){
+    if(!sel) return;
+    var wrap = sel.parentElement;
+    if(!wrap) return;
+    var children = Array.from(wrap.children).filter(function(el){ return el !== sel; });
+    var flagish = children.filter(function(el){
+      var txt = (el.textContent || "").trim();
+      var html = (el.outerHTML || "");
+      return /🇫🇷|🇬🇧|flag|drapeau|france|french|anglais|english/i.test(txt + " " + html);
+    });
+    if(flagish.length > 1){
+      flagish.slice(1).forEach(function(el){ el.remove(); });
+    }
+    try{
+      var opts = Array.from(sel.options || []);
+      opts.forEach(function(o){
+        o.text = o.text.replace(/🇫🇷|🇬🇧/g, "").trim();
+      });
+    }catch(e){}
+  }
+  function fixPage(){
+    var sels = Array.from(document.querySelectorAll('select[data-sgfs-lang-final="1"]'));
+    if(sels.length > 1){
+      sels.slice(1).forEach(function(s){ s.remove(); });
+      sels = sels.slice(0,1);
+    }
+    if(!sels.length) return;
+    var sel = sels[0];
+    cleanupWrapper(sel);
+    bindSelector(sel);
+  }
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", fixPage, {once:true});
+  }else{
+    fixPage();
+  }
+  setTimeout(fixPage, 300);
+})();
+</script>
+<!-- /SGFS_LANG_FINAL_PATCH -->
+
+
+<!-- SGFS_FLAG_FIX_V3 -->
+<script>
+(function(){
+  function norm(s){
+    return (s || '').replace(/\s+/g,' ').trim().toLowerCase();
+  }
+
+  function containsOne(text, arr){
+    var t = norm(text);
+    return arr.some(function(x){ return t.indexOf(norm(x)) !== -1; });
+  }
+
+  function scoreFlag(el){
+    var txt = ((el.textContent || '') + ' ' + (el.outerHTML || '')).toLowerCase();
+    var score = 0;
+    if (/float|floating|wave|wavy|wav/.test(txt)) score += 50;
+    if (el.tagName === 'IMG' || el.tagName === 'PICTURE') score += 20;
+    if (el.tagName === 'SVG') score += 10;
+    if ((el.getAttribute && (el.getAttribute('alt') || '').toLowerCase().indexOf('france') !== -1)) score += 10;
+    if ((el.getAttribute && (el.getAttribute('src') || '').toLowerCase().indexOf('france') !== -1)) score += 10;
+    if ((el.getAttribute && (el.getAttribute('src') || '').toLowerCase().indexOf('flag') !== -1)) score += 5;
+    return score;
+  }
+
+  function flagCandidates(root){
+    if (!root || !root.querySelectorAll) return [];
+    return Array.from(root.querySelectorAll('img,svg,picture,span,i'))
+      .filter(function(el){
+        var cls = ((el.className || '') + '').toLowerCase();
+        var alt = ((el.getAttribute && (el.getAttribute('alt') || '')) || '').toLowerCase();
+        var aria = ((el.getAttribute && (el.getAttribute('aria-label') || '')) || '').toLowerCase();
+        var src = ((el.getAttribute && (el.getAttribute('src') || '')) || '').toLowerCase();
+        var txt = (el.textContent || '').trim();
+        var html = (el.outerHTML || '').toLowerCase();
+
+        if (txt === '🇫🇷') return true;
+        if (el.tagName === 'IMG' || el.tagName === 'PICTURE' || el.tagName === 'SVG'){
+          return /flag|france|french|drapeau|francais|français/.test(cls + ' ' + alt + ' ' + aria + ' ' + src + ' ' + html);
+        }
+
+        return /flag|france|french|drapeau|francais|français/.test(cls + ' ' + alt + ' ' + aria + ' ' + html);
+      });
+  }
+
+  function getHeaderSelector(){
+    var scopes = Array.from(document.querySelectorAll('header, nav, .site-header, .header, .topbar'));
+    if (!scopes.length) scopes = [document.body];
+    var candidates = [];
+
+    scopes.forEach(function(scope){
+      Array.from(scope.querySelectorAll('button,a,div,span')).forEach(function(el){
+        var t = norm(el.textContent);
+        if (!t) return;
+        var hasLang = /\bfr\b/.test(t) || /\ben\b/.test(t);
+        if (!hasLang) return;
+        var flags = flagCandidates(el);
+        if (!flags.length) return;
+        var rect = (el.getBoundingClientRect ? el.getBoundingClientRect() : {width:0,height:0});
+        if (rect.width > 320 || rect.height > 120) return;
+        candidates.push(el);
+      });
+    });
+
+    candidates.sort(function(a,b){
+      var as = flagCandidates(a).length + (norm(a.textContent).indexOf('fr') !== -1 ? 3 : 0);
+      var bs = flagCandidates(b).length + (norm(b.textContent).indexOf('fr') !== -1 ? 3 : 0);
+      return bs - as;
+    });
+
+    return candidates[0] || null;
+  }
+
+  function chooseFlagFrom(root){
+    var flags = flagCandidates(root).slice().sort(function(a,b){
+      return scoreFlag(b) - scoreFlag(a);
+    });
+    return flags[0] || null;
+  }
+
+  function dedupeSelector(selector){
+    if (!selector) return null;
+    var flags = flagCandidates(selector).slice().sort(function(a,b){
+      return scoreFlag(b) - scoreFlag(a);
+    });
+    if (!flags.length) return null;
+    var keep = flags[0];
+    flags.slice(1).forEach(function(el){
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    });
+    return keep;
+  }
+
+  function cloneFlag(flag){
+    if (!flag) return null;
+    var wrapper = document.createElement('span');
+    wrapper.className = 'sgfs-single-floating-flag';
+    wrapper.style.display = 'inline-flex';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.justifyContent = 'center';
+    wrapper.style.verticalAlign = 'middle';
+    wrapper.style.marginRight = '12px';
+    wrapper.appendChild(flag.cloneNode(true));
+    return wrapper;
+  }
+
+  function textTargetElements(){
+    var phrases = [
+      'fabriqué en france',
+      'fabrication française',
+      'fabrication francaise',
+      'made in france',
+      'french manufacturing'
+    ];
+
+    return Array.from(document.querySelectorAll('div,span,p,strong,b,a,h2,h3,h4'))
+      .filter(function(el){
+        var t = norm(el.textContent);
+        if (!t) return false;
+        if (!containsOne(t, phrases)) return false;
+        var rect = (el.getBoundingClientRect ? el.getBoundingClientRect() : {width:0,height:0});
+        return rect.width <= 1000 && rect.height <= 180;
+      });
+  }
+
+  function cleanTarget(target, sourceFlag){
+    if (!target || !sourceFlag) return;
+    var flags = flagCandidates(target);
+    flags.forEach(function(el){
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    });
+
+    var existing = target.querySelector('.sgfs-single-floating-flag');
+    if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+
+    var clone = cloneFlag(sourceFlag);
+    if (!clone) return;
+
+    var firstChild = target.firstChild;
+    if (firstChild) {
+      target.insertBefore(clone, firstChild);
+    } else {
+      target.appendChild(clone);
+    }
+  }
+
+  function fixHeaderAndBadges(){
+    var selector = getHeaderSelector();
+    var keptFlag = dedupeSelector(selector) || chooseFlagFrom(selector);
+
+    if (!keptFlag){
+      var fallback = chooseFlagFrom(document.body);
+      if (fallback) keptFlag = fallback;
+    }
+
+    if (selector && keptFlag){
+      var extra = flagCandidates(selector).slice(1);
+      extra.forEach(function(el){
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+      });
+    }
+
+    if (!keptFlag) return;
+
+    textTargetElements().forEach(function(el){
+      cleanTarget(el, keptFlag);
+    });
+
+    // Nettoyage final : si un sélecteur contient encore plusieurs drapeaux, on garde le meilleur.
+    Array.from(document.querySelectorAll('header *, nav *')).forEach(function(el){
+      var t = norm(el.textContent);
+      if (!(/\bfr\b/.test(t) || /\ben\b/.test(t))) return;
+      var flags = flagCandidates(el);
+      if (flags.length > 1){
+        var keep = flags.slice().sort(function(a,b){ return scoreFlag(b) - scoreFlag(a); })[0];
+        flags.forEach(function(f){
+          if (f !== keep && f.parentNode) f.parentNode.removeChild(f);
+        });
+      }
+    });
+  }
+
+  function run(){
+    fixHeaderAndBadges();
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', run, {once:true});
+  } else {
+    run();
+  }
+
+  setTimeout(run, 250);
+  setTimeout(run, 800);
+  setTimeout(run, 1500);
+})();
+</script>
+<!-- /SGFS_FLAG_FIX_V3 -->
+
+
+
+
+
+<!-- SGFS_DEDUP_FLAG_HEADER_FINAL -->
+<script>
+(function(){
+  function norm(s){
+    return (s || '').replace(/\s+/g,' ').trim();
+  }
+
+  function isTopRight(el){
+    if(!el || !el.getBoundingClientRect) return false;
+    var r = el.getBoundingClientRect();
+    return (
+      r.top >= 0 &&
+      r.top < 260 &&
+      r.right > window.innerWidth * 0.62 &&
+      r.width >= 45 &&
+      r.width <= 240 &&
+      r.height >= 24 &&
+      r.height <= 100
+    );
+  }
+
+  function looksLikeLangControl(el){
+    var t = norm(el.textContent);
+    return (
+      /^FR(?:\s*[⌄⌃∨∧])?$/.test(t) ||
+      /^🇫🇷\s*FR(?:\s*[⌄⌃∨∧])?$/.test(t) ||
+      /^EN(?:\s*[⌄⌃∨∧])?$/.test(t) ||
+      /^🇬🇧\s*EN(?:\s*[⌄⌃∨∧])?$/.test(t)
+    );
+  }
+
+  function flagNodes(root){
+    if(!root) return [];
+    var out = [];
+
+    Array.from(root.querySelectorAll('.sgfs-floating-fr-flag,img,svg,picture,i,span')).forEach(function(el){
+      var cls = String(el.className || '').toLowerCase();
+      var alt = (el.getAttribute && (el.getAttribute('alt') || '') || '').toLowerCase();
+      var aria = (el.getAttribute && (el.getAttribute('aria-label') || '') || '').toLowerCase();
+      var src = (el.getAttribute && (el.getAttribute('src') || '') || '').toLowerCase();
+      var txt = norm(el.textContent);
+
+      if(
+        (el.classList && el.classList.contains('sgfs-floating-fr-flag')) ||
+        txt === '🇫🇷' ||
+        txt === '🇬🇧' ||
+        /flag|drapeau|france|french|anglais|english/.test(cls+' '+alt+' '+aria+' '+src)
+      ){
+        out.push(el);
+      }
+    });
+
+    return out;
+  }
+
+  function score(el){
+    var s = 0;
+    if(el.classList && el.classList.contains('sgfs-floating-fr-flag')) s += 100;
+    var blob = (
+      String(el.className || '') + ' ' +
+      ((el.getAttribute && el.getAttribute('src')) || '') + ' ' +
+      ((el.getAttribute && el.getAttribute('alt')) || '')
+    ).toLowerCase();
+    if(/float|floating|wave|wavy/.test(blob)) s += 50;
+    if(el.tagName === 'SVG') s += 20;
+    if(el.tagName === 'IMG') s += 10;
+    return s;
+  }
+
+  function dedupeControl(el){
+    var flags = flagNodes(el);
+    if(flags.length <= 1) return;
+
+    flags.sort(function(a,b){ return score(b) - score(a); });
+    var keep = flags[0];
+
+    flags.slice(1).forEach(function(f){
+      if(f && f !== keep && f.parentNode){
+        f.parentNode.removeChild(f);
+      }
+    });
+
+    Array.from(el.childNodes).forEach(function(n){
+      if(n.nodeType === Node.TEXT_NODE){
+        n.nodeValue = (n.nodeValue || '').replace(/🇫🇷/g,'').replace(/🇬🇧/g,'');
+      }
+    });
+  }
+
+  function dedupe(){
+    var scopes = Array.from(document.querySelectorAll('header,nav,.site-header,.header'));
+    if(!scopes.length) scopes = [document.body];
+
+    scopes.forEach(function(scope){
+      Array.from(scope.querySelectorAll('button,a,[role="button"],[role="combobox"],div')).forEach(function(el){
+        if(!isTopRight(el)) return;
+        if(!looksLikeLangControl(el)) return;
+        dedupeControl(el);
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', dedupe, {once:true});
+  }else{
+    dedupe();
+  }
+
+  setTimeout(dedupe,200);
+  setTimeout(dedupe,700);
+  setTimeout(dedupe,1400);
+})();
+</script>
+<!-- /SGFS_DEDUP_FLAG_HEADER_FINAL -->
+
+\
+<!-- SGFS_SINGLE_FLAG_COMPOSITION_V1 -->
+<style>
+.sgfs-fr-wave{display:inline-flex !important;align-items:center !important;justify-content:center !important;width:34px !important;height:24px !important;flex:0 0 auto !important;vertical-align:middle !important}
+.sgfs-fr-wave svg{width:34px !important;height:24px !important;display:block !important;filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.16))}
+.sgfs-france-banner-content{width:100%;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+</style>
+<script>
+(function(){
+  function norm(s){return (s||'').replace(/\s+/g,' ').trim()}
+  function lower(s){return norm(s).toLowerCase()}
+  function flagHTML(){
+    return '' +
+      '<span class="sgfs-fr-wave" aria-hidden="true">' +
+        '<svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">' +
+          '<defs><clipPath id="sgfsFrWaveClipOne"><path d="M2 5 C11 1 19 8 30 5 C41 2 50 8 58 4 L58 35 C50 39 41 33 30 36 C19 39 11 32 2 36 Z"/></clipPath></defs>' +
+          '<g clip-path="url(#sgfsFrWaveClipOne)">' +
+            '<rect x="0" y="0" width="20" height="40" fill="#0055A4"/>' +
+            '<rect x="20" y="0" width="20" height="40" fill="#FFFFFF"/>' +
+            '<rect x="40" y="0" width="20" height="40" fill="#EF4135"/>' +
+            '<path d="M0 10 C12 6 18 13 30 10 C42 7 49 13 60 9" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2"/>' +
+            '<path d="M0 25 C12 21 18 28 30 25 C42 22 49 28 60 24" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="2"/>' +
+          '</g>' +
+          '<path d="M2 5 C11 1 19 8 30 5 C41 2 50 8 58 4 L58 35 C50 39 41 33 30 36 C19 39 11 32 2 36 Z" fill="none" stroke="rgba(0,0,0,.12)" stroke-width=".6"/>' +
+        '</svg>' +
+      '</span>';
+  }
+  function flagLike(el){
+    if(!el) return false;
+    var blob = (
+      String(el.className || '') + ' ' +
+      ((el.getAttribute && el.getAttribute('alt')) || '') + ' ' +
+      ((el.getAttribute && el.getAttribute('aria-label')) || '') + ' ' +
+      ((el.getAttribute && el.getAttribute('src')) || '') + ' ' +
+      (el.textContent || '')
+    ).toLowerCase();
+    return (el.classList && el.classList.contains('sgfs-fr-wave')) || norm(el.textContent)==='🇫🇷' || /flag|drapeau|france|french|français|francais/.test(blob);
+  }
+  function findBanner(){
+    var nodes = Array.from(document.querySelectorAll('div,p,span,strong'));
+    for(var i=0;i<nodes.length;i++){
+      var el = nodes[i];
+      var t = norm(el.textContent);
+      if(t.indexOf('Le Mix Universel BIO Sans Gluten Food Solutions est fabriqué en France.') !== -1){
+        var cur = el;
+        for(var j=0;j<6 && cur;j++,cur=cur.parentElement){
+          if(!cur.getBoundingClientRect) continue;
+          var r = cur.getBoundingClientRect();
+          if(r.width >= 500 && r.height >= 45 && r.height <= 220){
+            return cur;
+          }
+        }
+      }
+    }
+    return null;
+  }
+  function run(){
+    var banner = findBanner();
+    if(!banner) return;
+    banner.innerHTML = '<div class="sgfs-france-banner-content">' + flagHTML() + '<strong>Fabriqué en France</strong><span>Le Mix Universel BIO Sans Gluten Food Solutions est fabriqué en France.</span></div>';
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run, {once:true}); else run();
+  setTimeout(run, 250);
+  setTimeout(run, 900);
+})();
+</script>
+<!-- /SGFS_SINGLE_FLAG_COMPOSITION_V1 -->
+
+</body></html>

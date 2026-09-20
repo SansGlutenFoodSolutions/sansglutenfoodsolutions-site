@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- SGFS_FAVICON_LOCK_START -->
+<link id="sgfs-favicon-primary" rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/assets/sgfs-s-epi-final-20260919-224536.ico">
+<link id="sgfs-apple-touch-primary" rel="apple-touch-icon" sizes="180x180" href="/assets/sgfs-s-epi-final-20260919-224536-180.png">
+<script id="sgfs-favicon-lock-script">
+(function() {
+  const wanted = "/assets/sgfs-s-epi-final-20260919-224536.ico";
+  function normalizeRel(v) {
+    return (v || "").trim().toLowerCase().replace(/\s+/g, " ");
+  }
+  function enforceSGFSFavicon() {
+    const head = document.head;
+    if (!head) return;
+
+    Array.from(head.querySelectorAll("link[rel]")).forEach(function(link) {
+      const rel = normalizeRel(link.getAttribute("rel"));
+      const isTabIcon = rel === "icon" || rel === "shortcut icon" || rel === "mask-icon";
+      if (isTabIcon && link.id !== "sgfs-favicon-primary") {
+        link.remove();
+      }
+    });
+
+    let primary = document.getElementById("sgfs-favicon-primary");
+    if (!primary) {
+      primary = document.createElement("link");
+      primary.id = "sgfs-favicon-primary";
+      primary.rel = "icon";
+      primary.type = "image/x-icon";
+      primary.sizes = "16x16 32x32";
+      primary.href = wanted;
+      head.prepend(primary);
+    } else if (primary.getAttribute("href") !== wanted) {
+      primary.setAttribute("href", wanted);
+    }
+  }
+
+  enforceSGFSFavicon();
+
+  const observer = new MutationObserver(function() {
+    enforceSGFSFavicon();
+  });
+  observer.observe(document.head, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["rel", "href"]
+  });
+})();
+</script>
+<!-- SGFS_FAVICON_LOCK_END -->
+
+<link rel="manifest" href="/sgfs-manifest-exact-20260919205750.webmanifest?v=20260919205750">
+
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta content="50" name="site-version"/>
+<script>window.addEventListener("pageshow",function(e){if(e.persisted){window.location.reload();}});</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex,follow" name="robots"/>
+<title>Privacy Policy | Gluten Free Food Solutions</title>
+<link href="/styles-v54.css" rel="stylesheet"/>
+
+
+
+
+
+
+<script src="/favicon-v45.js?v=45"></script><script defer src="/language-v54.js?v=54"></script>
+
+
+<meta name="theme-color" content="#08583d">
+
+<meta name="theme-color" content="#08583d">
+
+<meta name="theme-color" content="#08583d">
+
+<base href="/en/">
+<link rel="canonical" href="https://sansglutenfoodsolutions.com/en/confidentialite.html">
+<link rel="alternate" hreflang="fr" href="https://sansglutenfoodsolutions.com/confidentialite.html">
+<link rel="alternate" hreflang="en" href="https://sansglutenfoodsolutions.com/en/confidentialite.html">
+<link rel="alternate" hreflang="x-default" href="https://sansglutenfoodsolutions.com/confidentialite.html">
+</head>
+<body>
+<header class="site-header">
+<div class="container nav">
+<a aria-label="Home Gluten Free Food Solutions" class="brand brand-header" href="/en/?v=53">
+<img alt="Sans Gluten Food Solutions" class="privacy-logo-lockup" src="/assets/sgfs-logo-horizontal-v26.png?v=28"/>
+</a>
+<a class="btn btn-secondary" href="/en/?v=53">Return to site</a>
+</div>
+</header>
+<main class="section"><article class="container privacy-card">
+<span class="eyebrow">Personal data</span><h1>Privacy Policy</h1>
+<p>The data entered in the contact form is used exclusively to process commercial requests addressed to Sans Gluten Food Solutions. They are transmitted to FormSubmit only in order to route the request to benoit.rey@sansglutenfoodsolutions.com.</p>
+<h2>Data collected</h2><p>Name, first name, company, activity, contact details, geographical area, estimated volume and description of the project.</p>
+<h2>Purpose and conservation</h2><p>This information is used to respond to the request, to prepare a professional proposal and to monitor the commercial relationship. FormSubmit says it keeps submissions for 30 days in its archive; </p>
+<h2>Your rights</h2><p>You can request access, rectification or deletion of your data by writing to <a href="mailto:benoit.rey@sansglutenfoodsolutions.com">benoit.rey@sansglutenfoodsolutions.com</a>.</p>
+<p><strong>To be completed before publication:</strong> full legal identity of the publisher, head office address, SIREN, data controller, host and precise retention period.</p>
+<p><a class="btn btn-secondary" href="/en/?v=53">Return to site</a></p>
+</article></main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SGFS_FLAG_FIX_V3 -->
+<script>
+(function(){
+  function norm(s){
+    return (s || '').replace(/\s+/g,' ').trim().toLowerCase();
+  }
+
+  function containsOne(text, arr){
+    var t = norm(text);
+    return arr.some(function(x){ return t.indexOf(norm(x)) !== -1; });
+  }
+
+  function scoreFlag(el){
+    var txt = ((el.textContent || '') + ' ' + (el.outerHTML || '')).toLowerCase();
+    var score = 0;
+    if (/float|floating|wave|wavy|wav/.test(txt)) score += 50;
+    if (el.tagName === 'IMG' || el.tagName === 'PICTURE') score += 20;
+    if (el.tagName === 'SVG') score += 10;
+    if ((el.getAttribute && (el.getAttribute('alt') || '').toLowerCase().indexOf('france') !== -1)) score += 10;
+    if ((el.getAttribute && (el.getAttribute('src') || '').toLowerCase().indexOf('france') !== -1)) score += 10;
+    if ((el.getAttribute && (el.getAttribute('src') || '').toLowerCase().indexOf('flag') !== -1)) score += 5;
+    return score;
+  }
+
+  function flagCandidates(root){
+    if (!root || !root.querySelectorAll) return [];
+    return Array.from(root.querySelectorAll('img,svg,picture,span,i'))
+      .filter(function(el){
+        var cls = ((el.className || '') + '').toLowerCase();
+        var alt = ((el.getAttribute && (el.getAttribute('alt') || '')) || '').toLowerCase();
+        var aria = ((el.getAttribute && (el.getAttribute('aria-label') || '')) || '').toLowerCase();
+        var src = ((el.getAttribute && (el.getAttribute('src') || '')) || '').toLowerCase();
+        var txt = (el.textContent || '').trim();
+        var html = (el.outerHTML || '').toLowerCase();
+
+        if (txt === '🇫🇷') return true;
+        if (el.tagName === 'IMG' || el.tagName === 'PICTURE' || el.tagName === 'SVG'){
+          return /flag|france|french|drapeau|francais|français/.test(cls + ' ' + alt + ' ' + aria + ' ' + src + ' ' + html);
+        }
+
+        return /flag|france|french|drapeau|francais|français/.test(cls + ' ' + alt + ' ' + aria + ' ' + html);
+      });
+  }
+
+  function getHeaderSelector(){
+    var scopes = Array.from(document.querySelectorAll('header, nav, .site-header, .header, .topbar'));
+    if (!scopes.length) scopes = [document.body];
+    var candidates = [];
+
+    scopes.forEach(function(scope){
+      Array.from(scope.querySelectorAll('button,a,div,span')).forEach(function(el){
+        var t = norm(el.textContent);
+        if (!t) return;
+        var hasLang = /\bfr\b/.test(t) || /\ben\b/.test(t);
+        if (!hasLang) return;
+        var flags = flagCandidates(el);
+        if (!flags.length) return;
+        var rect = (el.getBoundingClientRect ? el.getBoundingClientRect() : {width:0,height:0});
+        if (rect.width > 320 || rect.height > 120) return;
+        candidates.push(el);
+      });
+    });
+
+    candidates.sort(function(a,b){
+      var as = flagCandidates(a).length + (norm(a.textContent).indexOf('fr') !== -1 ? 3 : 0);
+      var bs = flagCandidates(b).length + (norm(b.textContent).indexOf('fr') !== -1 ? 3 : 0);
+      return bs - as;
+    });
+
+    return candidates[0] || null;
+  }
+
+  function chooseFlagFrom(root){
+    var flags = flagCandidates(root).slice().sort(function(a,b){
+      return scoreFlag(b) - scoreFlag(a);
+    });
+    return flags[0] || null;
+  }
+
+  function dedupeSelector(selector){
+    if (!selector) return null;
+    var flags = flagCandidates(selector).slice().sort(function(a,b){
+      return scoreFlag(b) - scoreFlag(a);
+    });
+    if (!flags.length) return null;
+    var keep = flags[0];
+    flags.slice(1).forEach(function(el){
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    });
+    return keep;
+  }
+
+  function cloneFlag(flag){
+    if (!flag) return null;
+    var wrapper = document.createElement('span');
+    wrapper.className = 'sgfs-single-floating-flag';
+    wrapper.style.display = 'inline-flex';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.justifyContent = 'center';
+    wrapper.style.verticalAlign = 'middle';
+    wrapper.style.marginRight = '12px';
+    wrapper.appendChild(flag.cloneNode(true));
+    return wrapper;
+  }
+
+  function textTargetElements(){
+    var phrases = [
+      'fabriqué en france',
+      'fabrication française',
+      'fabrication francaise',
+      'made in france',
+      'french manufacturing'
+    ];
+
+    return Array.from(document.querySelectorAll('div,span,p,strong,b,a,h2,h3,h4'))
+      .filter(function(el){
+        var t = norm(el.textContent);
+        if (!t) return false;
+        if (!containsOne(t, phrases)) return false;
+        var rect = (el.getBoundingClientRect ? el.getBoundingClientRect() : {width:0,height:0});
+        return rect.width <= 1000 && rect.height <= 180;
+      });
+  }
+
+  function cleanTarget(target, sourceFlag){
+    if (!target || !sourceFlag) return;
+    var flags = flagCandidates(target);
+    flags.forEach(function(el){
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    });
+
+    var existing = target.querySelector('.sgfs-single-floating-flag');
+    if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+
+    var clone = cloneFlag(sourceFlag);
+    if (!clone) return;
+
+    var firstChild = target.firstChild;
+    if (firstChild) {
+      target.insertBefore(clone, firstChild);
+    } else {
+      target.appendChild(clone);
+    }
+  }
+
+  function fixHeaderAndBadges(){
+    var selector = getHeaderSelector();
+    var keptFlag = dedupeSelector(selector) || chooseFlagFrom(selector);
+
+    if (!keptFlag){
+      var fallback = chooseFlagFrom(document.body);
+      if (fallback) keptFlag = fallback;
+    }
+
+    if (selector && keptFlag){
+      var extra = flagCandidates(selector).slice(1);
+      extra.forEach(function(el){
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+      });
+    }
+
+    if (!keptFlag) return;
+
+    textTargetElements().forEach(function(el){
+      cleanTarget(el, keptFlag);
+    });
+
+    // Nettoyage final : si un sélecteur contient encore plusieurs drapeaux, on garde le meilleur.
+    Array.from(document.querySelectorAll('header *, nav *')).forEach(function(el){
+      var t = norm(el.textContent);
+      if (!(/\bfr\b/.test(t) || /\ben\b/.test(t))) return;
+      var flags = flagCandidates(el);
+      if (flags.length > 1){
+        var keep = flags.slice().sort(function(a,b){ return scoreFlag(b) - scoreFlag(a); })[0];
+        flags.forEach(function(f){
+          if (f !== keep && f.parentNode) f.parentNode.removeChild(f);
+        });
+      }
+    });
+  }
+
+  function run(){
+    fixHeaderAndBadges();
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', run, {once:true});
+  } else {
+    run();
+  }
+
+  setTimeout(run, 250);
+  setTimeout(run, 800);
+  setTimeout(run, 1500);
+})();
+</script>
+<!-- /SGFS_FLAG_FIX_V3 -->
+
+
+
+
+
+<!-- SGFS_DEDUP_FLAG_HEADER_FINAL -->
+<script>
+(function(){
+  function norm(s){
+    return (s || '').replace(/\s+/g,' ').trim();
+  }
+
+  function isTopRight(el){
+    if(!el || !el.getBoundingClientRect) return false;
+    var r = el.getBoundingClientRect();
+    return (
+      r.top >= 0 &&
+      r.top < 260 &&
+      r.right > window.innerWidth * 0.62 &&
+      r.width >= 45 &&
+      r.width <= 240 &&
+      r.height >= 24 &&
+      r.height <= 100
+    );
+  }
+
+  function looksLikeLangControl(el){
+    var t = norm(el.textContent);
+    return (
+      /^FR(?:\s*[⌄⌃∨∧])?$/.test(t) ||
+      /^🇫🇷\s*FR(?:\s*[⌄⌃∨∧])?$/.test(t) ||
+      /^EN(?:\s*[⌄⌃∨∧])?$/.test(t) ||
+      /^🇬🇧\s*EN(?:\s*[⌄⌃∨∧])?$/.test(t)
+    );
+  }
+
+  function flagNodes(root){
+    if(!root) return [];
+    var out = [];
+
+    Array.from(root.querySelectorAll('.sgfs-floating-fr-flag,img,svg,picture,i,span')).forEach(function(el){
+      var cls = String(el.className || '').toLowerCase();
+      var alt = (el.getAttribute && (el.getAttribute('alt') || '') || '').toLowerCase();
+      var aria = (el.getAttribute && (el.getAttribute('aria-label') || '') || '').toLowerCase();
+      var src = (el.getAttribute && (el.getAttribute('src') || '') || '').toLowerCase();
+      var txt = norm(el.textContent);
+
+      if(
+        (el.classList && el.classList.contains('sgfs-floating-fr-flag')) ||
+        txt === '🇫🇷' ||
+        txt === '🇬🇧' ||
+        /flag|drapeau|france|french|anglais|english/.test(cls+' '+alt+' '+aria+' '+src)
+      ){
+        out.push(el);
+      }
+    });
+
+    return out;
+  }
+
+  function score(el){
+    var s = 0;
+    if(el.classList && el.classList.contains('sgfs-floating-fr-flag')) s += 100;
+    var blob = (
+      String(el.className || '') + ' ' +
+      ((el.getAttribute && el.getAttribute('src')) || '') + ' ' +
+      ((el.getAttribute && el.getAttribute('alt')) || '')
+    ).toLowerCase();
+    if(/float|floating|wave|wavy/.test(blob)) s += 50;
+    if(el.tagName === 'SVG') s += 20;
+    if(el.tagName === 'IMG') s += 10;
+    return s;
+  }
+
+  function dedupeControl(el){
+    var flags = flagNodes(el);
+    if(flags.length <= 1) return;
+
+    flags.sort(function(a,b){ return score(b) - score(a); });
+    var keep = flags[0];
+
+    flags.slice(1).forEach(function(f){
+      if(f && f !== keep && f.parentNode){
+        f.parentNode.removeChild(f);
+      }
+    });
+
+    Array.from(el.childNodes).forEach(function(n){
+      if(n.nodeType === Node.TEXT_NODE){
+        n.nodeValue = (n.nodeValue || '').replace(/🇫🇷/g,'').replace(/🇬🇧/g,'');
+      }
+    });
+  }
+
+  function dedupe(){
+    var scopes = Array.from(document.querySelectorAll('header,nav,.site-header,.header'));
+    if(!scopes.length) scopes = [document.body];
+
+    scopes.forEach(function(scope){
+      Array.from(scope.querySelectorAll('button,a,[role="button"],[role="combobox"],div')).forEach(function(el){
+        if(!isTopRight(el)) return;
+        if(!looksLikeLangControl(el)) return;
+        dedupeControl(el);
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', dedupe, {once:true});
+  }else{
+    dedupe();
+  }
+
+  setTimeout(dedupe,200);
+  setTimeout(dedupe,700);
+  setTimeout(dedupe,1400);
+})();
+</script>
+<!-- /SGFS_DEDUP_FLAG_HEADER_FINAL -->
+
+</body>
+</html>

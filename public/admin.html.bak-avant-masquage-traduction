@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta content="50" name="site-version"/>
+<script>window.addEventListener("pageshow",function(e){if(e.persisted){window.location.reload();}});</script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="noindex,nofollow" name="robots">
+<title>Administration | Sans Gluten Food Solutions</title>
+<link href="/styles-v54.css" rel="stylesheet"/>
+
+
+
+
+
+
+</meta></meta></meta><link href="/assets/sgfs-tab-icon-v45-20260919.png?v=45" rel="icon" type="image/png"/><link href="/assets/sgfs-apple-touch-v45-20260919.png?v=45" rel="apple-touch-icon" sizes="180x180"/><link href="/site-v45.webmanifest?v=45" rel="manifest"/><script src="/favicon-v45.js?v=45"></script><script defer src="/language-v54.js?v=54"></script></head>
+<body>
+<main class="admin-shell">
+<section class="container">
+<div class="admin-card admin-login" id="loginPanel">
+<a aria-label="Retour au site" class="admin-logo-link" href="/?v=53">
+<img alt="Sans Gluten Food Solutions" class="admin-logo" src="/assets/sgfs-logo-horizontal-v26.png?v=28"/>
+</a>
+<span class="eyebrow">Accès sécurisé</span>
+<h1>Administration</h1>
+<p>Connectez-vous avec le compte administrateur créé dans Firebase Authentication.</p>
+<form class="form-grid" id="loginForm">
+<div class="field field-full"><label for="adminEmail">E-mail</label><input id="adminEmail" required="" type="email"/></div>
+<div class="field field-full"><label for="adminPassword">Mot de passe</label><input id="adminPassword" required="" type="password"/></div>
+<div class="field field-full"><button class="btn btn-primary" type="submit">Se connecter</button><div class="form-status" id="loginStatus"></div></div>
+</form>
+</div>
+<div class="admin-card" hidden="" id="dashboard">
+<div class="admin-bar"><div><span class="eyebrow">Prospects</span><h1>Demandes commerciales</h1></div><button class="btn btn-secondary" id="logoutButton">Déconnexion</button></div>
+<div id="leadList"><p class="admin-empty">Chargement…</p></div>
+</div>
+</section>
+</main>
+<script src="/admin.js" type="module"></script>
+</body>
+</html>

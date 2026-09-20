@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta content="50" name="site-version"/>
+<script>window.addEventListener("pageshow",function(e){if(e.persisted){window.location.reload();}});</script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="noindex,nofollow" name="robots">
+<title>Administration | Sans Gluten Food Solutions</title>
+<link href="/styles-v54.css" rel="stylesheet"/>
+
+
+
+
+
+
+</meta></meta></meta><link href="/assets/sgfs-tab-icon-v45-20260919.png?v=45" rel="icon" type="image/png"/><link href="/assets/sgfs-apple-touch-v45-20260919.png?v=45" rel="apple-touch-icon" sizes="180x180"/><link href="/site-v45.webmanifest?v=45" rel="manifest"/><script src="/favicon-v45.js?v=45"></script><script defer src="/language-v54.js?v=54"></script>
+
+<!-- SGFS_SAFE_FIX_20260919 -->
+<style>
+/* Masque le bandeau supérieur Google Traduction sans JavaScript */
+iframe.goog-te-banner-frame,
+iframe.goog-te-banner-frame.skiptranslate,
+iframe.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.goog-te-banner-frame.skiptranslate,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html,
+body,
+body.translated-ltr,
+body.translated-rtl {
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+</style>
+<!-- /SGFS_SAFE_FIX_20260919 -->
+
+</head>
+<body>
+<main class="admin-shell">
+<section class="container">
+<div class="admin-card admin-login" id="loginPanel">
+<a aria-label="Retour au site" class="admin-logo-link" href="/?v=53">
+<img alt="Sans Gluten Food Solutions" class="admin-logo" src="/assets/sgfs-logo-horizontal-v26.png?v=28"/>
+</a>
+<span class="eyebrow">Accès sécurisé</span>
+<h1>Administration</h1>
+<p>Connectez-vous avec le compte administrateur créé dans Firebase Authentication.</p>
+<form class="form-grid" id="loginForm">
+<div class="field field-full"><label for="adminEmail">E-mail</label><input id="adminEmail" required="" type="email"/></div>
+<div class="field field-full"><label for="adminPassword">Mot de passe</label><input id="adminPassword" required="" type="password"/></div>
+<div class="field field-full"><button class="btn btn-primary" type="submit">Se connecter</button><div class="form-status" id="loginStatus"></div></div>
+</form>
+</div>
+<div class="admin-card" hidden="" id="dashboard">
+<div class="admin-bar"><div><span class="eyebrow">Prospects</span><h1>Demandes commerciales</h1></div><button class="btn btn-secondary" id="logoutButton">Déconnexion</button></div>
+<div id="leadList"><p class="admin-empty">Chargement…</p></div>
+</div>
+</section>
+</main>
+<script src="/admin.js" type="module"></script>
+
+
+<!-- SGFS_FRANCE_FLAG_FIX_V2 -->
+<style>
+.sgfs-france-real-flag {
+  display:inline-block !important;
+  font-size:22px !important;
+  line-height:1 !important;
+  width:auto !important;
+  height:auto !important;
+  margin-right:12px !important;
+  vertical-align:-2px !important;
+}
+</style>
+<script>
+(function () {
+  function normalize(s) {
+    return (s || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function removeLikelyStripe(labelEl) {
+    var parent = labelEl && labelEl.parentElement;
+    if (!parent) return;
+
+    var prev = labelEl.previousElementSibling;
+    if (prev) {
+      var t = normalize(prev.textContent);
+      var r = prev.getBoundingClientRect();
+      if (
+        t === '' ||
+        r.width <= 90 ||
+        /flag|france|stripe|liseret|line|bar|divider|separator|icon/i.test((prev.className || '').toString())
+      ) {
+        prev.style.setProperty('display', 'none', 'important');
+      }
+    }
+
+    Array.from(parent.children).forEach(function (el) {
+      if (el === labelEl) return;
+      var t = normalize(el.textContent);
+      var r = el.getBoundingClientRect();
+      var cls = (el.className || '').toString();
+      var style = getComputedStyle(el);
+
+      var smallEmptyVisual = t === '' && r.width <= 100 && r.height <= 35;
+      var suspiciousClass = /stripe|liseret|divider|separator|france-flag|flag-line|tricolor/i.test(cls);
+      var suspiciousGradient =
+        (style.backgroundImage || '').includes('linear-gradient') &&
+        r.width <= 120 && r.height <= 40;
+
+      if (smallEmptyVisual || suspiciousClass || suspiciousGradient) {
+        el.style.setProperty('display', 'none', 'important');
+      }
+    });
+  }
+
+  function patchFrance() {
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      var txt = normalize(node.nodeValue);
+      if (txt === 'Fabriqué en France') {
+        var label = node.parentElement;
+        if (!label) continue;
+
+        removeLikelyStripe(label);
+
+        if (!label.querySelector('.sgfs-france-real-flag')) {
+          var flag = document.createElement('span');
+          flag.className = 'sgfs-france-real-flag';
+          flag.setAttribute('aria-hidden', 'true');
+          flag.textContent = '🇫🇷';
+          label.insertBefore(flag, label.firstChild);
+        }
+
+        label.style.setProperty('display', 'inline-flex', 'important');
+        label.style.setProperty('align-items', 'center', 'important');
+        label.dataset.sgfsFranceFlagV2 = '1';
+        return true;
+      }
+    }
+    return false;
+  }
+
+  patchFrance();
+
+  var obs = new MutationObserver(function () {
+    patchFrance();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+
+  setTimeout(patchFrance, 300);
+  setTimeout(patchFrance, 1000);
+  setTimeout(patchFrance, 2500);
+})();
+</script>
+<!-- /SGFS_FRANCE_FLAG_FIX_V2 -->
+
+
+</body>
+</html>

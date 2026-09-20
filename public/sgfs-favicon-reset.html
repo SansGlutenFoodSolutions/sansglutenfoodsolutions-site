@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<title>Actualisation SGFS</title>
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/assets/sgfs-s-epi-final-20260919-224536.ico">
+</head>
+<body>
+<script>
+(async function () {
+  try {
+    if ("serviceWorker" in navigator) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map(r => r.unregister()));
+    }
+  } catch (e) {}
+
+  try {
+    if ("caches" in window) {
+      const names = await caches.keys();
+      await Promise.all(names.map(n => caches.delete(n)));
+    }
+  } catch (e) {}
+
+  location.replace("/?favicon-clean=final-20260919-224536");
+})();
+</script>
+</body>
+</html>

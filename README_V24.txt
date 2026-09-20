@@ -1,0 +1,1 @@
+V24 : correction du temps de réalisation. Suppression de toute mention "2 minutes max". Le site indique désormais environ 2 heures selon la recette pour la réalisation complète, avec variation selon préparation, repos/pousse éventuels, façonnage et cuisson.

@@ -1,0 +1,18 @@
+
+# --- SGFS GitHub safety ---
+.DS_Store
+.firebase/
+node_modules/
+firebase-debug.log
+*.log
+*.tmp
+*.bak
+.env
+.env.*
+!.env.example
+*service-account*.json
+*firebase-adminsdk*.json
+*.pem
+*.key
+sgfs-backups/
+# --- /SGFS GitHub safety ---

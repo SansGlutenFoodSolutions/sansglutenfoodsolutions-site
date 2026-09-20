@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta content="50" name="site-version"/>
+<script>window.addEventListener("pageshow",function(e){if(e.persisted){window.location.reload();}});</script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="noindex,nofollow" name="robots">
+<title>Administration | Sans Gluten Food Solutions</title>
+<link href="/styles-v54.css" rel="stylesheet"/>
+
+
+
+
+
+
+</meta></meta></meta><link href="/assets/sgfs-tab-icon-v45-20260919.png?v=45" rel="icon" type="image/png"/><link href="/assets/sgfs-apple-touch-v45-20260919.png?v=45" rel="apple-touch-icon" sizes="180x180"/><link href="/site-v45.webmanifest?v=45" rel="manifest"/><script src="/favicon-v45.js?v=45"></script><script defer src="/language-v54.js?v=54"></script>
+</head>
+<body>
+<main class="admin-shell">
+<section class="container">
+<div class="admin-card admin-login" id="loginPanel">
+<a aria-label="Retour au site" class="admin-logo-link" href="/?v=53">
+<img alt="Sans Gluten Food Solutions" class="admin-logo" src="/assets/sgfs-logo-horizontal-v26.png?v=28"/>
+</a>
+<span class="eyebrow">Accès sécurisé</span>
+<h1>Administration</h1>
+<p>Connectez-vous avec le compte administrateur créé dans Firebase Authentication.</p>
+<form class="form-grid" id="loginForm">
+<div class="field field-full"><label for="adminEmail">E-mail</label><input id="adminEmail" required="" type="email"/></div>
+<div class="field field-full"><label for="adminPassword">Mot de passe</label><input id="adminPassword" required="" type="password"/></div>
+<div class="field field-full"><button class="btn btn-primary" type="submit">Se connecter</button><div class="form-status" id="loginStatus"></div></div>
+</form>
+</div>
+<div class="admin-card" hidden="" id="dashboard">
+<div class="admin-bar"><div><span class="eyebrow">Prospects</span><h1>Demandes commerciales</h1></div><button class="btn btn-secondary" id="logoutButton">Déconnexion</button></div>
+<div id="leadList"><p class="admin-empty">Chargement…</p></div>
+</div>
+</section>
+</main>
+<script src="/admin.js" type="module"></script>
+
+
+<!-- SGFS_FRANCE_FLAG_FIX_V2 -->
+<style>
+.sgfs-france-real-flag {
+  display:inline-block !important;
+  font-size:22px !important;
+  line-height:1 !important;
+  width:auto !important;
+  height:auto !important;
+  margin-right:12px !important;
+  vertical-align:-2px !important;
+}
+</style>
+<script>
+(function () {
+  function normalize(s) {
+    return (s || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function removeLikelyStripe(labelEl) {
+    var parent = labelEl && labelEl.parentElement;
+    if (!parent) return;
+
+    var prev = labelEl.previousElementSibling;
+    if (prev) {
+      var t = normalize(prev.textContent);
+      var r = prev.getBoundingClientRect();
+      if (
+        t === '' ||
+        r.width <= 90 ||
+        /flag|france|stripe|liseret|line|bar|divider|separator|icon/i.test((prev.className || '').toString())
+      ) {
+        prev.style.setProperty('display', 'none', 'important');
+      }
+    }
+
+    Array.from(parent.children).forEach(function (el) {
+      if (el === labelEl) return;
+      var t = normalize(el.textContent);
+      var r = el.getBoundingClientRect();
+      var cls = (el.className || '').toString();
+      var style = getComputedStyle(el);
+
+      var smallEmptyVisual = t === '' && r.width <= 100 && r.height <= 35;
+      var suspiciousClass = /stripe|liseret|divider|separator|france-flag|flag-line|tricolor/i.test(cls);
+      var suspiciousGradient =
+        (style.backgroundImage || '').includes('linear-gradient') &&
+        r.width <= 120 && r.height <= 40;
+
+      if (smallEmptyVisual || suspiciousClass || suspiciousGradient) {
+        el.style.setProperty('display', 'none', 'important');
+      }
+    });
+  }
+
+  function patchFrance() {
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      var txt = normalize(node.nodeValue);
+      if (txt === 'Fabriqué en France') {
+        var label = node.parentElement;
+        if (!label) continue;
+
+        removeLikelyStripe(label);
+
+        if (!label.querySelector('.sgfs-france-real-flag')) {
+          var flag = document.createElement('span');
+          flag.className = 'sgfs-france-real-flag';
+          flag.setAttribute('aria-hidden', 'true');
+          flag.textContent = '🇫🇷';
+          label.insertBefore(flag, label.firstChild);
+        }
+
+        label.style.setProperty('display', 'inline-flex', 'important');
+        label.style.setProperty('align-items', 'center', 'important');
+        label.dataset.sgfsFranceFlagV2 = '1';
+        return true;
+      }
+    }
+    return false;
+  }
+
+  patchFrance();
+
+  var obs = new MutationObserver(function () {
+    patchFrance();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+
+  setTimeout(patchFrance, 300);
+  setTimeout(patchFrance, 1000);
+  setTimeout(patchFrance, 2500);
+})();
+</script>
+<!-- /SGFS_FRANCE_FLAG_FIX_V2 -->
+
+
+<!-- SGFS_CONSOLIDATED_FIX_20260919 -->
+<style>
+/* === Masquage du bandeau supérieur Google Traduction === */
+iframe.goog-te-banner-frame,
+iframe.goog-te-banner-frame.skiptranslate,
+iframe.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.goog-te-banner-frame.skiptranslate,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb,
+body > .skiptranslate:first-child {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+html,
+body,
+body.translated-ltr,
+body.translated-rtl {
+  top: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Le nouveau titre du bloc usages doit rester cohérent avec la charte existante */
+.sgfs-usage-title-patched {
+  letter-spacing: inherit !important;
+}
+</style>
+
+<script>
+(function () {
+  const NEW_TITLE = 'Un seul mix. Toutes vos envies sans gluten.';
+  const NEW_TEXT =
+    'Le Mix Universel BIO sans gluten 500 g est une base polyvalente pensée pour réaliser de nombreuses recettes du quotidien : pain, pain burger, pizza, panuozzo, brioche, crêpes, génoise, gâteau au yaourt, cookies et d’autres préparations au fil de leur validation.';
+
+  function norm(s) {
+    return (s || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function hideTranslateToolbar() {
+    try {
+      document.querySelectorAll(
+        'iframe.goog-te-banner-frame,' +
+        'iframe.goog-te-banner-frame.skiptranslate,' +
+        'iframe.VIpgJd-ZVi9od-ORHb-OEVmcd,' +
+        '.goog-te-banner-frame.skiptranslate,' +
+        '.VIpgJd-ZVi9od-ORHb-OEVmcd,' +
+        '.VIpgJd-ZVi9od-ORHb'
+      ).forEach(function(el) {
+        el.style.setProperty('display', 'none', 'important');
+        el.style.setProperty('height', '0', 'important');
+        el.style.setProperty('visibility', 'hidden', 'important');
+      });
+
+      document.documentElement.style.setProperty('top', '0', 'important');
+      document.body && document.body.style.setProperty('top', '0', 'important');
+
+      // Sécurité supplémentaire : masque tout iframe Google Translate collé en haut.
+      document.querySelectorAll('iframe').forEach(function(frame) {
+        var cls = (frame.className || '').toString();
+        var src = (frame.getAttribute('src') || '').toLowerCase();
+        var r = frame.getBoundingClientRect();
+        var googleTranslateFrame =
+          /goog-te|VIpgJd-ZVi9od-ORHb/i.test(cls) ||
+          /translate\.google|translate\.goog/i.test(src);
+        if (googleTranslateFrame && r.top <= 5 && r.height < 160) {
+          frame.style.setProperty('display', 'none', 'important');
+          frame.style.setProperty('height', '0', 'important');
+        }
+      });
+    } catch (e) {}
+  }
+
+  function findUsageBlock() {
+    var elements = Array.from(document.querySelectorAll(
+      'h1,h2,h3,h4,h5,h6,p,div,section,article,span,strong'
+    ));
+
+    // 1. Recherche prioritaire du titre qui mélange "un seul mix" et "5 ingrédients".
+    var title = elements.find(function(el) {
+      var t = norm(el.textContent).toLowerCase();
+      return t.includes('un seul mix') && t.includes('5 ingrédients');
+    });
+
+    // 2. Anciennes variantes possibles.
+    if (!title) {
+      title = elements.find(function(el) {
+        var t = norm(el.textContent).toLowerCase();
+        return (
+          t.includes('mix universel bio sans gluten') &&
+          t.includes('500 g') &&
+          t.includes('un seul mix')
+        );
+      });
+    }
+
+    return title || null;
+  }
+
+  function patchUsageBlock() {
+    var title = findUsageBlock();
+    if (!title) return false;
+
+    // Si on a trouvé un gros conteneur au lieu du titre, cherche le heading à l'intérieur.
+    if (!/^H[1-6]$/.test(title.tagName)) {
+      var innerHeading = Array.from(title.querySelectorAll('h1,h2,h3,h4,h5,h6')).find(function(h) {
+        var t = norm(h.textContent).toLowerCase();
+        return t.includes('un seul mix') || t.includes('5 ingrédients');
+      });
+      if (innerHeading) title = innerHeading;
+    }
+
+    title.textContent = NEW_TITLE;
+    title.classList.add('sgfs-usage-title-patched');
+    title.dataset.sgfsUsageDone = '1';
+
+    // Trouve le paragraphe descriptif le plus proche qui parle encore de composition.
+    var container = title.parentElement;
+    for (var up = 0; up < 4 && container; up++, container = container.parentElement) {
+      var paras = Array.from(container.querySelectorAll('p'));
+      var desc = paras.find(function(p) {
+        var t = norm(p.textContent).toLowerCase();
+        return (
+          t.includes('fécule de pomme de terre') ||
+          t.includes('farine de riz blanc') ||
+          t.includes('amidon de tapioca') ||
+          t.includes('formulation courte') ||
+          t.includes('sans maïs ni légumineuses') ||
+          t.includes('servir de base à plusieurs recettes')
+        );
+      });
+
+      if (desc) {
+        desc.textContent = NEW_TEXT;
+        desc.dataset.sgfsUsageTextDone = '1';
+        return true;
+      }
+    }
+
+    // Si aucun paragraphe "composition" n'est trouvé, remplace le premier paragraphe proche.
+    container = title.parentElement;
+    for (var up2 = 0; up2 < 3 && container; up2++, container = container.parentElement) {
+      var firstP = container.querySelector('p');
+      if (firstP) {
+        firstP.textContent = NEW_TEXT;
+        firstP.dataset.sgfsUsageTextDone = '1';
+        return true;
+      }
+    }
+
+    return true;
+  }
+
+  function runAll() {
+    hideTranslateToolbar();
+    patchUsageBlock();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runAll);
+  } else {
+    runAll();
+  }
+
+  var observer = new MutationObserver(function() {
+    hideTranslateToolbar();
+    patchUsageBlock();
+  });
+
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true
+  });
+
+  setTimeout(runAll, 300);
+  setTimeout(runAll, 1000);
+  setTimeout(runAll, 2500);
+  setTimeout(runAll, 5000);
+})();
+</script>
+<!-- /SGFS_CONSOLIDATED_FIX_20260919 -->
+
+</body>
+</html>

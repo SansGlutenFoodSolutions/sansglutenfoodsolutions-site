@@ -1,0 +1,55 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    match /leads/{leadId} {
+      allow create: if request.resource.data.keys().hasOnly([
+          'firstName', 'lastName', 'company', 'activity', 'email', 'phone',
+          'postalCode', 'volume', 'message', 'source', 'status', 'createdAt'
+        ])
+        && request.resource.data.firstName is string
+        && request.resource.data.firstName.size() >= 1
+        && request.resource.data.firstName.size() <= 60
+        && request.resource.data.lastName is string
+        && request.resource.data.lastName.size() >= 1
+        && request.resource.data.lastName.size() <= 60
+        && request.resource.data.company is string
+        && request.resource.data.company.size() >= 1
+        && request.resource.data.company.size() <= 120
+        && request.resource.data.activity is string
+        && request.resource.data.activity.size() >= 1
+        && request.resource.data.activity.size() <= 80
+        && request.resource.data.email is string
+        && request.resource.data.email.size() >= 5
+        && request.resource.data.email.size() <= 160
+        && request.resource.data.phone is string
+        && request.resource.data.phone.size() <= 30
+        && request.resource.data.postalCode is string
+        && request.resource.data.postalCode.size() >= 2
+        && request.resource.data.postalCode.size() <= 12
+        && request.resource.data.volume is string
+        && request.resource.data.volume.size() <= 80
+        && request.resource.data.message is string
+        && request.resource.data.message.size() >= 10
+        && request.resource.data.message.size() <= 1500
+        && request.resource.data.source == 'sansglutenfoodsolutions.com'
+        && request.resource.data.status == 'nouveau'
+        && request.resource.data.createdAt == request.time;
+
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /admins/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

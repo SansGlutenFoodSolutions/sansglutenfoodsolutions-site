@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html lang="fr-FR">
+<head>
+<meta content="50" name="site-version"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Mix farine BIO sans gluten 500 g à 5 ingrédients, sans maïs ni légumineuses, sans additifs ajoutés. Échantillons et projets pro étudiés en France et en Europe." name="description"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="Sans Gluten Food Solutions" name="author"/>
+<meta content="website" property="og:type"/>
+<meta content="fr_FR" property="og:locale"/>
+<meta content="en_GB" property="og:locale:alternate"/>
+<meta content="Sans Gluten Food Solutions" property="og:site_name"/>
+<meta content="Mix Universel BIO sans gluten 500 g | Sans Gluten Food Solutions" property="og:title"/>
+<meta content="Mix farine BIO sans gluten 500 g à 5 ingrédients, sans maïs ni légumineuses, sans additifs ajoutés. Échantillons et projets pro étudiés en France et en Europe." property="og:description"/>
+<meta content="https://sansglutenfoodsolutions.com/" property="og:url"/>
+<meta content="https://sansglutenfoodsolutions.com/assets/og-mix-sans-gluten-v35.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Mix Universel BIO sans gluten 500 g Sans Gluten Food Solutions" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Mix Universel BIO sans gluten 500 g | Sans Gluten Food Solutions" name="twitter:title"/>
+<meta content="Mix farine BIO sans gluten 500 g à 5 ingrédients, sans maïs ni légumineuses, sans additifs ajoutés. Échantillons et projets pro étudiés en France et en Europe." name="twitter:description"/>
+<meta content="https://sansglutenfoodsolutions.com/assets/og-mix-sans-gluten-v35.jpg" name="twitter:image"/>
+<title>Mix Universel BIO sans gluten 500 g | Sans Gluten Food Solutions</title>
+<link href="https://sansglutenfoodsolutions.com/" rel="canonical"/>
+<link href="https://sansglutenfoodsolutions.com/" hreflang="fr-FR" rel="alternate"/>
+<link href="https://sansglutenfoodsolutions.com/en/" hreflang="en" rel="alternate"/>
+<link href="https://sansglutenfoodsolutions.com/" hreflang="x-default" rel="alternate"/>
+<link as="image" fetchpriority="high" href="/assets/mix-universel-bio-sans-gluten-500g.webp" rel="preload"/>
+<link href="/styles-v54.css" rel="stylesheet"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sansglutenfoodsolutions.com/#organization",
+      "name": "Sans Gluten Food Solutions",
+      "url": "https://sansglutenfoodsolutions.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sansglutenfoodsolutions.com/assets/sgfs-logo-horizontal-v26.png"
+      },
+      "email": "benoit.rey@sansglutenfoodsolutions.com",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "France"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Europe"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "commercial et partenariats professionnels",
+        "email": "benoit.rey@sansglutenfoodsolutions.com",
+        "areaServed": [
+          "FR",
+          "EU"
+        ],
+        "availableLanguage": [
+          "fr",
+          "en"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sansglutenfoodsolutions.com/#website",
+      "url": "https://sansglutenfoodsolutions.com/",
+      "name": "Sans Gluten Food Solutions",
+      "inLanguage": "fr-FR",
+      "publisher": {
+        "@id": "https://sansglutenfoodsolutions.com/#organization"
+      },
+      "alternateName": "SGFS"
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://sansglutenfoodsolutions.com/#mix-universel-500g",
+      "name": "Mix Universel BIO sans gluten 500 g",
+      "description": "Mix farine BIO sans gluten 500 g à 5 ingrédients, sans maïs ni légumineuses, sans additifs ajoutés. Échantillons et projets pro étudiés en France et en Europe.",
+      "image": [
+        "https://sansglutenfoodsolutions.com/assets/mix-universel-bio-sans-gluten-500g.webp",
+        "https://sansglutenfoodsolutions.com/assets/recette-pain.webp",
+        "https://sansglutenfoodsolutions.com/assets/recette-crepes.webp",
+        "https://sansglutenfoodsolutions.com/assets/recette-genoise.webp",
+        "https://sansglutenfoodsolutions.com/assets/gateau-au-yaourt-sans-gluten-sgfs.webp",
+        "https://sansglutenfoodsolutions.com/assets/cookies-sans-gluten-pepites-chocolat.webp"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sansglutenfoodsolutions.com/#webpage",
+      "url": "https://sansglutenfoodsolutions.com/",
+      "name": "Mix Universel BIO sans gluten 500 g | Sans Gluten Food Solutions",
+      "description": "Mix farine BIO sans gluten 500 g à 5 ingrédients, sans maïs ni légumineuses, sans additifs ajoutés. Échantillons et projets pro étudiés en France et en Europe.",
+      "inLanguage": "fr-FR",
+      "isPartOf": {
+        "@id": "https://sansglutenfoodsolutions.com/#website"
+      },
+      "about": {
+        "@id": "https://sansglutenfoodsolutions.com/#mix-universel-500g"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://sansglutenfoodsolutions.com/assets/mix-universel-bio-sans-gluten-500g.webp"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sansglutenfoodsolutions.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quels sont les ingrédients du Mix Universel BIO sans gluten ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le Mix est composé de cinq ingrédients : fécule de pomme de terre BIO, farine de riz blanc BIO, amidon de tapioca BIO, farine de riz complet BIO et psyllium BIO."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le Mix Universel est-il BIO ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Le Mix Universel est certifié BIO et fabriqué dans une usine certifiée BIO et sans gluten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le Mix contient-il du maïs ou des légumineuses ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. La formulation du Mix Universel est sans maïs et sans légumineuses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le Mix contient-il des additifs ou conservateurs ajoutés ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. La formulation est sans additifs ajoutés et sans conservateurs ajoutés."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles recettes peut-on préparer avec le Mix Universel ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les premiers usages développés sont le pain sans gluten, la pizza sans gluten, le panuozzo sans gluten, le pain burger sans gluten, les crêpes sans gluten, la génoise sans gluten, les cookies sans gluten et le gâteau au yaourt sans gluten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sans Gluten Food Solutions étudie-t-il des projets en France et en Europe ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Les demandes d’échantillons payants, de référencement, de restauration, de distribution et de partenariats professionnels peuvent être étudiées en France et en Europe avant la commercialisation générale prévue fin 2026 / début 2027."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+<link href="/assets/sgfs-tab-icon-v45-20260919.png?v=45" rel="icon" type="image/png"/><link href="/assets/sgfs-apple-touch-v45-20260919.png?v=45" rel="apple-touch-icon" sizes="180x180"/><link href="/site-v45.webmanifest?v=45" rel="manifest"/><script src="/favicon-v45.js?v=45"></script><script defer src="/language-v54.js?v=54"></script>
+</head>
+<body>
+<header class="site-header">
+<div class="nav-shell">
+<a aria-label="Accueil Sans Gluten Food Solutions" class="nav-logo" href="#accueil">
+<img alt="Sans Gluten Food Solutions" height="194" src="/assets/sgfs-logo-horizontal-v26.png?v=40" width="621"/>
+</a>
+<button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-toggle" id="navToggle">☰</button>
+<nav aria-label="Navigation principale" class="nav-links" id="navLinks">
+<a href="/mix-sans-gluten">Le mix</a><a href="/recettes">Recettes</a><a href="/professionnels">Professionnels</a><a href="/echantillon-mix-sans-gluten">Échantillons</a><a href="/a-propos">À propos</a><div class="language-picker" title="Traduire le site"><span aria-hidden="true" class="language-flag">🇫🇷</span><select aria-label="Traduire le site" class="language-select"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="it">IT</option><option value="de">DE</option><option value="pt">PT</option><option value="nl">NL</option><option value="pl">PL</option><option value="ro">RO</option><option value="el">EL</option><option value="cs">CS</option><option value="sv">SV</option><option value="da">DA</option><option value="fi">FI</option></select></div>
+</nav>
+</div>
+</header>
+<main>
+<section class="hero hero-brand" id="accueil">
+<div class="hero-brand-shell">
+<img alt="" aria-hidden="true" class="hero-brand-mark" height="220" src="/assets/sgfs-logo-mark-v26.png?v=40" width="210"/>
+<p class="eyebrow hero-kicker">Mix Universel BIO sans gluten · 500 g</p>
+<h1 class="hero-title hero-brand-title"><span>Le plaisir de cuisiner</span><strong>sans limites.</strong></h1>
+<p class="hero-lead hero-brand-lead">Un mix de farine BIO et sans gluten composé de seulement 5 ingrédients, sans maïs, sans légumineuses, sans additifs ni conservateurs ajoutés, fabriqué en France, pour réaliser pain, pizza, panuozzo, pain burger, crêpes, génoise, cookies, gâteau au yaourt et bien d'autres recettes.</p>
+<div class="hero-actions hero-brand-actions">
+<a class="button button-primary" href="/mix-sans-gluten">Découvrir le mix</a>
+<a class="button button-ghost request-button" data-request="Échantillon payant – Mix Universel 500 g" href="/echantillon-mix-sans-gluten">Demander un échantillon payant</a>
+</div>
+<div aria-label="Caractéristiques du Mix Universel" class="hero-badges hero-brand-badges"><span><strong>BIO</strong> certifié</span><span><strong>5 ingrédients</strong> formulation courte</span><span><strong>Sans maïs</strong> ni légumineuses</span><span><strong>500 g</strong> format sachet</span><span class="france-made-badge"><span aria-hidden="true" class="france-flag"><i class="blue"></i><i class="white"></i><i class="red"></i></span><strong>Fabrication française</strong></span></div>
+</div>
+</section>
+<section class="mix-section" id="mix">
+<div class="mix-product-shell">
+<div class="mix-product-copy">
+<p class="eyebrow">Mix Universel BIO sans gluten · 500 g</p>
+<h2 class="mix-product-title">Un seul mix. Toutes vos envies sans gluten.</h2>
+<p>Le Mix Universel BIO sans gluten 500 g est une base polyvalente pensée pour réaliser de nombreuses recettes du quotidien : pain, pain burger, pizza, panuozzo, brioche, crêpes, génoise, gâteau au yaourt, cookies et d’autres préparations au fil de leur validation.</p>
+<div class="mix-product-actions">
+<a class="button button-primary request-button" data-request="Échantillon payant – Mix Universel 500 g" href="/echantillon-mix-sans-gluten">Demander un échantillon payant</a>
+<a class="button button-ghost" href="/recettes">Voir les recettes</a>
+</div>
+</div>
+<figure class="mix-product-card">
+<img alt="Mix Universel BIO sans gluten 500 g, sans maïs ni légumineuses – Sans Gluten Food Solutions" class="mix-product-image" decoding="async" fetchpriority="high" height="1402" loading="eager" src="/assets/mix-universel-bio-sans-gluten-500g.webp" width="1122"/>
+<figcaption class="product-illustration-note">Photo d’illustration – sachet non contractuel</figcaption>
+</figure>
+</div>
+<div class="mix-feature-grid mix-feature-grid-v26">
+<article><h3>BIO</h3><p>Un mix certifié BIO, élaboré à partir d’une liste courte de matières premières.</p></article>
+<article><h3>5 ingrédients</h3><p>Fécule de pomme de terre, riz blanc, tapioca, riz complet et psyllium.</p></article>
+<article><h3>Sans maïs</h3><p>Une formulation sans maïs et sans légumineuses, pour une base différente des mix classiques.</p></article>
+<article><h3>Sans additifs ajoutés</h3><p>Sans conservateurs ajoutés, sans gomme xanthane, sans guar et sans HPMC ajoutés.</p></article>
+</div>
+</section><section class="composition-section" id="composition">
+<div class="composition-shell">
+<div class="composition-copy">
+<p class="eyebrow">Composition du Mix Universel BIO</p>
+<h2>5 ingrédients. Rien de superflu.</h2>
+<p class="composition-intro">Une liste volontairement courte et lisible : <strong>fécule de pomme de terre BIO, farine de riz blanc BIO, amidon de tapioca BIO, farine de riz complet BIO et psyllium BIO.</strong> La composition est présentée sans divulguer les proportions ni le procédé de fabrication.</p>
+<div aria-label="Les cinq ingrédients du Mix Universel BIO sans gluten" class="ingredient-list">
+<span>Fécule de pomme de terre BIO</span><span>Farine de riz blanc BIO</span><span>Amidon de tapioca BIO</span><span>Farine de riz complet BIO</span><span>Psyllium BIO</span>
+</div><div class="france-made-callout"><span aria-hidden="true" class="france-tricolor"></span><strong>Fabriqué en France</strong><span>Le Mix Universel BIO Sans Gluten Food Solutions est fabriqué en France.</span></div>
+</div>
+<div class="composition-benefits">
+<article><strong>Sans gluten</strong><p>Mix développé pour une alimentation sans gluten et fabriqué dans une usine certifiée sans gluten.</p></article>
+<article><strong>Sans maïs &amp; sans légumineuses</strong><p>Aucun maïs ni aucune légumineuse dans la formulation du Mix Universel.</p></article>
+<article><strong>Sans additifs ni conservateurs ajoutés</strong><p>Pas de gomme xanthane, gomme de guar, HPMC, colorant, arôme ou conservateur ajouté à la formulation.</p></article>
+<article><strong>Formulé sans les 14 allergènes à déclaration obligatoire de l’UE</strong><p>La formulation ne contient aucun des 14 allergènes soumis à déclaration obligatoire dans l’Union européenne.</p></article>
+</div>
+<div class="certification-note">
+<strong>BIO aujourd’hui. AFDIAG demain.</strong>
+<span>Le Mix est certifié BIO et fabriqué dans une usine certifiée BIO et sans gluten. La certification AFDIAG « épi barré » du Mix est prévue avant sa commercialisation générale.</span>
+</div>
+</div>
+</section>
+<section aria-label="Disponibilité du Mix Universel" class="availability-strip">
+<div class="availability-shell">
+<div><span>Disponible aujourd'hui</span><strong>Échantillons payants</strong><p>Sur demande, avant le lancement commercial.</p></div>
+<div><span>Commercialisation générale</span><strong>Fin 2026 / début 2027</strong><p>Le sachet 500 g sera proposé à la vente à cette période.</p></div>
+<div><span>Format annoncé</span><strong>Sachet 500 g</strong><p>Un mix BIO sans gluten polyvalent pour plusieurs familles de recettes.</p></div>
+</div>
+</section>
+<section class="recipes-section" id="recettes">
+<div class="section-head">
+<p class="eyebrow">Idées avec le Mix Universel</p>
+<h2>Pain, cookies, gâteau au yaourt, pizza, panuozzo, pain burger, crêpes, génoise : un seul mix BIO sans gluten.</h2>
+<p>Le Mix Universel BIO sans gluten 500 g sert de base à plusieurs recettes. Les recettes du pain sans gluten, des cookies aux pépites de chocolat, des crêpes, de la génoise et du gâteau au yaourt sont maintenant publiées ; les fiches pizza, pain burger et panuozzo restent en cours de validation.</p>
+</div>
+<div class="recipe-grid"><article class="recipe-card recipe-card-wide-first recipe-card-available">
+<div class="recipe-image"><img alt="Pain sans gluten doré avec mie alvéolée réalisé avec le Mix Universel SGFS" decoding="async" height="1313" loading="lazy" src="/assets/pain-sans-gluten-sgfs-v50.webp" width="1198"/></div>
+<div class="recipe-copy"><p class="eyebrow">Nouvelle recette publiée · Pain sans gluten</p><h3>Mie alvéolée, croûte croustillante.</h3><p>172 g de Mix SGFS, 163 g d’eau à 28 °C et une cuisson sur pierre avec vapeur.</p><a class="recipe-status-button recipe-live-link" href="/recettes/pain-sans-gluten">Voir la fiche recette du pain</a></div>
+</article><article class="recipe-card recipe-card-available">
+<div class="recipe-image"><img alt="Cookies sans gluten aux pépites de chocolat réalisés avec le Mix Universel SGFS" decoding="async" height="1400" loading="lazy" src="/assets/cookies-sans-gluten-pepites-chocolat.webp" width="1120"/></div>
+<div class="recipe-copy">
+<p class="eyebrow">Nouvelle recette publiée</p>
+<h3>Cookies sans gluten aux pépites de chocolat.</h3>
+<p>Une recette simple avec 150 g de Mix Universel SGFS pour préparer environ 10 à 12 cookies, avec des bords légèrement dorés et un centre qui reste tendre.</p>
+<a class="recipe-status-button recipe-live-link" href="/recettes/cookies-sans-gluten">Voir la recette complète</a>
+</div>
+</article><article class="recipe-card recipe-card-available">
+<div class="recipe-image"><img alt="Gâteau au yaourt sans gluten doré réalisé avec le Mix Universel SGFS" decoding="async" height="1080" loading="lazy" src="/assets/gateau-au-yaourt-sans-gluten-sgfs.webp" width="1440"/></div>
+<div class="recipe-copy"><p class="eyebrow">Nouvelle recette publiée · Gâteau au yaourt</p><h3>Le classique au pot de yaourt.</h3><p>1 pot de yaourt nature, 3 pots de Mix SGFS, 3 œufs et une cuisson testée 40 minutes à 180 °C.</p><a class="recipe-status-button recipe-live-link" href="/recettes/gateau-au-yaourt-sans-gluten">Voir la fiche gâteau au yaourt</a></div>
+</article><article class="recipe-card recipe-card-available">
+<div class="recipe-image"><img alt="Crêpes sans gluten dorées réalisées avec le Mix Universel SGFS" decoding="async" height="1254" loading="lazy" src="/assets/recette-crepes.webp" width="1254"/></div>
+<div class="recipe-copy"><p class="eyebrow">Recette publiée · Crêpes sans gluten</p><h3>Fines et souples.</h3><p>3 crêpes de 28 cm avec 50 g de Mix SGFS, 1 œuf et 175 ml de lait sans lactose.</p><a class="recipe-status-button recipe-live-link" href="/recettes/crepes-sans-gluten">Voir la recette complète</a></div>
+</article><article class="recipe-card">
+<div class="recipe-image"><img alt="Illustration d’une génoise sans gluten dorée et tranchée" decoding="async" height="1254" loading="lazy" src="/assets/recette-genoise.webp" width="1254"/></div>
+<div class="recipe-copy"><p class="eyebrow">Recette publiée · Génoise sans gluten</p><h3>Légère à 1 œuf.</h3><p>Une petite génoise avec 31,25 g de Mix SGFS et 31,25 g de sucre, cuisson à 180 °C.</p><a class="recipe-status-button recipe-live-link" href="/recettes/genoise-sans-gluten">Voir la recette complète</a></div>
+</article><article class="recipe-card recipe-card-pending"><div class="recipe-image recipe-placeholder"><span>Recette en cours d'élaboration</span></div><div class="recipe-copy"><p class="eyebrow">En cours de validation</p><h3>Pizza sans gluten.</h3><p>La recette de pâte à pizza sans gluten est en cours d’élaboration et de validation.</p><button class="recipe-status-button recipe-status-trigger" type="button">Voir la fiche</button></div></article><article class="recipe-card recipe-card-pending"><div class="recipe-image recipe-placeholder"><span>Recette en cours d'élaboration</span></div><div class="recipe-copy"><p class="eyebrow">En cours de validation</p><h3>Pain burger sans gluten.</h3><p>La recette du pain burger sans gluten est en cours d’élaboration et de validation.</p><button class="recipe-status-button recipe-status-trigger" type="button">Voir la fiche</button></div></article><article class="recipe-card">
+<div class="recipe-image"><img alt="Panuozzo sans gluten préparé à partir du Mix Universel 500 g" decoding="async" height="1149" loading="lazy" src="/assets/recette-panuozzo.webp?v=54" width="1369"/></div>
+<div class="recipe-copy">
+<p class="eyebrow">Panuozzo sans gluten</p>
+<h3>Le panuozzo, réalisé avec le mix.</h3>
+<p>Le Mix Universel sert de base à la pâte du panuozzo. Après préparation, cuisson et garniture, vous obtenez un format repas pratique et personnalisable.</p>
+<button class="recipe-status-button recipe-status-trigger" type="button">Voir la recette</button>
+</div>
+</article></div>
+<div class="recipes-note"><strong>Cinq recettes sont disponibles.</strong><span>Le pain sans gluten, les cookies aux pépites de chocolat, les crêpes, la génoise et le gâteau au yaourt sont publiés. Les fiches pizza, pain burger et panuozzo seront mises en ligne après validation des essais.</span></div>
+<div class="product-proof-note"><strong>Nos réalisations avec le Mix Universel.</strong><span>Les produits présentés correspondent aux préparations réellement développées avec notre mix sans gluten. Les visuels sont mis en scène pour la présentation du site.</span></div>
+</section>
+<section class="how-section">
+<div class="how-shell">
+<div class="how-copy"><p class="eyebrow">Le principe</p><h2>Préparez la base. Choisissez le résultat.</h2><p>Le Mix Universel est le point de départ. Chaque recette possède son propre dosage, façonnage, temps de repos ou de pousse éventuel et cuisson. Selon la recette, comptez environ 2 heures pour la réalisation complète.</p></div>
+<div class="steps">
+<div><span>1</span><strong>Dosez</strong><p>Utilisez le Mix Universel comme base sèche de la recette choisie.</p></div>
+<div><span>2</span><strong>Mélangez</strong><p>Préparez le mélange avec les ajouts et dosages indiqués dans la future fiche recette.</p></div>
+<div><span>3</span><strong>Finalisez</strong><p>Façonnez, laissez reposer ou pousser si nécessaire, puis cuisez. Selon la recette, l’ensemble demande environ 2 heures.</p></div>
+</div>
+</div>
+</section>
+<section class="pro-section" id="professionnels">
+<div class="section-head center">
+<p class="eyebrow">Particuliers &amp; professionnels</p>
+<h2>Un Mix Universel BIO sans gluten à tester avant son lancement.</h2>
+<p>La commercialisation générale du sachet 500 g est prévue entre la fin 2026 et le début 2027. D'ici là, Sans Gluten Food Solutions propose des échantillons payants sur demande et étudie les projets de restauration, référencement, revente et distribution en France et en Europe.</p>
+</div>
+<div class="market-grid">
+<article><h3>Échantillons payants</h3><p>Ils permettent de tester le Mix Universel avant sa mise en vente générale.</p></article>
+<article><h3>Restauration</h3><p>Testez plusieurs préparations à partir d'une seule référence de mix sans gluten.</p></article>
+<article><h3>Revendeurs</h3><p>Préparez un futur référencement du sachet 500 g et échangez sur les conditions de lancement.</p></article>
+<article><h3>Distribution</h3><p>Les demandes de volumes et de partenariats peuvent être étudiées avant la commercialisation.</p></article>
+</div>
+</section>
+<section class="europe-section" id="france-europe">
+<div class="europe-shell">
+<div class="europe-copy">
+<p class="eyebrow">France &amp; Europe</p>
+<h2>Un mix sans gluten BIO pensé pour se développer au-delà d’une seule région.</h2>
+<p>Sans Gluten Food Solutions étudie les demandes d’échantillons payants, de référencement et de partenariats professionnels partout en France et en Europe. Le Mix Universel BIO 500 g s’adresse notamment aux acteurs de la restauration, aux revendeurs, aux distributeurs et aux professionnels qui recherchent une base sans gluten, sans maïs et sans légumineuses.</p>
+<p class="europe-note"><strong>Phase actuelle :</strong> échantillons payants et projets professionnels sur demande. La commercialisation générale du sachet 500 g est prévue fin 2026 / début 2027. Les projets européens sont étudiés au cas par cas selon le pays.</p>
+<a class="button button-primary" href="/professionnels">Présenter mon projet France / Europe</a>
+</div>
+<div aria-label="Développement France et Europe" class="europe-grid">
+<article><span>France</span><h3>Référencement national</h3><p>Demandes de restauration, revente, distribution et partenariats étudiées sur l’ensemble du territoire français.</p></article>
+<article><span>Europe</span><h3>Projets européens</h3><p>Étude des demandes professionnelles en Europe selon le marché, le pays et les modalités de distribution.</p></article>
+<article><span>Professionnels</span><h3>Restauration &amp; métiers de bouche</h3><p>Une seule base BIO sans gluten pour développer plusieurs familles de préparations.</p></article>
+<article><span>Partenaires</span><h3>Revendeurs &amp; distribution</h3><p>Préparation du futur référencement du sachet 500 g et échanges sur les volumes envisagés.</p></article>
+</div>
+</div>
+</section>
+<section class="faq-section" id="faq">
+<div class="section-head center">
+<p class="eyebrow">Questions fréquentes</p>
+<h2>À propos du Mix Universel.</h2>
+</div>
+<div class="faq-list"><details><summary>Quels sont les ingrédients du Mix Universel BIO sans gluten ?</summary><p>Le Mix est composé de cinq ingrédients : fécule de pomme de terre BIO, farine de riz blanc BIO, amidon de tapioca BIO, farine de riz complet BIO et psyllium BIO. Les proportions et le procédé de fabrication ne sont pas publiés.</p></details><details><summary>Le Mix est-il BIO ?</summary><p>Oui. Le Mix Universel est certifié BIO et il est fabriqué dans une usine certifiée BIO et sans gluten.</p></details><details><summary>Le Mix contient-il du maïs, des légumineuses ou des additifs ?</summary><p>Non. La formulation est sans maïs, sans légumineuses, sans additifs ajoutés et sans conservateurs ajoutés. Elle ne contient pas de gomme xanthane, de gomme de guar ni de HPMC ajoutés.</p></details><details><summary>Qu’en est-il des 14 allergènes à déclaration obligatoire ?</summary><p>La formulation a été conçue sans les 14 allergènes à déclaration obligatoire de l’Union européenne. La certification AFDIAG « épi barré » du Mix est prévue avant la commercialisation générale.</p></details>
+<details><summary>Étudiez-vous des projets en France et en Europe ?</summary><p>Oui. Les demandes d’échantillons payants, de référencement, de restauration, de distribution et de partenariats professionnels peuvent être étudiées partout en France et en Europe. Les projets européens sont étudiés au cas par cas selon le pays.</p></details>
+<details><summary>Le Mix Universel 500 g est-il déjà en vente ?</summary><p>Pas encore en vente générale. Pour le moment, seuls des échantillons payants sont proposés sur demande. La commercialisation du sachet 500 g est prévue fin 2026 / début 2027.</p></details>
+<details><summary>Combien de temps faut-il prévoir ?</summary><p>Selon la recette, comptez environ 2 heures pour la réalisation complète. Ce temps peut varier en fonction de la préparation, du façonnage, du repos ou de la pousse éventuelle et de la cuisson.</p></details>
+<details><summary>Quelles recettes peut-on préparer avec le mix ?</summary><p>Les recettes des cookies aux pépites de chocolat, des crêpes, de la génoise, du gâteau au yaourt et du pain sans gluten sont disponibles. Les autres usages travaillés sont le panuozzo et la pizza. D'autres applications pourront être ajoutées après validation.</p></details>
+<details><summary>Pourquoi les recettes ne sont-elles pas encore disponibles ?</summary><p>La fiche cookies est maintenant publiée. Les autres fiches sont encore en cours d'élaboration et seront publiées lorsque leurs dosages et protocoles auront été testés et validés.</p></details>
+<details><summary>Les échantillons sont-ils gratuits ?</summary><p>Non. Les échantillons proposés avant le lancement sont payants. Le tarif et les modalités sont communiqués selon la demande.</p></details>
+</div>
+</section>
+<section class="contact-section" id="echantillons">
+<div class="contact-heading">
+<p class="eyebrow">Échantillons payants · Mix Universel BIO sans gluten 500 g</p>
+<h2>Demander un échantillon.</h2>
+<p><strong>Le Mix Universel n'est pas encore commercialisé au grand public.</strong> Les demandes actuelles concernent uniquement des échantillons payants. La vente générale du sachet 500 g est prévue fin 2026 / début 2027. Pour une question directe : <a href="mailto:benoit.rey@sansglutenfoodsolutions.com">benoit.rey@sansglutenfoodsolutions.com</a>.</p>
+</div>
+<form action="https://formsubmit.co/benoit.rey@sansglutenfoodsolutions.com" class="contact-form" id="leadForm" method="POST">
+<input name="_subject" type="hidden" value="Nouvelle demande – Sans Gluten Food Solutions"/>
+<input name="_template" type="hidden" value="table"/>
+<input name="_captcha" type="hidden" value="false"/>
+<input name="_next" type="hidden" value="https://sansglutenfoodsolutions.com/merci?v=40"/>
+<input name="_url" type="hidden" value="https://sansglutenfoodsolutions.com/"/>
+<div class="form-grid">
+<div class="field"><label for="firstName">Prénom *</label><input autocomplete="given-name" id="firstName" maxlength="60" name="firstName" required=""/></div>
+<div class="field"><label for="lastName">Nom *</label><input autocomplete="family-name" id="lastName" maxlength="60" name="lastName" required=""/></div>
+<div class="field"><label for="email">E-mail *</label><input autocomplete="email" id="email" maxlength="160" name="email" required="" type="email"/></div>
+<div class="field"><label for="phone">Téléphone</label><input autocomplete="tel" id="phone" maxlength="30" name="phone" type="tel"/></div>
+<div class="field"><label for="activity">Votre demande *</label><select id="activity" name="activity" required=""><option value="">Sélectionner</option><option>Échantillon payant – Mix Universel 500 g</option><option>Être informé de la sortie des recettes</option><option>Demande professionnelle / référencement</option><option>Distribution / grossiste</option><option>Autre</option></select></div>
+<div class="field"><label for="volume">Nombre d'échantillons / volume envisagé</label><select id="volume" name="volume"><option value="">À définir</option><option>1 échantillon</option><option>2 à 5 échantillons</option><option>6 à 20 échantillons</option><option>Plus de 20 échantillons</option><option>Projet professionnel</option></select></div>
+<div class="field"><label for="company">Entreprise <span>(facultatif)</span></label><input autocomplete="organization" id="company" maxlength="120" name="company"/></div>
+<div class="field"><label for="country">Pays *</label><select id="country" name="country" required=""><option selected="" value="France">France</option><option>Belgique</option><option>Luxembourg</option><option>Suisse</option><option>Espagne</option><option>Italie</option><option>Allemagne</option><option>Portugal</option><option>Pays-Bas</option><option>Autre pays européen</option></select></div>
+<div class="field"><label for="postalCode">Code postal *</label><input autocomplete="postal-code" id="postalCode" maxlength="12" name="postalCode" required=""/></div>
+<div class="field field-full"><label for="message">Votre message *</label><textarea id="message" maxlength="1500" name="message" placeholder="Exemple : je souhaite recevoir un échantillon payant du Mix Universel 500 g pour réaliser des essais." required=""></textarea></div>
+<div class="honeypot"><label for="website">Site web</label><input autocomplete="off" id="website" name="website" tabindex="-1"/></div>
+<div class="field field-full"><button class="submit-button" id="submitButton" type="submit">Envoyer ma demande d'échantillon</button><div aria-live="polite" class="form-status" id="formStatus"></div></div>
+</div>
+<p class="legal-note">Les demandes France et Europe sont étudiées au cas par cas. Les informations transmises sont utilisées uniquement pour répondre à votre demande. Elles sont transmises via notre service d’envoi de formulaire afin de notifier Sans Gluten Food Solutions par e-mail. Les échantillons sont payants ; aucun achat grand public du sachet 500 g n'est proposé à ce jour.</p>
+</form>
+</section>
+</main>
+<footer>
+<div class="footer-inner">
+<div class="footer-brand"><img alt="Sans Gluten Food Solutions" class="footer-logo" height="194" src="/assets/sgfs-logo-horizontal-v26.png?v=40" width="621"/></div>
+<small>© <span id="year"></span> Sans Gluten Food Solutions. Tous droits réservés.</small>
+<div class="footer-links"><a href="/en/" hreflang="en">English / Europe</a><a href="/confidentialite">Confidentialité</a><a href="mailto:benoit.rey@sansglutenfoodsolutions.com">Contact</a><a class="back-to-top" href="#accueil">↑ Haut de page</a></div>
+</div>
+</footer>
+<div class="recipe-modal" hidden="" id="recipeModal">
+<div class="recipe-modal-backdrop" data-close-recipe-modal=""></div>
+<div aria-describedby="recipeModalText" aria-labelledby="recipeModalTitle" aria-modal="true" class="recipe-modal-dialog" role="dialog">
+<button aria-label="Fermer" class="recipe-modal-close" data-close-recipe-modal="" type="button">×</button>
+<img alt="" aria-hidden="true" height="220" src="/assets/sgfs-logo-mark-v26.png?v=40" width="210"/>
+<p class="eyebrow">Bientôt disponible</p>
+<h2 id="recipeModalTitle">Recettes en cours d'élaboration.</h2>
+<p id="recipeModalText">Les fiches recettes sont encore en phase de test et de validation. Elles seront mises en ligne dès que les dosages et protocoles seront finalisés.</p>
+<button class="button button-primary" data-close-recipe-modal="" type="button">Compris</button>
+</div>
+</div>
+<script defer="" src="/effects-v52.js"></script>
+<script src="/app-v52.js" type="module"></script>
+
+
+<!-- SGFS_FRANCE_FLAG_FIX_V2 -->
+<style>
+.sgfs-france-real-flag {
+  display:inline-block !important;
+  font-size:22px !important;
+  line-height:1 !important;
+  width:auto !important;
+  height:auto !important;
+  margin-right:12px !important;
+  vertical-align:-2px !important;
+}
+</style>
+<script>
+(function () {
+  function normalize(s) {
+    return (s || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function removeLikelyStripe(labelEl) {
+    var parent = labelEl && labelEl.parentElement;
+    if (!parent) return;
+
+    var prev = labelEl.previousElementSibling;
+    if (prev) {
+      var t = normalize(prev.textContent);
+      var r = prev.getBoundingClientRect();
+      if (
+        t === '' ||
+        r.width <= 90 ||
+        /flag|france|stripe|liseret|line|bar|divider|separator|icon/i.test((prev.className || '').toString())
+      ) {
+        prev.style.setProperty('display', 'none', 'important');
+      }
+    }
+
+    Array.from(parent.children).forEach(function (el) {
+      if (el === labelEl) return;
+      var t = normalize(el.textContent);
+      var r = el.getBoundingClientRect();
+      var cls = (el.className || '').toString();
+      var style = getComputedStyle(el);
+
+      var smallEmptyVisual = t === '' && r.width <= 100 && r.height <= 35;
+      var suspiciousClass = /stripe|liseret|divider|separator|france-flag|flag-line|tricolor/i.test(cls);
+      var suspiciousGradient =
+        (style.backgroundImage || '').includes('linear-gradient') &&
+        r.width <= 120 && r.height <= 40;
+
+      if (smallEmptyVisual || suspiciousClass || suspiciousGradient) {
+        el.style.setProperty('display', 'none', 'important');
+      }
+    });
+  }
+
+  function patchFrance() {
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      var txt = normalize(node.nodeValue);
+      if (txt === 'Fabriqué en France') {
+        var label = node.parentElement;
+        if (!label) continue;
+
+        removeLikelyStripe(label);
+
+        if (!label.querySelector('.sgfs-france-real-flag')) {
+          var flag = document.createElement('span');
+          flag.className = 'sgfs-france-real-flag';
+          flag.setAttribute('aria-hidden', 'true');
+          flag.textContent = '🇫🇷';
+          label.insertBefore(flag, label.firstChild);
+        }
+
+        label.style.setProperty('display', 'inline-flex', 'important');
+        label.style.setProperty('align-items', 'center', 'important');
+        label.dataset.sgfsFranceFlagV2 = '1';
+        return true;
+      }
+    }
+    return false;
+  }
+
+  patchFrance();
+
+  var obs = new MutationObserver(function () {
+    patchFrance();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+
+  setTimeout(patchFrance, 300);
+  setTimeout(patchFrance, 1000);
+  setTimeout(patchFrance, 2500);
+})();
+</script>
+<!-- /SGFS_FRANCE_FLAG_FIX_V2 -->
+
+
+<!-- SGFS_CONSOLIDATED_FIX_20260919 -->
+<style>
+/* === Masquage du bandeau supérieur Google Traduction === */
+iframe.goog-te-banner-frame,
+iframe.goog-te-banner-frame.skiptranslate,
+iframe.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.goog-te-banner-frame.skiptranslate,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-ORHb,
+body > .skiptranslate:first-child {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+html,
+body,
+body.translated-ltr,
+body.translated-rtl {
+  top: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Le nouveau titre du bloc usages doit rester cohérent avec la charte existante */
+.sgfs-usage-title-patched {
+  letter-spacing: inherit !important;
+}
+</style>
+
+<script>
+(function () {
+  const NEW_TITLE = 'Un seul mix. Toutes vos envies sans gluten.';
+  const NEW_TEXT =
+    'Le Mix Universel BIO sans gluten 500 g est une base polyvalente pensée pour réaliser de nombreuses recettes du quotidien : pain, pain burger, pizza, panuozzo, brioche, crêpes, génoise, gâteau au yaourt, cookies et d’autres préparations au fil de leur validation.';
+
+  function norm(s) {
+    return (s || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function hideTranslateToolbar() {
+    try {
+      document.querySelectorAll(
+        'iframe.goog-te-banner-frame,' +
+        'iframe.goog-te-banner-frame.skiptranslate,' +
+        'iframe.VIpgJd-ZVi9od-ORHb-OEVmcd,' +
+        '.goog-te-banner-frame.skiptranslate,' +
+        '.VIpgJd-ZVi9od-ORHb-OEVmcd,' +
+        '.VIpgJd-ZVi9od-ORHb'
+      ).forEach(function(el) {
+        el.style.setProperty('display', 'none', 'important');
+        el.style.setProperty('height', '0', 'important');
+        el.style.setProperty('visibility', 'hidden', 'important');
+      });
+
+      document.documentElement.style.setProperty('top', '0', 'important');
+      document.body && document.body.style.setProperty('top', '0', 'important');
+
+      // Sécurité supplémentaire : masque tout iframe Google Translate collé en haut.
+      document.querySelectorAll('iframe').forEach(function(frame) {
+        var cls = (frame.className || '').toString();
+        var src = (frame.getAttribute('src') || '').toLowerCase();
+        var r = frame.getBoundingClientRect();
+        var googleTranslateFrame =
+          /goog-te|VIpgJd-ZVi9od-ORHb/i.test(cls) ||
+          /translate\.google|translate\.goog/i.test(src);
+        if (googleTranslateFrame && r.top <= 5 && r.height < 160) {
+          frame.style.setProperty('display', 'none', 'important');
+          frame.style.setProperty('height', '0', 'important');
+        }
+      });
+    } catch (e) {}
+  }
+
+  function findUsageBlock() {
+    var elements = Array.from(document.querySelectorAll(
+      'h1,h2,h3,h4,h5,h6,p,div,section,article,span,strong'
+    ));
+
+    // 1. Recherche prioritaire du titre qui mélange "un seul mix" et "5 ingrédients".
+    var title = elements.find(function(el) {
+      var t = norm(el.textContent).toLowerCase();
+      return t.includes('un seul mix') && t.includes('5 ingrédients');
+    });
+
+    // 2. Anciennes variantes possibles.
+    if (!title) {
+      title = elements.find(function(el) {
+        var t = norm(el.textContent).toLowerCase();
+        return (
+          t.includes('mix universel bio sans gluten') &&
+          t.includes('500 g') &&
+          t.includes('un seul mix')
+        );
+      });
+    }
+
+    return title || null;
+  }
+
+  function patchUsageBlock() {
+    var title = findUsageBlock();
+    if (!title) return false;
+
+    // Si on a trouvé un gros conteneur au lieu du titre, cherche le heading à l'intérieur.
+    if (!/^H[1-6]$/.test(title.tagName)) {
+      var innerHeading = Array.from(title.querySelectorAll('h1,h2,h3,h4,h5,h6')).find(function(h) {
+        var t = norm(h.textContent).toLowerCase();
+        return t.includes('un seul mix') || t.includes('5 ingrédients');
+      });
+      if (innerHeading) title = innerHeading;
+    }
+
+    title.textContent = NEW_TITLE;
+    title.classList.add('sgfs-usage-title-patched');
+    title.dataset.sgfsUsageDone = '1';
+
+    // Trouve le paragraphe descriptif le plus proche qui parle encore de composition.
+    var container = title.parentElement;
+    for (var up = 0; up < 4 && container; up++, container = container.parentElement) {
+      var paras = Array.from(container.querySelectorAll('p'));
+      var desc = paras.find(function(p) {
+        var t = norm(p.textContent).toLowerCase();
+        return (
+          t.includes('fécule de pomme de terre') ||
+          t.includes('farine de riz blanc') ||
+          t.includes('amidon de tapioca') ||
+          t.includes('formulation courte') ||
+          t.includes('sans maïs ni légumineuses') ||
+          t.includes('servir de base à plusieurs recettes')
+        );
+      });
+
+      if (desc) {
+        desc.textContent = NEW_TEXT;
+        desc.dataset.sgfsUsageTextDone = '1';
+        return true;
+      }
+    }
+
+    // Si aucun paragraphe "composition" n'est trouvé, remplace le premier paragraphe proche.
+    container = title.parentElement;
+    for (var up2 = 0; up2 < 3 && container; up2++, container = container.parentElement) {
+      var firstP = container.querySelector('p');
+      if (firstP) {
+        firstP.textContent = NEW_TEXT;
+        firstP.dataset.sgfsUsageTextDone = '1';
+        return true;
+      }
+    }
+
+    return true;
+  }
+
+  function runAll() {
+    hideTranslateToolbar();
+    patchUsageBlock();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runAll);
+  } else {
+    runAll();
+  }
+
+  var observer = new MutationObserver(function() {
+    hideTranslateToolbar();
+    patchUsageBlock();
+  });
+
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true
+  });
+
+  setTimeout(runAll, 300);
+  setTimeout(runAll, 1000);
+  setTimeout(runAll, 2500);
+  setTimeout(runAll, 5000);
+})();
+</script>
+<!-- /SGFS_CONSOLIDATED_FIX_20260919 -->
+
+</body>
+</html>

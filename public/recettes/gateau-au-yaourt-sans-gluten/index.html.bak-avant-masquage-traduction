@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<meta content="50" name="site-version"/>
+<title>Gâteau au yaourt sans gluten au Mix SGFS | Recette</title>
+<meta content="Recette de gâteau au yaourt sans gluten avec 3 pots de Mix SGFS, 1 pot de yaourt, 2 pots de sucre, 3 œufs et 1/2 pot d’huile. Test validé : 40 min à 180 °C." name="description"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="Sans Gluten Food Solutions" name="author"/>
+<link href="https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten" rel="canonical"/>
+<link href="https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten" hreflang="fr-FR" rel="alternate"/>
+<link href="https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten" hreflang="x-default" rel="alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="fr_FR" property="og:locale"/>
+<meta content="Sans Gluten Food Solutions" property="og:site_name"/>
+<meta content="Gâteau au yaourt sans gluten au Mix SGFS" property="og:title"/>
+<meta content="Une recette simple au pot de yaourt avec 3 pots de Mix SGFS, 3 œufs et une cuisson testée 40 minutes à 180 °C." property="og:description"/>
+<meta content="https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten" property="og:url"/>
+<meta content="https://sansglutenfoodsolutions.com/assets/og-gateau-yaourt-sans-gluten-v46.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Gâteau au yaourt sans gluten doré et découpé" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Gâteau au yaourt sans gluten au Mix SGFS" name="twitter:title"/>
+<meta content="Recette au pot de yaourt avec 3 pots de Mix SGFS et cuisson 40 minutes à 180 °C." name="twitter:description"/>
+<meta content="https://sansglutenfoodsolutions.com/assets/og-gateau-yaourt-sans-gluten-v46.jpg" name="twitter:image"/>
+<link as="image" fetchpriority="high" href="/assets/gateau-au-yaourt-sans-gluten-sgfs.webp" rel="preload"/>
+<link href="/styles-v54.css" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://sansglutenfoodsolutions.com/#organization",
+      "name":"Sans Gluten Food Solutions",
+      "url":"https://sansglutenfoodsolutions.com/",
+      "logo":{"@type":"ImageObject","url":"https://sansglutenfoodsolutions.com/assets/sgfs-logo-horizontal-v26.png"}
+    },
+    {
+      "@type":"Recipe",
+      "@id":"https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten#recipe",
+      "name":"Gâteau au yaourt sans gluten au Mix SGFS",
+      "description":"Gâteau au yaourt sans gluten préparé avec 1 pot de yaourt nature de 125 g, 2 pots de sucre, 3 pots de Mix SGFS, 1/2 pot d’huile de tournesol, 3 œufs et 1 sachet de poudre à lever sans gluten.",
+      "image":[
+        "https://sansglutenfoodsolutions.com/assets/og-gateau-yaourt-sans-gluten-v46.jpg",
+        "https://sansglutenfoodsolutions.com/assets/gateau-au-yaourt-sans-gluten-sgfs.webp"
+      ],
+      "author":{"@id":"https://sansglutenfoodsolutions.com/#organization"},
+      "datePublished":"2026-09-19",
+      "cookTime":"PT40M",
+      "recipeYield":"1 gâteau au yaourt",
+      "recipeCategory":"Gâteau",
+      "suitableForDiet":"https://schema.org/GlutenFreeDiet",
+      "keywords":"gâteau au yaourt sans gluten, recette gâteau sans gluten, gâteau au yaourt Mix SGFS, pâtisserie sans gluten",
+      "recipeIngredient":[
+        "1 pot de yaourt nature (125 g)",
+        "2 pots de sucre",
+        "3 pots de Mix SGFS",
+        "1/2 pot d’huile de tournesol",
+        "3 œufs",
+        "1 sachet de poudre à lever sans gluten"
+      ],
+      "recipeInstructions":[
+        {"@type":"HowToStep","position":1,"text":"Préchauffer le four à 180 °C."},
+        {"@type":"HowToStep","position":2,"text":"Verser le yaourt dans un saladier et conserver le pot vide : il sert de mesure."},
+        {"@type":"HowToStep","position":3,"text":"Ajouter les 2 pots de sucre puis les 3 œufs. Fouetter jusqu’à obtenir un mélange homogène."},
+        {"@type":"HowToStep","position":4,"text":"Ajouter progressivement les 3 pots de Mix SGFS et le sachet de poudre à lever sans gluten."},
+        {"@type":"HowToStep","position":5,"text":"Incorporer le 1/2 pot d’huile de tournesol et mélanger juste assez pour obtenir une pâte lisse."},
+        {"@type":"HowToStep","position":6,"text":"Verser dans un moule légèrement graissé."},
+        {"@type":"HowToStep","position":7,"text":"Cuire 40 minutes à 180 °C. Vérifier avec la pointe d’un couteau : elle doit ressortir sèche ou avec quelques miettes humides."},
+        {"@type":"HowToStep","position":8,"text":"Laisser reposer 10 minutes dans le moule, puis démouler et refroidir sur une grille."}
+      ]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Accueil","item":"https://sansglutenfoodsolutions.com/"},
+        {"@type":"ListItem","position":2,"name":"Recettes","item":"https://sansglutenfoodsolutions.com/recettes"},
+        {"@type":"ListItem","position":3,"name":"Gâteau au yaourt sans gluten","item":"https://sansglutenfoodsolutions.com/recettes/gateau-au-yaourt-sans-gluten"}
+      ]
+    }
+  ]
+}
+</script>
+<link href="/assets/sgfs-tab-icon-v45-20260919.png?v=45" rel="icon" type="image/png"/>
+<link href="/assets/sgfs-apple-touch-v45-20260919.png?v=45" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site-v45.webmanifest?v=45" rel="manifest"/>
+<script src="/favicon-v45.js?v=45"></script>
+<script defer src="/language-v54.js?v=54"></script></head>
+<body id="top">
+<header class="site-header"><div class="nav-shell"><a aria-label="Accueil Sans Gluten Food Solutions" class="nav-logo" href="/?v=53"><img alt="Sans Gluten Food Solutions" height="194" src="/assets/sgfs-logo-horizontal-v26.png?v=46" width="621"/></a><button aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-toggle" id="navToggle">☰</button><nav aria-label="Navigation principale" class="nav-links" id="navLinks"><a href="/mix-sans-gluten">Le mix</a><a aria-current="page" href="/recettes">Recettes</a><a href="/professionnels">Professionnels</a><a href="/echantillon-mix-sans-gluten">Échantillons</a><a href="/a-propos">À propos</a><div class="language-picker" title="Traduire le site"><span aria-hidden="true" class="language-flag">🇫🇷</span><select aria-label="Traduire le site" class="language-select"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="it">IT</option><option value="de">DE</option><option value="pt">PT</option><option value="nl">NL</option><option value="pl">PL</option><option value="ro">RO</option><option value="el">EL</option><option value="cs">CS</option><option value="sv">SV</option><option value="da">DA</option><option value="fi">FI</option></select></div></nav></div></header>
+<main>
+<nav aria-label="Fil d’Ariane" class="breadcrumbs"><a href="/">Accueil</a><span>›</span><a href="/recettes">Recettes</a><span>›</span><span aria-current="page">Gâteau au yaourt sans gluten</span></nav>
+<section class="recipe-detail-hero"><div class="recipe-detail-shell"><div class="recipe-detail-copy"><p class="eyebrow">Recette validée avec le Mix Universel SGFS</p><h1>Gâteau au yaourt sans gluten.</h1><p class="recipe-detail-lead">La recette classique au pot de yaourt, adaptée au Mix SGFS : <strong>3 pots de Mix</strong>, 1 pot de yaourt nature, 2 pots de sucre, 3 œufs et 1/2 pot d’huile.</p><div aria-label="Informations recette" class="recipe-meta"><span><strong>3 pots</strong> de Mix SGFS</span><span><strong>3 œufs</strong></span><span><strong>180 °C</strong> au four</span><span><strong>40 min</strong> de cuisson testée</span></div><div class="hero-actions"><a class="button button-primary" href="#recette">Voir la recette</a><a class="button button-ghost" href="/mix-sans-gluten">Découvrir le mix</a></div></div><figure class="recipe-detail-visual"><img alt="Gâteau au yaourt sans gluten doré, découpé et présenté sur une assiette" fetchpriority="high" height="1080" src="/assets/gateau-au-yaourt-sans-gluten-sgfs.webp" width="1440"/></figure></div></section>
+<section class="recipe-detail-section" id="recette"><div class="recipe-detail-content"><aside class="recipe-ingredients-card"><p class="eyebrow">Ingrédients</p><h2>Pour 1 gâteau au yaourt</h2><ul class="recipe-ingredient-list"><li><span>Yaourt nature</span><strong>1 pot · 125 g</strong></li><li><span>Sucre</span><strong>2 pots</strong></li><li><span>Mix SGFS</span><strong>3 pots</strong></li><li><span>Huile de tournesol</span><strong>1/2 pot</strong></li><li><span>Œufs</span><strong>3</strong></li><li><span>Poudre à lever sans gluten</span><strong>1 sachet</strong></li></ul><div class="recipe-tip"><strong>Le pot sert de mesure</strong><p>Conservez le pot de yaourt vide. Pour le Mix SGFS, remplissez le pot à ras, sans tasser, puis répétez 3 fois.</p></div></aside><div class="recipe-steps-panel"><p class="eyebrow">Préparation</p><h2>La recette pas à pas</h2><ol class="recipe-step-list"><li><span>1</span><p>Préchauffer le four à <strong>180 °C</strong>.</p></li><li><span>2</span><p>Verser le yaourt dans un saladier et conserver le pot vide : il servira de mesure.</p></li><li><span>3</span><p>Ajouter les <strong>2 pots de sucre</strong> puis les <strong>3 œufs</strong>. Fouetter jusqu’à obtenir un mélange homogène.</p></li><li><span>4</span><p>Ajouter progressivement les <strong>3 pots de Mix SGFS</strong> et le sachet de poudre à lever sans gluten.</p></li><li><span>5</span><p>Incorporer le <strong>1/2 pot d’huile de tournesol</strong> et mélanger juste assez pour obtenir une pâte lisse.</p></li><li><span>6</span><p>Verser dans un moule légèrement graissé.</p></li><li><span>7</span><p>Cuire environ <strong>40 minutes à 180 °C</strong>. Vérifier avec la pointe d’un couteau : elle doit ressortir sèche ou avec quelques miettes humides.</p></li><li><span>8</span><p>Laisser reposer <strong>10 minutes</strong> dans le moule, puis démouler et refroidir sur une grille.</p></li></ol><div class="recipe-tip"><strong>Cuisson du test validé</strong><p>La fiche de test portait une base imprimée à 175 °C pendant 30 à 40 minutes ; l’essai validé a été annoté à <strong>180 °C pendant 40 minutes</strong>. C’est ce repère testé qui est publié ici.</p></div></div></div></section>
+<section class="recipe-seo-section"><div class="seo-wrap split"><div><p class="eyebrow">Un classique sans gluten</p><h2>Le gâteau au yaourt avec le Mix Universel.</h2><p>Cette recette utilise le pot de yaourt comme unité de mesure et remplace la farine classique par 3 pots de Mix SGFS. Retrouvez aussi les recettes déjà publiées de cookies, crêpes et génoise sans gluten.</p><div class="hero-actions"><a class="button button-primary" href="/recettes">Voir toutes les recettes</a><a class="button button-ghost" href="/echantillon-mix-sans-gluten">Demander un échantillon</a></div></div><div class="seo-callout"><strong>Mix Universel BIO sans gluten 500 g</strong><p>5 ingrédients, sans maïs, sans légumineuses, sans additifs ajoutés et sans conservateurs ajoutés. <a href="/mix-sans-gluten">Voir la page du Mix Universel</a>.</p></div></div></section>
+<section class="faq-section"><div class="section-head center"><p class="eyebrow">Questions fréquentes</p><h2>Réussir le gâteau au yaourt.</h2></div><div class="faq-list"><details><summary>Quel pot utiliser pour mesurer les ingrédients ?</summary><p>Utilisez le pot vide du yaourt de 125 g. Pour le Mix SGFS, remplissez-le à ras sans tasser.</p></details><details><summary>Quelle cuisson a été validée pour cette recette ?</summary><p>Le test validé a été réalisé à 180 °C pendant environ 40 minutes.</p></details><details><summary>Comment vérifier la cuisson ?</summary><p>Plantez la pointe d’un couteau au centre : elle doit ressortir sèche ou avec seulement quelques miettes humides.</p></details></div></section>
+</main>
+<footer><div class="footer-inner"><div class="footer-brand"><img alt="Sans Gluten Food Solutions" class="footer-logo" height="194" src="/assets/sgfs-logo-horizontal-v26.png?v=46" width="621"/></div><small>© <span id="year"></span> Sans Gluten Food Solutions. Tous droits réservés.</small><div class="footer-links"><a href="/en/" hreflang="en">English / Europe</a><a href="/confidentialite">Confidentialité</a><a href="mailto:benoit.rey@sansglutenfoodsolutions.com">Contact</a><a class="back-to-top" href="#top">↑ Haut de page</a></div></div></footer>
+<script src="/app-v42.js" type="module"></script>
+</body></html>

@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- SGFS_FAVICON_LOCK_START -->
+<link id="sgfs-favicon-primary" rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/assets/sgfs-s-epi-final-20260919-224536.ico">
+<link id="sgfs-apple-touch-primary" rel="apple-touch-icon" sizes="180x180" href="/assets/sgfs-s-epi-final-20260919-224536-180.png">
+<script id="sgfs-favicon-lock-script">
+(function() {
+  const wanted = "/assets/sgfs-s-epi-final-20260919-224536.ico";
+  function normalizeRel(v) {
+    return (v || "").trim().toLowerCase().replace(/\s+/g, " ");
+  }
+  function enforceSGFSFavicon() {
+    const head = document.head;
+    if (!head) return;
+
+    Array.from(head.querySelectorAll("link[rel]")).forEach(function(link) {
+      const rel = normalizeRel(link.getAttribute("rel"));
+      const isTabIcon = rel === "icon" || rel === "shortcut icon" || rel === "mask-icon";
+      if (isTabIcon && link.id !== "sgfs-favicon-primary") {
+        link.remove();
+      }
+    });
+
+    let primary = document.getElementById("sgfs-favicon-primary");
+    if (!primary) {
+      primary = document.createElement("link");
+      primary.id = "sgfs-favicon-primary";
+      primary.rel = "icon";
+      primary.type = "image/x-icon";
+      primary.sizes = "16x16 32x32";
+      primary.href = wanted;
+      head.prepend(primary);
+    } else if (primary.getAttribute("href") !== wanted) {
+      primary.setAttribute("href", wanted);
+    }
+  }
+
+  enforceSGFSFavicon();
+
+  const observer = new MutationObserver(function() {
+    enforceSGFSFavicon();
+  });
+  observer.observe(document.head, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["rel", "href"]
+  });
+})();
+</script>
+<!-- SGFS_FAVICON_LOCK_END -->
+
+<link rel="manifest" href="/sgfs-manifest-exact-20260919205750.webmanifest?v=20260919205750">
+
+<meta content="50" name="site-version"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Mix farine BIO sans gluten 500 g à 5 ingrédients, sans maïs ni légumineuses, sans additifs ajoutés. Échantillons et projets pro étudiés en France et en Europe." name="description"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="Sans Gluten Food Solutions" name="author"/>
+<meta content="website" property="og:type"/>
+<meta content="fr_FR" property="og:locale"/>
+<meta content="en_GB" property="og:locale:alternate"/>
+<meta content="Sans Gluten Food Solutions" property="og:site_name"/>
+<meta content="Mix Universel BIO sans gluten 500 g | Sans Gluten Food Solutions" property="og:title"/>
+<meta content="Mix farine BIO sans gluten 500 g à 5 ingrédients, sans maïs ni légumineuses, sans additifs ajoutés. Échantillons et projets pro étudiés en France et en Europe." property="og:description"/>
+<meta content="https://sansglutenfoodsolutions.com/" property="og:url"/>
+<meta content="https://sansglutenfoodsolutions.com/assets/og-mix-sans-gluten-v35.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Mix Universel BIO sans gluten 500 g Sans Gluten Food Solutions" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Mix Universel BIO sans gluten 500 g | Sans Gluten Food Solutions" name="twitter:title"/>
+<meta content="Mix farine BIO sans gluten 500 g à 5 ingrédients, sans maïs ni légumineuses, sans additifs ajoutés. Échantillons et projets pro étudiés en France et en Europe." name="twitter:description"/>
+<meta content="https://sansglutenfoodsolutions.com/assets/og-mix-sans-gluten-v35.jpg" name="twitter:image"/>
+<title>Gluten-free ORGANIC Universal Mix 500 g | Gluten Free Food Solutions</title>
+<link as="image" fetchpriority="high" href="/assets/mix-universel-bio-sans-gluten-500g-photo-20260920.png" rel="preload"/>
+<link href="/styles-v54.css" rel="stylesheet"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sansglutenfoodsolutions.com/#organization",
+      "name": "Sans Gluten Food Solutions",
+      "url": "https://sansglutenfoodsolutions.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sansglutenfoodsolutions.com/assets/sgfs-logo-horizontal-v26.png"
+      },
+      "email": "benoit.rey@sansglutenfoodsolutions.com",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "France"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Europe"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "commercial et partenariats professionnels",
+        "email": "benoit.rey@sansglutenfoodsolutions.com",
+        "areaServed": [
+          "FR",
+          "EU"
+        ],
+        "availableLanguage": [
+          "fr",
+          "en"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sansglutenfoodsolutions.com/#website",
+      "url": "https://sansglutenfoodsolutions.com/",
+      "name": "Sans Gluten Food Solutions",
+      "inLanguage": "fr-FR",
+      "publisher": {
+        "@id": "https://sansglutenfoodsolutions.com/#organization"
+      },
+      "alternateName": "SGFS"
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://sansglutenfoodsolutions.com/#mix-universel-500g",
+      "name": "Mix Universel BIO sans gluten 500 g",
+      "description": "Mix farine BIO sans gluten 500 g à 5 ingrédients, sans maïs ni légumineuses, sans additifs ajoutés. Échantillons et projets pro étudiés en France et en Europe.",
+      "image": [
+        "https://sansglutenfoodsolutions.com/assets/mix-universel-bio-sans-gluten-500g-photo-20260920.png",
+        "https://sansglutenfoodsolutions.com/assets/recette-pain.webp",
+        "https://sansglutenfoodsolutions.com/assets/recette-crepes.webp",
+        "https://sansglutenfoodsolutions.com/assets/recette-genoise.webp",
+        "https://sansglutenfoodsolutions.com/assets/gateau-au-yaourt-sans-gluten-sgfs.webp",
+        "https://sansglutenfoodsolutions.com/assets/cookies-sans-gluten-pepites-chocolat.webp"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sansglutenfoodsolutions.com/#webpage",
+      "url": "https://sansglutenfoodsolutions.com/",
+      "name": "Mix Universel BIO sans gluten 500 g | Sans Gluten Food Solutions",
+      "description": "Mix farine BIO sans gluten 500 g à 5 ingrédients, sans maïs ni légumineuses, sans additifs ajoutés. Échantillons et projets pro étudiés en France et en Europe.",
+      "inLanguage": "fr-FR",
+      "isPartOf": {
+        "@id": "https://sansglutenfoodsolutions.com/#website"
+      },
+      "about": {
+        "@id": "https://sansglutenfoodsolutions.com/#mix-universel-500g"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://sansglutenfoodsolutions.com/assets/mix-universel-bio-sans-gluten-500g-photo-20260920.png"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sansglutenfoodsolutions.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quels sont les ingrédients du Mix Universel BIO sans gluten ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le Mix est composé de cinq ingrédients : fécule de pomme de terre BIO, farine de riz blanc BIO, amidon de tapioca BIO, farine de riz complet BIO et psyllium BIO."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le Mix Universel est-il BIO ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Le Mix Universel est certifié BIO et fabriqué dans une usine certifiée BIO et sans gluten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le Mix contient-il du maïs ou des légumineuses ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. La formulation du Mix Universel est sans maïs et sans légumineuses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le Mix contient-il des additifs ou conservateurs ajoutés ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. La formulation est sans additifs ajoutés et sans conservateurs ajoutés."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles recettes peut-on préparer avec le Mix Universel ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les premiers usages développés sont le pain sans gluten, la pizza sans gluten, le panuozzo sans gluten, le pain burger sans gluten, les crêpes sans gluten, la génoise sans gluten, les cookies sans gluten et le gâteau au yaourt sans gluten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sans Gluten Food Solutions étudie-t-il des projets en France et en Europe ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Les demandes d’échantillons payants, de référencement, de restauration, de distribution et de partenariats professionnels peuvent être étudiées en France et en Europe avant la commercialisation générale prévue fin 2026 / début 2027."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+<script src="/favicon-v45.js?v=45"></script><script defer src="/language-v54.js?v=54"></script>
+
+
+<meta name="theme-color" content="#08583d">
+
+<meta name="theme-color" content="#08583d">
+
+<meta name="theme-color" content="#08583d">
+
+<base href="/en/">
+<link rel="canonical" href="https://sansglutenfoodsolutions.com/en/">
+<link rel="alternate" hreflang="fr" href="https://sansglutenfoodsolutions.com/">
+<link rel="alternate" hreflang="en" href="https://sansglutenfoodsolutions.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://sansglutenfoodsolutions.com/">
+</head>
+<body>
+<header class="site-header">
+<div class="nav-shell">
+<a aria-label="Home Gluten Free Food Solutions" class="nav-logo" href="#accueil">
+<img alt="Sans Gluten Food Solutions" height="194" src="/assets/sgfs-logo-horizontal-v26.png?v=40" width="621"/>
+</a>
+<button aria-controls="navLinks" aria-expanded="false" aria-label="Open menu" class="nav-toggle" id="navToggle">☰</button>
+<nav aria-label="Main navigation" class="nav-links" id="navLinks">
+<a href="/en/mix-sans-gluten">The mix</a><a href="/en/recettes">Recipes</a><a href="/en/professionnels">Professionals</a><a href="/en/echantillon-mix-sans-gluten">Samples</a><a href="/en/a-propos">About</a><div class="language-picker" title="Translate the site"><span aria-hidden="true" class="language-flag"></span><select aria-label="Translate the site" class="language-select" data-sgfs-language-safe="1" data-sgfs-lang-final="1"><option value="fr">FR</option><option value="en" selected>EN</option></select></div>
+</nav>
+</div>
+</header>
+<main>
+<section class="hero hero-brand" id="accueil">
+<div class="hero-brand-shell">
+<img alt="" aria-hidden="true" class="hero-brand-mark" height="220" src="/assets/sgfs-logo-mark-v26.png?v=40" width="210"/>
+<p class="eyebrow hero-kicker">Gluten-free ORGANIC Universal Mix · 500 g</p>
+<h1 class="hero-title hero-brand-title"><span>The pleasure of cooking</span><strong>without limits.</strong></h1>
+<p class="hero-lead hero-brand-lead">A mix of organic and gluten-free flour composed of only 5 ingredients, without corn, without legumes, without additives or added preservatives, made in France, to make bread, pizza, panuozzo, burger bread, pancakes, sponge cake, cookies, yogurt cake and many other recipes.</p>
+<div class="hero-actions hero-brand-actions">
+<a class="button button-primary" href="/en/mix-sans-gluten">Discover the mix</a>
+<a class="button button-ghost request-button" data-request="Échantillon payant – Mix Universel 500 g" href="/en/echantillon-mix-sans-gluten">Request a paid sample</a>
+</div>
+<div aria-label="Characteristics of the Universal Mix" class="hero-badges hero-brand-badges"><span><strong>BIO</strong> certified</span><span><strong>5 ingredients</strong> short wording</span><span><strong>Without corn</strong> nor legumes</span><span><strong>500 g</strong> sachet format</span><span class="france-made-badge"><span aria-hidden="true" class="france-flag"><i class="blue"></i><i class="white"></i><i class="red"></i></span><strong>French manufacturing</strong></span></div>
+</div>
+</section>
+<section class="mix-section" id="mix">
+<div class="mix-product-shell">
+<div class="mix-product-copy">
+<p class="eyebrow">Gluten-free ORGANIC Universal Mix · 500 g</p>
+<h2 class="mix-product-title">Just one mix. All your gluten-free desires.</h2>
+<p>The gluten-free ORGANIC Universal Mix 500 g is a versatile base designed to make many everyday recipes: bread, burger bread, pizza, panuozzo, brioche, pancakes, sponge cake, yogurt cake, cookies and other preparations as they are validated.</p>
+<div class="mix-product-actions">
+<a class="button button-primary request-button" data-request="Échantillon payant – Mix Universel 500 g" href="/en/echantillon-mix-sans-gluten">Request a paid sample</a>
+<a class="button button-ghost" href="/en/recettes">See the recipes</a>
+</div>
+</div>
+<figure class="mix-product-card">
+<img alt="Gluten-free ORGANIC Universal Mix 500 g, without corn or legumes – Sans Gluten Food Solutions" class="mix-product-image" decoding="async" fetchpriority="high" height="1402" loading="eager" src="/assets/mix-universel-bio-sans-gluten-500g-photo-20260920.png" width="1122"/>
+<figcaption class="product-illustration-note">Illustrative photo – non-contractual bag</figcaption>
+</figure>
+</div>
+<div class="mix-feature-grid mix-feature-grid-v26">
+<article><h3>BIO</h3><p>A certified ORGANIC mix, made from a short list of raw materials.</p></article>
+<article><h3>5 ingredients</h3><p>Potato starch, white rice, tapioca, brown rice and psyllium.</p></article>
+<article><h3>Without corn</h3><p>A formulation without corn and without legumes, for a base different from classic mixes.</p></article>
+<article><h3>No added additives</h3><p>No added preservatives, no xanthan gum, no guar and no added HPMC.</p></article>
+</div>
+</section><section class="composition-section" id="composition">
+<div class="composition-shell">
+<div class="composition-copy">
+<p class="eyebrow">Composition of the Universal ORGANIC Mix</p>
+<h2>5 ingredients. Nothing superfluous.</h2>
+
+<div aria-label="The five ingredients of the gluten-free ORGANIC Universal Mix" class="ingredient-list">
+<span>ORGANIC potato starch</span><span>ORGANIC white rice flour</span><span>ORGANIC tapioca starch</span><span>ORGANIC whole rice flour</span><span>ORGANIC Psyllium</span>
+</div><div class="france-made-callout"><span aria-hidden="true" class="france-tricolor"></span><strong>Made in France</strong><span>The Food Solutions Gluten-Free ORGANIC Universal Mix is ​​made in France.</span></div>
+</div>
+<div class="composition-benefits">
+<article><strong>Gluten free</strong><p>Mix developed for a gluten-free diet and manufactured in a certified gluten-free factory.</p></article>
+<article><strong>No corn &amp; no legumes</strong><p>No corn or legumes in the Universal Mix formulation.</p></article>
+<article><strong>No added additives or preservatives</strong><p>No xanthan gum, guar gum, HPMC, coloring, flavoring or preservative added to the formulation.</p></article>
+<article><strong>Formulated without the 14 EU notifiable allergens</strong><p>The formulation does not contain any of the 14 allergens subject to mandatory declaration in the European Union.</p></article>
+</div>
+<div class="certification-note">
+<strong>ORGANIC today. AFDIAG tomorrow.</strong>
+<span>The Mix is ​​certified ORGANIC and made in a certified ORGANIC and gluten-free factory. AFDIAG “barred ear” certification for the Mix is ​​planned before its general marketing.</span>
+</div>
+</div>
+</section>
+<section aria-label="Availability of the Universal Mix" class="availability-strip">
+<div class="availability-shell">
+<div><span>Available today</span><strong>Paid samples</strong><p>On request, before commercial launch.</p></div>
+<div><span>General marketing</span><strong>End of 2026 / beginning of 2027</strong><p>The 500 g sachet will be offered for sale during this period.</p></div>
+<div><span>Format announced</span><strong>Bag 500 g</strong><p>A versatile organic gluten-free mix for several families of recipes.</p></div>
+</div>
+</section>
+<section class="recipes-section" id="recettes">
+<div class="section-head">
+<p class="eyebrow">Ideas with the Universal Mix</p>
+<h2>Bread, cookies, yogurt cake, pizza, panuozzo, burger bread, pancakes, sponge cake: a single ORGANIC gluten-free mix.</h2>
+<p>The gluten-free ORGANIC Universal Mix 500 g serves as a basis for several recipes. Recipes for gluten-free bread, chocolate chip cookies, pancakes, sponge cake and yogurt cake are now published; the pizza, burger bread and panuozzo files remain under validation.</p>
+</div>
+<div class="recipe-grid"><article class="recipe-card recipe-card-wide-first recipe-card-available">
+<div class="recipe-image"><img alt="Pain sans gluten" decoding="async" height="1313" loading="lazy" src="/assets/pain-sans-gluten-photo-20260920.png" width="1198"/></div>
+<div class="recipe-copy"><p class="eyebrow">New recipe published · Gluten-free bread</p><h3>Honeycomb crumb, crispy crust.</h3><p>172 g of Mix SGFS, 163 g of water at 28°C and cooking on a stone with steam.</p><a class="recipe-status-button recipe-live-link" href="/en/recettes/pain-sans-gluten">See the bread recipe card</a></div>
+</article><article class="recipe-card recipe-card-available">
+<div class="recipe-image"><img alt="Gluten-free chocolate chip cookies made with the SGFS Universal Mix" decoding="async" height="1400" loading="lazy" src="/assets/cookies-sans-gluten-pepites-chocolat.webp" width="1120"/></div>
+<div class="recipe-copy">
+<p class="eyebrow">New recipe published</p>
+<h3>Gluten-free chocolate chip cookies.</h3>
+<p>A simple recipe with 150 g of SGFS Universal Mix to prepare approximately 10 to 12 cookies, with lightly browned edges and a center that remains tender.</p>
+<a class="recipe-status-button recipe-live-link" href="/en/recettes/cookies-sans-gluten">See the full recipe</a>
+</div>
+</article><article class="recipe-card recipe-card-available">
+<div class="recipe-image"><img alt="Golden gluten-free yogurt cake made with the SGFS Universal Mix" decoding="async" height="1080" loading="lazy" src="/assets/gateau-au-yaourt-sans-gluten-sgfs.webp" width="1440"/></div>
+<div class="recipe-copy"><p class="eyebrow">New recipe published · Yogurt cake</p><h3>The classic yogurt pot.</h3><p>1 pot of natural yogurt, 3 pots of Mix SGFS, 3 eggs and cooking tested for 40 minutes at 180°C.</p><a class="recipe-status-button recipe-live-link" href="/en/recettes/gateau-au-yaourt-sans-gluten">See the yogurt cake file</a></div>
+</article><article class="recipe-card recipe-card-available">
+<div class="recipe-image"><img alt="Golden gluten-free pancakes made with the SGFS Universal Mix" decoding="async" height="1254" loading="lazy" src="/assets/recette-crepes.webp" width="1254"/></div>
+<div class="recipe-copy"><p class="eyebrow">Published recipe · Gluten-free pancakes</p><h3>Fine and supple.</h3><p>3 28 cm pancakes with 50 g of Mix SGFS, 1 egg and 175 ml of lactose-free milk.</p><a class="recipe-status-button recipe-live-link" href="/en/recettes/crepes-sans-gluten">See the full recipe</a></div>
+</article><article class="recipe-card">
+<div class="recipe-image"><img alt="Illustration of a golden and sliced ​​gluten-free sponge cake" decoding="async" height="1254" loading="lazy" src="/assets/recette-genoise.webp" width="1254"/></div>
+<div class="recipe-copy"><p class="eyebrow">Published recipe · Gluten-free sponge cake</p><h3>Light at 1 egg.</h3><p>A small sponge cake with 31.25 g of Mix SGFS and 31.25 g of sugar, cooking at 180°C.</p><a class="recipe-status-button recipe-live-link" href="/en/recettes/genoise-sans-gluten">See the full recipe</a></div>
+</article><article class="recipe-card recipe-card-pending"><div class="recipe-image recipe-placeholder"><span>Recipe under development</span></div><div class="recipe-copy"><p class="eyebrow">Currently being validated</p><h3>Gluten-free pizza.</h3><p>The gluten-free pizza dough recipe is currently being developed and validated.</p><button class="recipe-status-button recipe-status-trigger" type="button">See the file</button></div></article><article class="recipe-card recipe-card-pending"><div class="recipe-image recipe-placeholder"><span>Recipe under development</span></div><div class="recipe-copy"><p class="eyebrow">Currently being validated</p><h3>Gluten-free burger bun.</h3><p>The gluten-free burger bun recipe is currently being developed and validated.</p><button class="recipe-status-button recipe-status-trigger" type="button">See the file</button></div></article><article class="recipe-card">
+<div class="recipe-image"><img alt="Gluten-free panuozzo prepared from the Universal Mix 500 g" decoding="async" height="1149" loading="lazy" src="/assets/recette-panuozzo-20260920-nouvelle.png" width="1369"/></div>
+<div class="recipe-copy">
+<p class="eyebrow">Gluten-free panuozzo</p>
+<h3>The panuozzo, made with the mix.</h3>
+<p>The Universal Mix serves as the basis for the panuozzo dough. After preparation, cooking and garnish, you obtain a practical and customizable meal size.</p>
+<button class="recipe-status-button recipe-status-trigger" type="button">See the recipe</button>
+</div>
+</article></div>
+<div class="recipes-note"><strong>Five recipes are available.</strong><span>Gluten-free bread, chocolate chip cookies, pancakes, sponge cake and yogurt cake are released. The pizza, burger bread and panuozzo files will be put online after validation of the tests.</span></div>
+<div class="product-proof-note"><strong>Our achievements with the Universal Mix.</strong><span>The products presented correspond to the preparations actually developed with our gluten-free mix. The visuals are staged for the presentation of the site.</span></div>
+</section>
+<section class="how-section">
+<div class="how-shell">
+<div class="how-copy"><p class="eyebrow">The principle</p><h2>Prepare the base. Choose the result.</h2><p>The Universal Mix is ​​the starting point. Each recipe has its own dosage, shaping, resting or possible proofing time and cooking. Depending on the recipe, allow approximately 2 hours for the complete preparation.</p></div>
+<div class="steps">
+<div><span>1</span><strong>Dose</strong><p>Use the Universal Mix as a dry base for the chosen recipe.</p></div>
+<div><span>2</span><strong>Mix</strong><p>Prepare the mixture with the additions and dosages indicated in the future recipe card.</p></div>
+<div><span>3</span><strong>Finalize</strong><p>Shape, let rest or rise if necessary, then cook. According to the recipe, the whole thing takes around 2 hours.</p></div>
+</div>
+</div>
+</section>
+<section class="pro-section" id="professionnels">
+<div class="section-head center">
+<p class="eyebrow">Individuals &amp; professionals</p>
+<h2>A gluten-free ORGANIC Universal Mix to test before its launch.</h2>
+<p>The general marketing of the 500 g sachet is planned between the end of 2026 and the beginning of 2027. Until then, Sans Gluten Food Solutions offers paid samples on request and is studying restoration, referencing, resale and distribution projects in France and Europe.</p>
+</div>
+<div class="market-grid">
+<article><h3>Paid samples</h3><p>They allow the Universal Mix to be tested before it goes on general sale.</p></article>
+<article><h3>Restoration</h3><p>Test several preparations from a single gluten-free mix reference.</p></article>
+<article><h3>Resellers</h3><p>Prepare a future listing of the 500 g bag and discuss the launch conditions.</p></article>
+<article><h3>Distribution</h3><p>Requests for volumes and partnerships can be studied before marketing.</p></article>
+</div>
+</section>
+<section class="europe-section" id="france-europe">
+<div class="europe-shell">
+<div class="europe-copy">
+<p class="eyebrow">France &amp; Europe</p>
+<h2>An ORGANIC gluten-free mix designed to expand beyond a single region.</h2>
+<p>Sans Gluten Food Solutions studies requests for paid samples, referencing and professional partnerships throughout France and Europe. The Organic Universal Mix 500 g is aimed in particular at catering operators, resellers, distributors and professionals looking for a gluten-free, corn-free and legume-free base.</p>
+<p class="europe-note"><strong>Current phase:</strong> paid samples and professional projects on request. The general marketing of the 500 g sachet is planned for the end of 2026 / beginning of 2027. European projects are studied on a case-by-case basis depending on the country.</p>
+<a class="button button-primary" href="/en/professionnels">Present my France / Europe project</a>
+</div>
+<div aria-label="Development France and Europe" class="europe-grid">
+<article><span>France</span><h3>National SEO</h3><p>Requests for restoration, resale, distribution and partnerships studied throughout France.</p></article>
+<article><span>Europe</span><h3>European projects</h3><p>Study of professional demands in Europe according to market, country and distribution methods.</p></article>
+<article><span>Professionals</span><h3>Catering &amp; catering professions</h3><p>A single ORGANIC gluten-free base to develop several families of preparations.</p></article>
+<article><span>Partners</span><h3>Resellers &amp; distribution</h3><p>Preparation of the future referencing of the 500 g sachet and discussions on the envisaged volumes.</p></article>
+</div>
+</div>
+</section>
+<section class="faq-section" id="faq">
+<div class="section-head center">
+<p class="eyebrow">Frequently asked questions</p>
+<h2>About the Universal Mix.</h2>
+</div>
+<div class="faq-list"><details><summary>What are the ingredients of the gluten-free ORGANIC Universal Mix?</summary><p>The Mix is ​​composed of five ingredients: ORGANIC potato starch, ORGANIC white rice flour, ORGANIC tapioca starch, ORGANIC whole grain rice flour and ORGANIC psyllium. The proportions and manufacturing process are not published.</p></details><details><summary>Is the Mix ORGANIC?</summary><p>Yes. The Universal Mix is ​​certified ORGANIC and is made in a certified ORGANIC and gluten-free factory.</p></details><details><summary>Does the Mix contain corn, legumes or additives?</summary><p>No. The formulation is corn free, legumes free, added additives and preservatives added. It does not contain added xanthan gum, guar gum or HPMC.</p></details><details><summary>What about the 14 allergens requiring notification?</summary><p>The formulation was designed without the 14 European Union notifiable allergens. AFDIAG “barred ear” certification for the Mix is ​​planned before general marketing.</p></details>
+<details><summary>Are you studying projects in France and Europe?</summary><p>Yes. Requests for paid samples, referencing, catering, distribution and professional partnerships can be studied anywhere in France and Europe. European projects are studied on a case-by-case basis depending on the country.</p></details>
+<details><summary>Is the Universal Mix 500 g already on sale?</summary><p>Not yet on general sale. At this time, only paid samples are offered upon request. The marketing of the 500 g sachet is planned for the end of 2026 / beginning of 2027.</p></details>
+<details><summary>How much time should you allow?</summary><p>Depending on the recipe, allow approximately 2 hours for the complete preparation. This time may vary depending on preparation, shaping, resting or possible proofing and cooking.</p></details>
+<details><summary>What recipes can you prepare with the mix?</summary><p>Recipes for chocolate chip cookies, pancakes, sponge cake, yogurt cake and gluten-free bread are available. Other uses are panuozzo and pizza. Other applications may be added after validation.</p></details>
+<details><summary>Why are the recipes not yet available?</summary><p>The cookies sheet is now published. The other sheets are still being developed and will be published when their dosages and protocols have been tested and validated.</p></details>
+<details><summary>Are samples free?</summary><p>No. Samples offered before launch are chargeable. The price and terms are communicated according to request.</p></details>
+</div>
+</section>
+<section class="contact-section" id="echantillons">
+<div class="contact-heading">
+<p class="eyebrow">Paid samples · Gluten-free ORGANIC Universal Mix 500 g</p>
+<h2>Request a sample.</h2>
+<p><strong>The Universal Mix is ​​not yet marketed to the general public.</strong> Current requests are for paid samples only. General sale of the 500 g sachet is planned for the end of 2026 / beginning of 2027. For a direct question: <a href="mailto:benoit.rey@sansglutenfoodsolutions.com">benoit.rey@sansglutenfoodsolutions.com</a>.</p>
+</div>
+<form action="https://formsubmit.co/benoit.rey@sansglutenfoodsolutions.com" class="contact-form" id="leadForm" method="POST">
+<input name="_subject" type="hidden" value="Nouvelle demande – Sans Gluten Food Solutions"/>
+<input name="_template" type="hidden" value="table"/>
+<input name="_captcha" type="hidden" value="false"/>
+<input name="_next" type="hidden" value="https://sansglutenfoodsolutions.com/merci?v=40"/>
+<input name="_url" type="hidden" value="https://sansglutenfoodsolutions.com/"/>
+<div class="form-grid">
+<div class="field"><label for="firstName">First name *</label><input autocomplete="given-name" id="firstName" maxlength="60" name="firstName" required=""/></div>
+<div class="field"><label for="lastName">Name *</label><input autocomplete="family-name" id="lastName" maxlength="60" name="lastName" required=""/></div>
+<div class="field"><label for="email">Email *</label><input autocomplete="email" id="email" maxlength="160" name="email" required="" type="email"/></div>
+<div class="field"><label for="phone">Phone</label><input autocomplete="tel" id="phone" maxlength="30" name="phone" type="tel"/></div>
+<div class="field"><label for="activity">Your request *</label><select id="activity" name="activity" required=""><option value="">Select</option><option>Paid sample – Universal Mix 500 g</option><option>Be informed when recipes are released</option><option>Professional request / SEO</option><option>Distribution / wholesaler</option><option>Other</option></select></div>
+<div class="field"><label for="volume">Number of samples / volume envisaged</label><select id="volume" name="volume"><option value="">To be defined</option><option>1 sample</option><option>2 to 5 samples</option><option>6 to 20 samples</option><option>More than 20 samples</option><option>Professional project</option></select></div>
+<div class="field"><label for="company">Business <span>(optional)</span></label><input autocomplete="organization" id="company" maxlength="120" name="company"/></div>
+<div class="field"><label for="country">Country *</label><select id="country" name="country" required=""><option selected="" value="France">France</option><option>Belgium</option><option>Luxembourg</option><option>Swiss</option><option>Spain</option><option>Italy</option><option>Germany</option><option>Portugal</option><option>The Netherlands</option><option>Other European country</option></select></div>
+<div class="field"><label for="postalCode">Postcode *</label><input autocomplete="postal-code" id="postalCode" maxlength="12" name="postalCode" required=""/></div>
+<div class="field field-full"><label for="message">Your message *</label><textarea id="message" maxlength="1500" name="message" placeholder="Example: I would like to receive a paid sample of the Universal Mix 500 g to carry out tests." required=""></textarea></div>
+<div class="honeypot"><label for="website">Website</label><input autocomplete="off" id="website" name="website" tabindex="-1"/></div>
+<div class="field field-full"><button class="submit-button" id="submitButton" type="submit">Send my sample request</button><div aria-live="polite" class="form-status" id="formStatus"></div></div>
+</div>
+<p class="legal-note">French and European requests are studied on a case-by-case basis. The information transmitted is used only to respond to your request. They are transmitted via our form sending service in order to notify Sans Gluten Food Solutions by e-mail. There is a charge for samples; no general public purchase of the 500 g sachet is offered to date.</p>
+</form>
+</section>
+</main>
+<footer>
+<div class="footer-inner">
+<div class="footer-brand"><img alt="Sans Gluten Food Solutions" class="footer-logo" height="194" src="/assets/sgfs-logo-horizontal-v26.png?v=40" width="621"/></div>
+<small>© <span id="year"></span> Gluten Free Food Solutions. All rights reserved.</small>
+<div class="footer-links"><a href="/en/" hreflang="en">English / Europe</a><a href="/en/confidentialite">Confidentiality</a><a href="mailto:benoit.rey@sansglutenfoodsolutions.com">Contact</a><a class="back-to-top" href="#accueil">↑ Top of page</a></div>
+</div>
+</footer>
+<div class="recipe-modal" hidden="" id="recipeModal">
+<div class="recipe-modal-backdrop" data-close-recipe-modal=""></div>
+<div aria-describedby="recipeModalText" aria-labelledby="recipeModalTitle" aria-modal="true" class="recipe-modal-dialog" role="dialog">
+<button aria-label="Close" class="recipe-modal-close" data-close-recipe-modal="" type="button">×</button>
+<img alt="" aria-hidden="true" height="220" src="/assets/sgfs-logo-mark-v26.png?v=40" width="210"/>
+<p class="eyebrow">Coming soon</p>
+<h2 id="recipeModalTitle">Recipes under development.</h2>
+<p id="recipeModalText">The recipe cards are still in the testing and validation phase. They will be posted online as soon as the dosages and protocols are finalized.</p>
+<button class="button button-primary" data-close-recipe-modal="" type="button">Understood</button>
+</div>
+</div>
+<script defer="" src="/effects-v52.js"></script>
+<script src="/app-v52.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(){
+  function bind(){
+    var sel=document.querySelector('select[data-sgfs-language-safe="1"]');
+    if(!sel || sel.dataset.bound==="1") return;
+
+    sel.dataset.bound="1";
+
+    sel.addEventListener("change",function(){
+      var p=location.pathname.replace(/^\/en(?=\/|$)/,"") || "/";
+
+      if(sel.value==="en"){
+        location.href=(p==="/")?"/en/":"/en"+p;
+      }else{
+        location.href=p;
+      }
+    });
+  }
+
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",bind,{once:true});
+  }else{
+    bind();
+  }
+})();
+</script>
+<!-- /SGFS_LANGUAGE_SELECT_SAFE_FINAL -->
+
+
+<!-- SGFS_LANG_FINAL_PATCH -->
+<script>
+(function(){
+  function pathToFr(pathname){
+    var p = pathname || "/";
+    p = p.replace(/^\/en(?=\/|$)/, "");
+    return p || "/";
+  }
+  function pathToEn(pathname){
+    var p = pathToFr(pathname);
+    return p === "/" ? "/en/" : "/en" + p;
+  }
+  function bindSelector(sel){
+    if(!sel || sel.dataset.sgfsBound === "1") return;
+    sel.dataset.sgfsBound = "1";
+    sel.addEventListener("change", function(){
+      var v = (sel.value || "").toLowerCase();
+      if(v === "en"){
+        window.location.href = pathToEn(window.location.pathname);
+      }else{
+        window.location.href = pathToFr(window.location.pathname);
+      }
+    });
+  }
+  function cleanupWrapper(sel){
+    if(!sel) return;
+    var wrap = sel.parentElement;
+    if(!wrap) return;
+    var children = Array.from(wrap.children).filter(function(el){ return el !== sel; });
+    var flagish = children.filter(function(el){
+      var txt = (el.textContent || "").trim();
+      var html = (el.outerHTML || "");
+      return /🇫🇷|🇬🇧|flag|drapeau|france|french|anglais|english/i.test(txt + " " + html);
+    });
+    if(flagish.length > 1){
+      flagish.slice(1).forEach(function(el){ el.remove(); });
+    }
+    try{
+      var opts = Array.from(sel.options || []);
+      opts.forEach(function(o){
+        o.text = o.text.replace(/🇫🇷|🇬🇧/g, "").trim();
+      });
+    }catch(e){}
+  }
+  function fixPage(){
+    var sels = Array.from(document.querySelectorAll('select[data-sgfs-lang-final="1"]'));
+    if(sels.length > 1){
+      sels.slice(1).forEach(function(s){ s.remove(); });
+      sels = sels.slice(0,1);
+    }
+    if(!sels.length) return;
+    var sel = sels[0];
+    cleanupWrapper(sel);
+    bindSelector(sel);
+  }
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", fixPage, {once:true});
+  }else{
+    fixPage();
+  }
+  setTimeout(fixPage, 300);
+})();
+</script>
+<!-- /SGFS_LANG_FINAL_PATCH -->
+
+
+<!-- SGFS_FLAG_FIX_V3 -->
+<script>
+(function(){
+  function norm(s){
+    return (s || '').replace(/\s+/g,' ').trim().toLowerCase();
+  }
+
+  function containsOne(text, arr){
+    var t = norm(text);
+    return arr.some(function(x){ return t.indexOf(norm(x)) !== -1; });
+  }
+
+  function scoreFlag(el){
+    var txt = ((el.textContent || '') + ' ' + (el.outerHTML || '')).toLowerCase();
+    var score = 0;
+    if (/float|floating|wave|wavy|wav/.test(txt)) score += 50;
+    if (el.tagName === 'IMG' || el.tagName === 'PICTURE') score += 20;
+    if (el.tagName === 'SVG') score += 10;
+    if ((el.getAttribute && (el.getAttribute('alt') || '').toLowerCase().indexOf('france') !== -1)) score += 10;
+    if ((el.getAttribute && (el.getAttribute('src') || '').toLowerCase().indexOf('france') !== -1)) score += 10;
+    if ((el.getAttribute && (el.getAttribute('src') || '').toLowerCase().indexOf('flag') !== -1)) score += 5;
+    return score;
+  }
+
+  function flagCandidates(root){
+    if (!root || !root.querySelectorAll) return [];
+    return Array.from(root.querySelectorAll('img,svg,picture,span,i'))
+      .filter(function(el){
+        var cls = ((el.className || '') + '').toLowerCase();
+        var alt = ((el.getAttribute && (el.getAttribute('alt') || '')) || '').toLowerCase();
+        var aria = ((el.getAttribute && (el.getAttribute('aria-label') || '')) || '').toLowerCase();
+        var src = ((el.getAttribute && (el.getAttribute('src') || '')) || '').toLowerCase();
+        var txt = (el.textContent || '').trim();
+        var html = (el.outerHTML || '').toLowerCase();
+
+        if (txt === '🇫🇷') return true;
+        if (el.tagName === 'IMG' || el.tagName === 'PICTURE' || el.tagName === 'SVG'){
+          return /flag|france|french|drapeau|francais|français/.test(cls + ' ' + alt + ' ' + aria + ' ' + src + ' ' + html);
+        }
+
+        return /flag|france|french|drapeau|francais|français/.test(cls + ' ' + alt + ' ' + aria + ' ' + html);
+      });
+  }
+
+  function getHeaderSelector(){
+    var scopes = Array.from(document.querySelectorAll('header, nav, .site-header, .header, .topbar'));
+    if (!scopes.length) scopes = [document.body];
+    var candidates = [];
+
+    scopes.forEach(function(scope){
+      Array.from(scope.querySelectorAll('button,a,div,span')).forEach(function(el){
+        var t = norm(el.textContent);
+        if (!t) return;
+        var hasLang = /\bfr\b/.test(t) || /\ben\b/.test(t);
+        if (!hasLang) return;
+        var flags = flagCandidates(el);
+        if (!flags.length) return;
+        var rect = (el.getBoundingClientRect ? el.getBoundingClientRect() : {width:0,height:0});
+        if (rect.width > 320 || rect.height > 120) return;
+        candidates.push(el);
+      });
+    });
+
+    candidates.sort(function(a,b){
+      var as = flagCandidates(a).length + (norm(a.textContent).indexOf('fr') !== -1 ? 3 : 0);
+      var bs = flagCandidates(b).length + (norm(b.textContent).indexOf('fr') !== -1 ? 3 : 0);
+      return bs - as;
+    });
+
+    return candidates[0] || null;
+  }
+
+  function chooseFlagFrom(root){
+    var flags = flagCandidates(root).slice().sort(function(a,b){
+      return scoreFlag(b) - scoreFlag(a);
+    });
+    return flags[0] || null;
+  }
+
+  function dedupeSelector(selector){
+    if (!selector) return null;
+    var flags = flagCandidates(selector).slice().sort(function(a,b){
+      return scoreFlag(b) - scoreFlag(a);
+    });
+    if (!flags.length) return null;
+    var keep = flags[0];
+    flags.slice(1).forEach(function(el){
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    });
+    return keep;
+  }
+
+  function cloneFlag(flag){
+    if (!flag) return null;
+    var wrapper = document.createElement('span');
+    wrapper.className = 'sgfs-single-floating-flag';
+    wrapper.style.display = 'inline-flex';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.justifyContent = 'center';
+    wrapper.style.verticalAlign = 'middle';
+    wrapper.style.marginRight = '12px';
+    wrapper.appendChild(flag.cloneNode(true));
+    return wrapper;
+  }
+
+  function textTargetElements(){
+    var phrases = [
+      'fabriqué en france',
+      'fabrication française',
+      'fabrication francaise',
+      'made in france',
+      'french manufacturing'
+    ];
+
+    return Array.from(document.querySelectorAll('div,span,p,strong,b,a,h2,h3,h4'))
+      .filter(function(el){
+        var t = norm(el.textContent);
+        if (!t) return false;
+        if (!containsOne(t, phrases)) return false;
+        var rect = (el.getBoundingClientRect ? el.getBoundingClientRect() : {width:0,height:0});
+        return rect.width <= 1000 && rect.height <= 180;
+      });
+  }
+
+  function cleanTarget(target, sourceFlag){
+    if (!target || !sourceFlag) return;
+    var flags = flagCandidates(target);
+    flags.forEach(function(el){
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    });
+
+    var existing = target.querySelector('.sgfs-single-floating-flag');
+    if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+
+    var clone = cloneFlag(sourceFlag);
+    if (!clone) return;
+
+    var firstChild = target.firstChild;
+    if (firstChild) {
+      target.insertBefore(clone, firstChild);
+    } else {
+      target.appendChild(clone);
+    }
+  }
+
+  function fixHeaderAndBadges(){
+    var selector = getHeaderSelector();
+    var keptFlag = dedupeSelector(selector) || chooseFlagFrom(selector);
+
+    if (!keptFlag){
+      var fallback = chooseFlagFrom(document.body);
+      if (fallback) keptFlag = fallback;
+    }
+
+    if (selector && keptFlag){
+      var extra = flagCandidates(selector).slice(1);
+      extra.forEach(function(el){
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+      });
+    }
+
+    if (!keptFlag) return;
+
+    textTargetElements().forEach(function(el){
+      cleanTarget(el, keptFlag);
+    });
+
+    // Nettoyage final : si un sélecteur contient encore plusieurs drapeaux, on garde le meilleur.
+    Array.from(document.querySelectorAll('header *, nav *')).forEach(function(el){
+      var t = norm(el.textContent);
+      if (!(/\bfr\b/.test(t) || /\ben\b/.test(t))) return;
+      var flags = flagCandidates(el);
+      if (flags.length > 1){
+        var keep = flags.slice().sort(function(a,b){ return scoreFlag(b) - scoreFlag(a); })[0];
+        flags.forEach(function(f){
+          if (f !== keep && f.parentNode) f.parentNode.removeChild(f);
+        });
+      }
+    });
+  }
+
+  function run(){
+    fixHeaderAndBadges();
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', run, {once:true});
+  } else {
+    run();
+  }
+
+  setTimeout(run, 250);
+  setTimeout(run, 800);
+  setTimeout(run, 1500);
+})();
+</script>
+<!-- /SGFS_FLAG_FIX_V3 -->
+
+
+
+
+
+<!-- SGFS_DEDUP_FLAG_HEADER_FINAL -->
+<script>
+(function(){
+  function norm(s){
+    return (s || '').replace(/\s+/g,' ').trim();
+  }
+
+  function isTopRight(el){
+    if(!el || !el.getBoundingClientRect) return false;
+    var r = el.getBoundingClientRect();
+    return (
+      r.top >= 0 &&
+      r.top < 260 &&
+      r.right > window.innerWidth * 0.62 &&
+      r.width >= 45 &&
+      r.width <= 240 &&
+      r.height >= 24 &&
+      r.height <= 100
+    );
+  }
+
+  function looksLikeLangControl(el){
+    var t = norm(el.textContent);
+    return (
+      /^FR(?:\s*[⌄⌃∨∧])?$/.test(t) ||
+      /^🇫🇷\s*FR(?:\s*[⌄⌃∨∧])?$/.test(t) ||
+      /^EN(?:\s*[⌄⌃∨∧])?$/.test(t) ||
+      /^🇬🇧\s*EN(?:\s*[⌄⌃∨∧])?$/.test(t)
+    );
+  }
+
+  function flagNodes(root){
+    if(!root) return [];
+    var out = [];
+
+    Array.from(root.querySelectorAll('.sgfs-floating-fr-flag,img,svg,picture,i,span')).forEach(function(el){
+      var cls = String(el.className || '').toLowerCase();
+      var alt = (el.getAttribute && (el.getAttribute('alt') || '') || '').toLowerCase();
+      var aria = (el.getAttribute && (el.getAttribute('aria-label') || '') || '').toLowerCase();
+      var src = (el.getAttribute && (el.getAttribute('src') || '') || '').toLowerCase();
+      var txt = norm(el.textContent);
+
+      if(
+        (el.classList && el.classList.contains('sgfs-floating-fr-flag')) ||
+        txt === '🇫🇷' ||
+        txt === '🇬🇧' ||
+        /flag|drapeau|france|french|anglais|english/.test(cls+' '+alt+' '+aria+' '+src)
+      ){
+        out.push(el);
+      }
+    });
+
+    return out;
+  }
+
+  function score(el){
+    var s = 0;
+    if(el.classList && el.classList.contains('sgfs-floating-fr-flag')) s += 100;
+    var blob = (
+      String(el.className || '') + ' ' +
+      ((el.getAttribute && el.getAttribute('src')) || '') + ' ' +
+      ((el.getAttribute && el.getAttribute('alt')) || '')
+    ).toLowerCase();
+    if(/float|floating|wave|wavy/.test(blob)) s += 50;
+    if(el.tagName === 'SVG') s += 20;
+    if(el.tagName === 'IMG') s += 10;
+    return s;
+  }
+
+  function dedupeControl(el){
+    var flags = flagNodes(el);
+    if(flags.length <= 1) return;
+
+    flags.sort(function(a,b){ return score(b) - score(a); });
+    var keep = flags[0];
+
+    flags.slice(1).forEach(function(f){
+      if(f && f !== keep && f.parentNode){
+        f.parentNode.removeChild(f);
+      }
+    });
+
+    Array.from(el.childNodes).forEach(function(n){
+      if(n.nodeType === Node.TEXT_NODE){
+        n.nodeValue = (n.nodeValue || '').replace(/🇫🇷/g,'').replace(/🇬🇧/g,'');
+      }
+    });
+  }
+
+  function dedupe(){
+    var scopes = Array.from(document.querySelectorAll('header,nav,.site-header,.header'));
+    if(!scopes.length) scopes = [document.body];
+
+    scopes.forEach(function(scope){
+      Array.from(scope.querySelectorAll('button,a,[role="button"],[role="combobox"],div')).forEach(function(el){
+        if(!isTopRight(el)) return;
+        if(!looksLikeLangControl(el)) return;
+        dedupeControl(el);
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', dedupe, {once:true});
+  }else{
+    dedupe();
+  }
+
+  setTimeout(dedupe,200);
+  setTimeout(dedupe,700);
+  setTimeout(dedupe,1400);
+})();
+</script>
+<!-- /SGFS_DEDUP_FLAG_HEADER_FINAL -->
+
+</body>
+</html>

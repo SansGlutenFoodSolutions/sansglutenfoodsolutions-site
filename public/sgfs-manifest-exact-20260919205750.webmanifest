@@ -1,0 +1,17 @@
+{
+  "name": "Sans Gluten Food Solutions",
+  "short_name": "SGFS",
+  "icons": [
+    {
+      "src": "/assets/sgfs-s-epi-final-20260919-224536-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/sgfs-s-epi-final-20260919-224536-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone"
+}
