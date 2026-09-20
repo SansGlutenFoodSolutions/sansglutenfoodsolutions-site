@@ -10,6 +10,31 @@
     "trailingSlash": false,
     "redirects": [
       {
+        "source": "/a-propos/",
+        "destination": "/a-propos",
+        "type": 301
+      },
+      {
+        "source": "/echantillon-mix-sans-gluten/",
+        "destination": "/echantillon-mix-sans-gluten",
+        "type": 301
+      },
+      {
+        "source": "/recettes/",
+        "destination": "/recettes",
+        "type": 301
+      },
+      {
+        "source": "/professionnels/",
+        "destination": "/professionnels",
+        "type": 301
+      },
+      {
+        "source": "/mix-sans-gluten/",
+        "destination": "/mix-sans-gluten",
+        "type": 301
+      },
+      {
         "source": "/confidentialite.html",
         "destination": "/confidentialite",
         "type": 301
