@@ -10,6 +10,11 @@
     "trailingSlash": false,
     "redirects": [
       {
+        "source": "/defaultsite",
+        "destination": "/",
+        "type": 301
+      },
+      {
         "source": "/a-propos/",
         "destination": "/a-propos",
         "type": 301
