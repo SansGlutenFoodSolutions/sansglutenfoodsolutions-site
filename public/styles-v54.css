@@ -156,3 +156,10 @@
 .recipe-card-wide-first .recipe-copy{display:flex;flex-direction:column;justify-content:center;padding:56px}
 @media(max-width:960px){.recipe-card-wide-first{grid-template-columns:1fr;min-height:auto}.recipe-card-wide-first .recipe-image{min-height:480px}}
 @media(max-width:720px){.language-picker{margin-left:0;align-self:flex-start}.language-select{font-size:.9rem}.recipe-card-wide-first .recipe-image{min-height:320px}.recipe-card-wide-first .recipe-copy{padding:34px 28px}}
+
+
+/* SGFS_AIDE_CULINAIRE_FULL_BORDER */
+.seo-note-aide-culinaire{
+  border:3px solid var(--gold) !important;
+  border-radius:16px !important;
+}
