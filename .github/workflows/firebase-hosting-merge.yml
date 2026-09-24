@@ -21,31 +21,63 @@ jobs:
           projectId: sans-gluten-food-solutions
 
       - name: Authenticate to Google Cloud for one-off www redirect setup
-        id: google_auth
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SANS_GLUTEN_FOOD_SOLUTIONS }}
-          token_format: access_token
 
       - name: Configure www custom-domain redirect
-        env:
-          ACCESS_TOKEN: ${{ steps.google_auth.outputs.access_token }}
         run: |
           set -euo pipefail
-          DOMAIN="www.sansglutenfoodsolutions.com"
-          TARGET="sansglutenfoodsolutions.com"
-          BASE="https://firebasehosting.googleapis.com/v1beta1/projects/sans-gluten-food-solutions/sites/sans-gluten-food-solutions/customDomains"
+          python -m pip install --quiet google-auth requests
+          python - <<'PY'
+          import json, os, sys
+          import requests
+          from google.auth.transport.requests import Request
+          from google.oauth2 import service_account
 
-          HTTP_CODE="$(curl -sS -o /tmp/current.json -w "%{http_code}"             -H "Authorization: Bearer ${ACCESS_TOKEN}"             "${BASE}/${DOMAIN}")"
+          creds = service_account.Credentials.from_service_account_file(
+              os.environ["GOOGLE_APPLICATION_CREDENTIALS"],
+              scopes=["https://www.googleapis.com/auth/cloud-platform"],
+          )
+          creds.refresh(Request())
+          headers = {
+              "Authorization": f"Bearer {creds.token}",
+              "Content-Type": "application/json",
+          }
 
-          if [ "${HTTP_CODE}" = "200" ]; then
-            echo "Custom domain exists; setting redirect target."
-            curl -sS -f -X PATCH               -H "Authorization: Bearer ${ACCESS_TOKEN}"               -H "Content-Type: application/json"               "${BASE}/${DOMAIN}?updateMask=redirectTarget"               -d "{\"redirectTarget\":\"${TARGET}\"}" | tee /tmp/custom-domain-result.json
-          elif [ "${HTTP_CODE}" = "404" ]; then
-            echo "Creating custom domain with redirect target."
-            curl -sS -f -X POST               -H "Authorization: Bearer ${ACCESS_TOKEN}"               -H "Content-Type: application/json"               "${BASE}?customDomainId=${DOMAIN}"               -d "{\"redirectTarget\":\"${TARGET}\"}" | tee /tmp/custom-domain-result.json
-          else
-            echo "Unexpected response while checking custom domain: HTTP ${HTTP_CODE}"
-            cat /tmp/current.json
-            exit 1
-          fi
+          domain = "www.sansglutenfoodsolutions.com"
+          target = "sansglutenfoodsolutions.com"
+          base = (
+              "https://firebasehosting.googleapis.com/v1beta1/"
+              "projects/sans-gluten-food-solutions/sites/sans-gluten-food-solutions/customDomains"
+          )
+          url = f"{base}/{domain}"
+
+          r = requests.get(url, headers=headers, timeout=30)
+          if r.status_code == 200:
+              print("Custom domain exists; setting redirect target.")
+              out = requests.patch(
+                  url,
+                  params={"updateMask": "redirectTarget"},
+                  headers=headers,
+                  json={"redirectTarget": target},
+                  timeout=30,
+              )
+          elif r.status_code == 404:
+              print("Creating custom domain with redirect target.")
+              out = requests.post(
+                  base,
+                  params={"customDomainId": domain},
+                  headers=headers,
+                  json={"redirectTarget": target},
+                  timeout=30,
+              )
+          else:
+              print(f"Unexpected GET status: {r.status_code}")
+              print(r.text)
+              sys.exit(1)
+
+          print(f"Mutation status: {out.status_code}")
+          print(out.text)
+          out.raise_for_status()
+          PY
