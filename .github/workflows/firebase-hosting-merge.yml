@@ -19,3 +19,33 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SANS_GLUTEN_FOOD_SOLUTIONS }}
           channelId: live
           projectId: sans-gluten-food-solutions
+
+      - name: Authenticate to Google Cloud for one-off www redirect setup
+        id: google_auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SANS_GLUTEN_FOOD_SOLUTIONS }}
+          token_format: access_token
+
+      - name: Configure www custom-domain redirect
+        env:
+          ACCESS_TOKEN: ${{ steps.google_auth.outputs.access_token }}
+        run: |
+          set -euo pipefail
+          DOMAIN="www.sansglutenfoodsolutions.com"
+          TARGET="sansglutenfoodsolutions.com"
+          BASE="https://firebasehosting.googleapis.com/v1beta1/projects/sans-gluten-food-solutions/sites/sans-gluten-food-solutions/customDomains"
+
+          HTTP_CODE="$(curl -sS -o /tmp/current.json -w "%{http_code}"             -H "Authorization: Bearer ${ACCESS_TOKEN}"             "${BASE}/${DOMAIN}")"
+
+          if [ "${HTTP_CODE}" = "200" ]; then
+            echo "Custom domain exists; setting redirect target."
+            curl -sS -f -X PATCH               -H "Authorization: Bearer ${ACCESS_TOKEN}"               -H "Content-Type: application/json"               "${BASE}/${DOMAIN}?updateMask=redirectTarget"               -d "{\"redirectTarget\":\"${TARGET}\"}" | tee /tmp/custom-domain-result.json
+          elif [ "${HTTP_CODE}" = "404" ]; then
+            echo "Creating custom domain with redirect target."
+            curl -sS -f -X POST               -H "Authorization: Bearer ${ACCESS_TOKEN}"               -H "Content-Type: application/json"               "${BASE}?customDomainId=${DOMAIN}"               -d "{\"redirectTarget\":\"${TARGET}\"}" | tee /tmp/custom-domain-result.json
+          else
+            echo "Unexpected response while checking custom domain: HTTP ${HTTP_CODE}"
+            cat /tmp/current.json
+            exit 1
+          fi
