@@ -20,17 +20,17 @@ jobs:
           channelId: live
           projectId: sans-gluten-food-solutions
 
-      - name: Authenticate to Google Cloud for one-off www redirect setup
+      - name: Authenticate to Google Cloud for www domain status check
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SANS_GLUTEN_FOOD_SOLUTIONS }}
 
-      - name: Configure www custom-domain redirect
+      - name: Check www custom-domain status
         run: |
           set -euo pipefail
           python -m pip install --quiet google-auth requests
           python - <<'PY'
-          import json, os, sys
+          import json, os
           import requests
           from google.auth.transport.requests import Request
           from google.oauth2 import service_account
@@ -40,44 +40,25 @@ jobs:
               scopes=["https://www.googleapis.com/auth/cloud-platform"],
           )
           creds.refresh(Request())
-          headers = {
-              "Authorization": f"Bearer {creds.token}",
-              "Content-Type": "application/json",
-          }
-
-          domain = "www.sansglutenfoodsolutions.com"
-          target = "sansglutenfoodsolutions.com"
-          base = (
+          headers = {"Authorization": f"Bearer {creds.token}"}
+          url = (
               "https://firebasehosting.googleapis.com/v1beta1/"
-              "projects/sans-gluten-food-solutions/sites/sans-gluten-food-solutions/customDomains"
+              "projects/sans-gluten-food-solutions/sites/sans-gluten-food-solutions/"
+              "customDomains/www.sansglutenfoodsolutions.com"
           )
-          url = f"{base}/{domain}"
-
           r = requests.get(url, headers=headers, timeout=30)
-          if r.status_code == 200:
-              print("Custom domain exists; setting redirect target.")
-              out = requests.patch(
-                  url,
-                  params={"updateMask": "redirectTarget"},
-                  headers=headers,
-                  json={"redirectTarget": target},
-                  timeout=30,
-              )
-          elif r.status_code == 404:
-              print("Creating custom domain with redirect target.")
-              out = requests.post(
-                  base,
-                  params={"customDomainId": domain},
-                  headers=headers,
-                  json={"redirectTarget": target},
-                  timeout=30,
-              )
-          else:
-              print(f"Unexpected GET status: {r.status_code}")
-              print(r.text)
-              sys.exit(1)
-
-          print(f"Mutation status: {out.status_code}")
-          print(out.text)
-          out.raise_for_status()
+          print(f"Status check HTTP: {r.status_code}")
+          r.raise_for_status()
+          data = r.json()
+          wanted = {
+              "name": data.get("name"),
+              "hostState": data.get("hostState"),
+              "ownershipState": data.get("ownershipState"),
+              "redirectTarget": data.get("redirectTarget"),
+              "reconciling": data.get("reconciling"),
+              "requiredDnsUpdates": data.get("requiredDnsUpdates"),
+              "issues": data.get("issues"),
+              "cert": data.get("cert"),
+          }
+          print(json.dumps(wanted, indent=2, ensure_ascii=False))
           PY
