@@ -43,6 +43,55 @@ service cloud.firestore {
       allow read, update, delete: if isAdmin();
     }
 
+    match /orders/{orderId} {
+      allow create: if request.resource.data.keys().hasOnly([
+          'firstName','lastName','email','phone','company','address','postalCode',
+          'city','notes','quantity','sku','unitPriceCents','currency',
+          'status','source','createdAt'
+        ])
+        && request.resource.data.keys().hasAll([
+          'firstName','lastName','email','phone','company','address','postalCode',
+          'city','notes','quantity','sku','unitPriceCents','currency',
+          'status','source','createdAt'
+        ])
+        && request.resource.data.firstName is string
+        && request.resource.data.firstName.size() >= 1 && request.resource.data.firstName.size() <= 60
+        && request.resource.data.lastName is string
+        && request.resource.data.lastName.size() >= 1 && request.resource.data.lastName.size() <= 60
+        && request.resource.data.email is string
+        && request.resource.data.email.size() >= 5 && request.resource.data.email.size() <= 160
+        && request.resource.data.email.matches('^[^@ ]+@[^@ ]+\\.[^@ ]+
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+)
+        && request.resource.data.phone is string
+        && request.resource.data.phone.size() >= 1 && request.resource.data.phone.size() <= 30
+        && request.resource.data.company is string && request.resource.data.company.size() <= 120
+        && request.resource.data.address is string
+        && request.resource.data.address.size() >= 5 && request.resource.data.address.size() <= 220
+        && request.resource.data.postalCode is string
+        && request.resource.data.postalCode.size() >= 2 && request.resource.data.postalCode.size() <= 12
+        && request.resource.data.city is string
+        && request.resource.data.city.size() >= 1 && request.resource.data.city.size() <= 100
+        && request.resource.data.notes is string && request.resource.data.notes.size() <= 500
+        && request.resource.data.quantity is int
+        && request.resource.data.quantity >= 1 && request.resource.data.quantity <= 100
+        && request.resource.data.sku == 'MIX-BIO-500G'
+        && request.resource.data.unitPriceCents == 790
+        && request.resource.data.currency == 'EUR'
+        && request.resource.data.status == 'en_attente_confirmation'
+        && request.resource.data.source == 'sansglutenfoodsolutions.com'
+        && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if isAdmin();
+    }
+
     match /admins/{uid} {
       allow read: if request.auth != null && request.auth.uid == uid;
       allow write: if false;
