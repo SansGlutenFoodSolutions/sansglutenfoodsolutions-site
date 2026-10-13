@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commander le mix sans gluten | SGFS</title>
+<meta name="description" content="Commandez directement votre mix universel BIO sans gluten 500 g auprès de Sans Gluten Food Solutions.">
+<link rel="canonical" href="https://sansglutenfoodsolutions.com/commande">
+<link rel="icon" href="/assets/sgfs-s-epi-final-20260919-224536.ico">
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#26382b;background:#f6f5f0}*{box-sizing:border-box}body{margin:0}header{background:white;border-bottom:1px solid #e5e8de;padding:15px max(20px,calc((100vw - 1100px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}header img{width:min(240px,55vw);height:auto}a{color:#275a3f}main{max-width:1100px;padding:28px 16px 70px;margin:auto}h1{font-size:clamp(27px,4vw,44px);margin:0 0 8px}h2{font-size:23px}p{line-height:1.55}.muted{color:#607064}.layout{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;margin-top:26px}.panel{background:#fff;border:1px solid #dfe5db;border-radius:18px;padding:25px;box-shadow:0 5px 25px #243d250d}.product{display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center}.product img{width:100%;border-radius:12px}button{background:#285d40;color:#fff;border:none;border-radius:10px;padding:12px 20px;font-weight:700;cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}.qty{display:flex;align-items:center;gap:14px;margin:17px 0}.qty button{min-width:40px;padding:10px}.qty strong{min-width:27px;text-align:center}.price{font-weight:800;font-size:28px}.divider{height:1px;background:#e4e8e1;margin:20px 0}.line{display:flex;justify-content:space-between;gap:15px;margin:8px 0}form{display:grid;gap:13px}label{font-size:14px;font-weight:700;display:grid;gap:5px}input,textarea,select{font:inherit;border:1px solid #bfcabc;border-radius:9px;padding:11px;width:100%;background:white}textarea{min-height:80px}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px}.note{background:#f0f5ed;padding:12px 15px;border-radius:9px;font-size:14px}.error{color:#a12828}.success{color:#1c6437;font-weight:700}.checks{display:flex;gap:9px;align-items:flex-start;font-size:13px}.checks input{width:auto;margin-top:3px}.checks label{font-weight:400}#status{min-height:24px}@media(max-width:780px){.layout{grid-template-columns:1fr}.panel{padding:18px}.product{grid-template-columns:95px 1fr}.twocol{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><a href="/" aria-label="Retour accueil"><img alt="Sans Gluten Food Solutions" src="/assets/sgfs-logo-horizontal-v26.png"></a><a href="/">← Retour au site</a></header>
+<main><p class="muted">SANS GLUTEN FOOD SOLUTIONS · BOUTIQUE</p><h1>Commander votre mix sans gluten</h1><p class="muted">Commande directe auprès de SGFS. Les frais de livraison sont confirmés avant règlement.</p>
+<div class="layout"><section class="panel" aria-label="Produit et panier">
+<div class="product"><img src="/assets/mix-universel-bio-sans-gluten-500g-photo-20260920.png" alt="Sachet de Mix Universel BIO sans gluten 500 g"><div><h2>Mix Universel BIO sans gluten</h2><p>Format 500 g · Fabrication française</p><div class="price">7,90 € TTC <small style="font-weight:400;font-size:12px">prix indicatif à confirmer</small></div></div></div>
+<div class="divider"></div><label for="qty">Quantité de sachets</label><div class="qty"><button type="button" id="decrease" aria-label="Diminuer">−</button><strong id="qtyValue">1</strong><button type="button" id="increase" aria-label="Augmenter">+</button></div>
+<div class="line"><span>Sous-total indicatif</span><strong id="subtotal">7,90 €</strong></div><div class="line"><span>Livraison</span><strong>À confirmer</strong></div><div class="divider"></div>
+<p class="note">La demande de commande ne constitue pas un paiement. SGFS confirme le prix, les stocks et le transport avant de vous transmettre un lien de règlement sécurisé. Aucun numéro de carte bancaire n'est demandé ici.</p>
+</section>
+<section class="panel"><h2>Vos coordonnées</h2><form id="orderForm">
+<div class="twocol"><label>Prénom *<input name="firstName" autocomplete="given-name" maxlength="60" required></label><label>Nom *<input name="lastName" autocomplete="family-name" maxlength="60" required></label></div>
+<label>Adresse e-mail *<input name="email" type="email" autocomplete="email" maxlength="160" required></label>
+<label>Téléphone *<input name="phone" type="tel" autocomplete="tel" maxlength="30" required></label>
+<label>Entreprise (facultatif)<input name="company" maxlength="120" autocomplete="organization"></label>
+<label>Adresse de livraison *<input name="address" autocomplete="street-address" maxlength="220" required></label>
+<div class="twocol"><label>Code postal *<input name="postalCode" autocomplete="postal-code" maxlength="12" required></label><label>Ville *<input name="city" autocomplete="address-level2" maxlength="100" required></label></div>
+<label>Précisions (facultatif)<textarea name="notes" maxlength="500" placeholder="Indications de livraison, demande particulière…"></textarea></label>
+<div class="checks"><input type="checkbox" id="consent" required><label for="consent">J'accepte que mes informations soient utilisées pour traiter ma demande de commande. <a href="/confidentialite">Politique de confidentialité</a>.</label></div>
+<button id="submitOrder" type="submit">Envoyer ma demande de commande</button><p id="status" aria-live="polite" role="status"></p>
+</form></section></div>
+</main>
+<script type="module">
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
+import {getFirestore,collection,addDoc,serverTimestamp} from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js';
+import {firebaseConfig} from '/firebase-config.js';
+const db=getFirestore(initializeApp(firebaseConfig));
+const fmt=new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR'});let qty=1;const priceCents=790;
+const q=document.querySelector('#qtyValue'),subtotal=document.querySelector('#subtotal');
+function update(n){qty=Math.max(1,Math.min(100,n));q.textContent=String(qty);subtotal.textContent=fmt.format(qty*priceCents/100)}
+document.querySelector('#decrease').addEventListener('click',()=>update(qty-1));
+document.querySelector('#increase').addEventListener('click',()=>update(qty+1));
+document.querySelector('#orderForm').addEventListener('submit',async e=>{
+ e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;
+ const btn=document.querySelector('#submitOrder'),status=document.querySelector('#status');btn.disabled=true;status.className='';status.textContent='Transmission de votre demande…';
+ const f=new FormData(form);const get=k=>String(f.get(k)||'').trim();
+ try{
+   const ref=await addDoc(collection(db,'orders'),{
+     firstName:get('firstName'),lastName:get('lastName'),email:get('email'),phone:get('phone'),company:get('company'),
+     address:get('address'),postalCode:get('postalCode'),city:get('city'),notes:get('notes'),quantity:qty,sku:'MIX-BIO-500G',
+     unitPriceCents:priceCents,currency:'EUR',status:'en_attente_confirmation',source:'sansglutenfoodsolutions.com',
+     createdAt:serverTimestamp()
+   });
+   form.reset();update(1);status.className='success';status.textContent='Votre demande a été enregistrée (réf. '+ref.id.slice(0,8).toUpperCase()+'). SGFS vous contactera pour confirmer la livraison et le règlement.';
+ }catch(err){status.className='error';status.textContent='La demande n’a pas pu être envoyée. Réessayez ou écrivez à contact@sansglutenfoodsolutions.com.';console.error('Commande',err)}
+ finally{btn.disabled=false}
+});
+</script>
+</body></html>
