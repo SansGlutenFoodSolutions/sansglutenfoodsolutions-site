@@ -63,7 +63,7 @@ exports.notifyValidatedOrder = onDocumentUpdated(
   const q=Number(after.quantity),unit=Number(after.unitPriceCents),shipping=Number(after.shippingCents);
   const total=Number(after.totalCents),pBps=Number(vatRateBps.value()),sBps=Number(shippingVatRateBps.value());
   const siren=sellerSiren.value().trim(),vat=sellerVat.value().trim();
-  if(!/^\\d{9}$/.test(siren)||!/^FR[0-9A-Z]{11}$/.test(vat)||!/^\\d+$/.test(vatRateBps.value())||!/^\\d+$/.test(shippingVatRateBps.value())
+  if(!/^\d{9}$/.test(siren)||!/^FR[0-9A-Z]{11}$/.test(vat)||!/^\d+$/.test(vatRateBps.value())||!/^\d+$/.test(shippingVatRateBps.value())
     || !Number.isInteger(q)||q<1||q>100||unit!==790||!Number.isSafeInteger(shipping)||shipping<0
     ||total!==q*unit+shipping||pBps<0||pBps>2500||sBps<0||sBps>2500||!after.email){
     logger.error("Données ou configuration fiscale manquantes: aucune facture émise",{orderId});return;
