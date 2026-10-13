@@ -49,28 +49,12 @@ service cloud.firestore {
           'city','notes','quantity','sku','unitPriceCents','currency',
           'status','source','createdAt'
         ])
-        && request.resource.data.keys().hasAll([
-          'firstName','lastName','email','phone','company','address','postalCode',
-          'city','notes','quantity','sku','unitPriceCents','currency',
-          'status','source','createdAt'
-        ])
         && request.resource.data.firstName is string
         && request.resource.data.firstName.size() >= 1 && request.resource.data.firstName.size() <= 60
         && request.resource.data.lastName is string
         && request.resource.data.lastName.size() >= 1 && request.resource.data.lastName.size() <= 60
         && request.resource.data.email is string
         && request.resource.data.email.size() >= 5 && request.resource.data.email.size() <= 160
-        && request.resource.data.email.matches('^[^@ ]+@[^@ ]+\\.[^@ ]+
-      allow read: if request.auth != null && request.auth.uid == uid;
-      allow write: if false;
-    }
-
-    match /{document=**} {
-      allow read, write: if false;
-    }
-  }
-}
-)
         && request.resource.data.phone is string
         && request.resource.data.phone.size() >= 1 && request.resource.data.phone.size() <= 30
         && request.resource.data.company is string && request.resource.data.company.size() <= 120
