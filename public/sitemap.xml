@@ -25,6 +25,9 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://sansglutenfoodsolutions.com/recettes/pizza-sans-gluten</loc>
+  </url>
+  <url>
     <loc>https://sansglutenfoodsolutions.com/recettes/cookies-sans-gluten</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
@@ -71,5 +74,35 @@
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://sansglutenfoodsolutions.com/en/mix-sans-gluten</loc>
+  </url>
+  <url>
+    <loc>https://sansglutenfoodsolutions.com/en/recettes</loc>
+  </url>
+  <url>
+    <loc>https://sansglutenfoodsolutions.com/en/recettes/pain-sans-gluten</loc>
+  </url>
+  <url>
+    <loc>https://sansglutenfoodsolutions.com/en/recettes/cookies-sans-gluten</loc>
+  </url>
+  <url>
+    <loc>https://sansglutenfoodsolutions.com/en/recettes/crepes-sans-gluten</loc>
+  </url>
+  <url>
+    <loc>https://sansglutenfoodsolutions.com/en/recettes/genoise-sans-gluten</loc>
+  </url>
+  <url>
+    <loc>https://sansglutenfoodsolutions.com/en/recettes/gateau-au-yaourt-sans-gluten</loc>
+  </url>
+  <url>
+    <loc>https://sansglutenfoodsolutions.com/en/professionnels</loc>
+  </url>
+  <url>
+    <loc>https://sansglutenfoodsolutions.com/en/echantillon-mix-sans-gluten</loc>
+  </url>
+  <url>
+    <loc>https://sansglutenfoodsolutions.com/en/a-propos</loc>
   </url>
 </urlset>
