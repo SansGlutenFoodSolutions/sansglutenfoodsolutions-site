@@ -12,7 +12,7 @@ const allowedOrigins = ["https://sansglutenfoodsolutions.com", "https://www.sans
 const productCents = 4490; // Carton de 6 sachets, TTC. Montant défini côté serveur uniquement.
 
 function shippingCents() {
-  const value = String(process.env.MON_DIAL_RELAY_SHIPPING_CENTS || "");
+  const value = String(process.env.MONDIAL_RELAY_SHIPPING_CENTS || "");
   if (!/^[1-9][0-9]{0,4}$/.test(value)) return null;
   const cents = Number(value);
   return cents <= 5000 ? cents : null;
