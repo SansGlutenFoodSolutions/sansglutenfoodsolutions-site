@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "public",
+    "site": "sans-gluten-food-solutions",
     "ignore": [
       "firebase.json",
       "**/.*",
