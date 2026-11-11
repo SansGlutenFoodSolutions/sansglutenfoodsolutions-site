@@ -7,7 +7,7 @@ Cette branche est une préparation **non publiée** : ne pas fusionner tant que 
 2. Ouvrir un compte **Mondial Relay professionnel** et récupérer le **code enseigne** destiné au widget. Valider la prise en charge du carton de 6 sachets et des Lockers/Points Relais.
 3. Fixer le **prix TTC facturé au client** pour le transport, en tenant compte du poids réel du carton emballé et des frais, puis le convertir en centimes.
 4. Activer la facturation Firebase nécessaire aux Cloud Functions/Secret Manager ; autoriser l'accès à Firestore pour le compte de service.
-5. Configurer localement `functions/.env` (ne pas le committer) avec `MONDIAL_RELAY_BRAND=...` et `MON_DIAL_RELAY_SHIPPING_CENTS=...` et déposer les deux secrets :
+5. Configurer localement `functions/.env` (ne pas le committer) avec `MONDIAL_RELAY_BRAND=...` et `MONDIAL_RELAY_SHIPPING_CENTS=...` et déposer les deux secrets :
    `firebase functions:secrets:set STRIPE_SECRET_KEY`
    `firebase functions:secrets:set STRIPE_WEBHOOK_SECRET`
 6. `cd functions && npm install` puis revenir à la racine et `firebase deploy --only functions`.
