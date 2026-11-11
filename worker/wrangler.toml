@@ -1,0 +1,6 @@
+name = "sgfs-checkout"
+main = "src/index.js"
+compatibility_date = "2026-11-11"
+
+# Secrets configurés dans le tableau de bord Cloudflare, jamais dans ce fichier :
+# STRIPE_SECRET_KEY, STRIPE_PRICE_ID, SENDCLOUD_PUBLIC_KEY, SENDCLOUD_SECRET_KEY
