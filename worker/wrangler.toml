@@ -7,8 +7,11 @@ binding = "DB"
 database_name = "sgfs-orders"
 database_id = "cc2ee9be-c8f1-4483-8467-0731369e4687"
 
-# Secrets Cloudflare : STRIPE_SECRET_KEY, STRIPE_PRICE_ID, STRIPE_WEBHOOK_SECRET,
+[vars]
+CHECKOUT_ENABLED = "false"
+STRIPE_PRICE_ID = "DISABLED_UNTIL_LAUNCH"
+
+# Secrets à configurer dans Cloudflare : STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
 # SENDCLOUD_PUBLIC_KEY, SENDCLOUD_SECRET_KEY, SENDCLOUD_SENDER_ADDRESS_ID.
-# Variable de contrôle : CHECKOUT_ENABLED=false jusqu'au lancement décidé.
 # Valeurs non secrètes facultatives : SENDCLOUD_FROM_POSTAL_CODE=13960,
 # SENDCLOUD_FROM_CITY=Sausset-les-Pins.
