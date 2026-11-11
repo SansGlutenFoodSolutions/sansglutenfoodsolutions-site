@@ -91,6 +91,7 @@ $id('order').addEventListener('submit',async event=>{
     location.assign(x.url);
   }catch(e){message('Impossible d’ouvrir Stripe : '+e.message,true);busy=false;canPay();}
 });
+if(new URLSearchParams(location.search).get('paiement')==='annule')message('Paiement annulé : vous pouvez sélectionner à nouveau votre relais.');
 initialize();
 })();
 </script></body></html>
