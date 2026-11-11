@@ -16,3 +16,9 @@ firebase-debug.log
 *.key
 sgfs-backups/
 # --- /SGFS GitHub safety ---
+
+# SGFS payment integration — do not commit credentials
+functions/.env
+functions/.env.*
+!functions/.env.example
+functions/node_modules/
