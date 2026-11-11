@@ -29,7 +29,7 @@ input[type=text],input[type=email],input[type=tel],input[type=number],select{wid
 footer{background:var(--deep);color:#fff;padding:30px 20px;text-align:center}footer a{color:white}
 @media(max-width:760px){.grid,.row{grid-template-columns:1fr}.header,nav{justify-content:center}.panel{padding:18px}}
 </style>
-<script src="/sgfs-checkout-config.js" defer></script>
+<script src="/sgfs-checkout-config.js"></script>
 </head>
 <body>
 <header><div class="header"><a href="/"><img class="logo" src="/assets/sgfs-logo-horizontal-v26.png" alt="Sans Gluten Food Solutions"></a><nav aria-label="Navigation principale"><a href="/">Accueil</a><a href="/mix-sans-gluten">Le Mix</a><a href="/recettes">Recettes</a><a href="/professionnels">Professionnels</a><a href="/commander/" aria-current="page">Commander</a><a href="/a-propos">À propos</a></nav></div></header>
@@ -92,7 +92,7 @@ function status(text,isError){$('relayStatus').textContent=text;$('relayStatus')
 $('quantity').addEventListener('input',updateTotals);
 $('order').addEventListener('input',updateButton);
 $('accept').addEventListener('change',updateButton);
-$('postal').addEventListener('input',()=>{selectedPoint=null;points=[];$('relayResults').replaceChildren();$('relaySummary').textContent='Point relais : non sélectionné.';updateButton();});
+['postal','city'].forEach(id=>$(id).addEventListener('input',()=>{selectedPoint=null;points=[];$('relayResults').replaceChildren();$('relaySummary').textContent='Point relais : non sélectionné.';updateButton();}));
 $('findRelay').addEventListener('click',async()=>{
  const postal=$('postal').value.trim();
  if(!/^[0-9]{5}$/.test(postal)){status('Saisissez un code postal français à 5 chiffres.',true);return;}
