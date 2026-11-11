@@ -1,0 +1,14 @@
+{
+  "name": "sgfs-checkout-functions",
+  "private": true,
+  "description": "Secure Stripe Checkout + Mondial Relay order records for SGFS",
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^6.0.0",
+    "stripe": "^19.0.0"
+  }
+}

@@ -43,6 +43,12 @@ service cloud.firestore {
       allow read, update, delete: if isAdmin();
     }
 
+    // Commandes Stripe : lecture réservée aux administrateurs SGFS. Écriture côté serveur exclusivement.
+    match /sgfs_orders/{orderId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
     match /admins/{uid} {
       allow read: if request.auth != null && request.auth.uid == uid;
       allow write: if false;
