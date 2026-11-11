@@ -125,7 +125,7 @@ export default {
     if (origin && origin !== SITE && origin !== 'https://www.sansglutenfoodsolutions.com') {
       return json({message:'Origine non autorisée'},403);
     }
-    if (request.method === 'OPTIONS') return json({},204,origin || SITE);
+    if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':origin || SITE,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type','Vary':'Origin'}});
     if (u.pathname === '/health' && request.method === 'GET') return json({status:'ok',configured:!!(env.STRIPE_SECRET_KEY && env.STRIPE_PRICE_ID && env.SENDCLOUD_PUBLIC_KEY && env.SENDCLOUD_SECRET_KEY)});
     if (u.pathname === '/service-points' && request.method === 'GET') {
       const postal = u.searchParams.get('postal_code'), city = short(u.searchParams.get('city'),80);
