@@ -18,9 +18,10 @@ Le parcours client préparé dans cette branche comprend recherche des points re
 2. Configurer les secrets `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `SENDCLOUD_PUBLIC_KEY`, `SENDCLOUD_SECRET_KEY`, `SENDCLOUD_SENDER_ADDRESS_ID`. Garder `STRIPE_PRICE_ID` dans une variable Cloudflare non secrète.
 3. Dans Stripe, créer le webhook live `https://sgfs-checkout.sgfs-benoit-rey.workers.dev/stripe-webhook` pour `checkout.session.completed` et `checkout.session.async_payment_succeeded`, puis enregistrer son secret de signature dans Cloudflare.
 4. Confirmer que le contrat Mondial Relay Sendcloud est vérifié et que le service choisi supporte les points relais et les dimensions/poids déclarés. Les tarifs estimés Sendcloud ne remplacent pas les tarifs facturés au compte.
-5. Comparer le prix, la TVA et la ligne de livraison avec le comptable. Le prix du produit doit rester un prix Stripe one-time, EUR, 4 328 centimes, taxes incluses.
-6. Vérifier en mode Stripe test et contrat/carrier de test la recherche, les prix, les webhooks signés, les événements en double, le retour navigateur, l'étiquette et les erreurs. Ne pas créer d'étiquette réelle ni effectuer de paiement réel pendant cette recette.
-7. Garder le formulaire de commande non publié jusqu'au lancement.
+5. Laisser `CHECKOUT_ENABLED=false` tant que les essais ne sont pas validés et que la boutique doit rester cachée. Seul `CHECKOUT_ENABLED=true` ouvre la création de sessions de paiement.
+6. Comparer le prix, la TVA et la ligne de livraison avec le comptable. Le prix du produit doit rester un prix Stripe one-time, EUR, 4 328 centimes, taxes incluses.
+7. Vérifier en mode Stripe test et contrat/carrier de test la recherche, les prix, les webhooks signés, les événements en double, le retour navigateur, l'étiquette et les erreurs. Ne pas créer d'étiquette réelle ni effectuer de paiement réel pendant cette recette.
+8. Garder le formulaire de commande non publié jusqu'au lancement.
 
 ## Protection des données
 
