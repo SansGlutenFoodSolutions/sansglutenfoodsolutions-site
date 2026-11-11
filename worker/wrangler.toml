@@ -2,5 +2,12 @@ name = "sgfs-checkout"
 main = "src/index.js"
 compatibility_date = "2026-11-11"
 
-# Secrets configurés dans le tableau de bord Cloudflare, jamais dans ce fichier :
-# STRIPE_SECRET_KEY, STRIPE_PRICE_ID, SENDCLOUD_PUBLIC_KEY, SENDCLOUD_SECRET_KEY
+[[d1_databases]]
+binding = "DB"
+database_name = "sgfs-orders"
+database_id = "A_CREER_DANS_CLOUDFLARE"
+
+# Secrets Cloudflare : STRIPE_SECRET_KEY, STRIPE_PRICE_ID, STRIPE_WEBHOOK_SECRET,
+# SENDCLOUD_PUBLIC_KEY, SENDCLOUD_SECRET_KEY, SENDCLOUD_SENDER_ADDRESS_ID.
+# Valeurs non secrètes facultatives : SENDCLOUD_FROM_POSTAL_CODE=13960,
+# SENDCLOUD_FROM_CITY=Sausset-les-Pins.
