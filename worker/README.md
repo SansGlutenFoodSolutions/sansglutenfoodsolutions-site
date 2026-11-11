@@ -15,7 +15,7 @@ Le parcours client préparé dans cette branche comprend recherche des points re
 ## Configuration requise avant activation
 
 1. Créer la base D1 `sgfs-orders`, exécuter `migrations/0001_orders.sql`, puis copier son identifiant réel dans `wrangler.toml` et lier le binding `DB` au Worker Cloudflare.
-2. Configurer les secrets `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `SENDCLOUD_PUBLIC_KEY`, `SENDCLOUD_SECRET_KEY`, `SENDCLOUD_SENDER_ADDRESS_ID`. Garder `STRIPE_PRICE_ID` dans une variable Cloudflare non secrète.
+2. Configurer les secrets `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `SENDCLOUD_PUBLIC_KEY`, `SENDCLOUD_SECRET_KEY`. `SENDCLOUD_SENDER_ADDRESS_ID` est facultatif : sans lui, l’adresse complète SGFS enregistrée dans Sendcloud est utilisée. Garder `STRIPE_PRICE_ID` dans une variable Cloudflare non secrète.
 3. Dans Stripe, créer le webhook live `https://sgfs-checkout.sgfs-benoit-rey.workers.dev/stripe-webhook` pour `checkout.session.completed` et `checkout.session.async_payment_succeeded`, puis enregistrer son secret de signature dans Cloudflare.
 4. Confirmer que le contrat Mondial Relay Sendcloud est vérifié et que le service choisi supporte les points relais et les dimensions/poids déclarés. Les tarifs estimés Sendcloud ne remplacent pas les tarifs facturés au compte.
 5. Laisser `CHECKOUT_ENABLED=false` tant que les essais ne sont pas validés et que la boutique doit rester cachée. Seul `CHECKOUT_ENABLED=true` ouvre la création de sessions de paiement.
