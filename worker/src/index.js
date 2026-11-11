@@ -43,7 +43,8 @@ async function relayShippingOption(env,relay,quantity){
  const body={from_address:{country_code:'FR',postal_code:env.SENDCLOUD_FROM_POSTAL_CODE||'13960',city:env.SENDCLOUD_FROM_CITY||'Sausset-les-Pins'},
   to_address:{country_code:'FR',postal_code:relay.postal_code,city:relay.city},
   to_service_point:{id:relay.id},
-  parcels:Array.from({length:quantity},()=>({weight:{value:CARTON_WEIGHT_KG,unit:'kg'},dimensions:{...DIMENSIONS_CM,unit:'cm'}}))};
+  parcels:Array.from({length:quantity},()=>({weight:{value:CARTON_WEIGHT_KG,unit:'kg'},dimensions:{...DIMENSIONS_CM,unit:'cm'}})),
+  calculate_quotes:true};
  const r=await fetch('https://panel.sendcloud.sc/api/v3/shipping-options',{method:'POST',headers:{Authorization:sendcloudAuth(env),'Content-Type':'application/json'},body:JSON.stringify(body)});
  if(!r.ok)throw new Error('Sendcloud shipping options '+r.status);
  const data=(await r.json())?.data;
