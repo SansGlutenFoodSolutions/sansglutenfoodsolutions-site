@@ -118,13 +118,18 @@ async function verifyStripeSignature(raw,header,secret){
  return diff===0;
 }
 async function announcePaidOrder(env,order){
- if(!env.SENDCLOUD_SENDER_ADDRESS_ID)throw new Error('Missing sender address id');
  const products=Array.from({length:order.quantity},(_,i)=>({
   order_number:order.order_ref+'-'+String(i+1).padStart(2,'0'),
   total_order_price:{currency:'EUR',value:((GOODS_CENTS+DELIVERY_CENTS)/100).toFixed(2)},
   to_address:{name:order.customer_name,email:order.email,phone_number:order.phone,country_code:'FR',
    postal_code:order.relay_postal_code,city:order.relay_city,address_line_1:order.relay_address},
-  from_address:{sender_address_id:Number(env.SENDCLOUD_SENDER_ADDRESS_ID)},
+  from_address:env.SENDCLOUD_SENDER_ADDRESS_ID
+   ? {sender_address_id:Number(env.SENDCLOUD_SENDER_ADDRESS_ID)}
+   : {name:'Sans Gluten Food Solutions',company_name:'Sans Gluten Food Solutions',
+      address_line_1:'chemin de Bel Air',house_number:'3',
+      postal_code:env.SENDCLOUD_FROM_POSTAL_CODE||'13960',
+      city:env.SENDCLOUD_FROM_CITY||'Sausset-les-Pins',country_code:'FR',
+      email:'contact@sansglutenfoodsolutions.com'},
   to_service_point:{id:order.relay_id},
   ship_with:{type:'shipping_option_code',properties:{shipping_option_code:order.shipping_option_code}},
   label_details:{mime_type:'application/pdf',dpi:72},
@@ -192,7 +197,7 @@ export default {async fetch(request,env){
  const u=new URL(request.url),origin=request.headers.get('Origin');
  if(origin&&origin!==SITE&&origin!=='https://www.sansglutenfoodsolutions.com')return json({message:'Origine non autorisée.'},403);
  if(request.method==='OPTIONS')return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':origin||SITE,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, Stripe-Signature','Vary':'Origin'}});
- if(u.pathname==='/health'&&request.method==='GET')return json({status:'ok',configured:!!(env.DB&&env.STRIPE_SECRET_KEY&&env.STRIPE_PRICE_ID&&env.STRIPE_WEBHOOK_SECRET&&env.SENDCLOUD_PUBLIC_KEY&&env.SENDCLOUD_SECRET_KEY&&env.SENDCLOUD_SENDER_ADDRESS_ID),checkout_enabled:env.CHECKOUT_ENABLED==='true'});
+ if(u.pathname==='/health'&&request.method==='GET')return json({status:'ok',configured:!!(env.DB&&env.STRIPE_SECRET_KEY&&env.STRIPE_PRICE_ID&&env.STRIPE_WEBHOOK_SECRET&&env.SENDCLOUD_PUBLIC_KEY&&env.SENDCLOUD_SECRET_KEY),checkout_enabled:env.CHECKOUT_ENABLED==='true'});
  if(u.pathname==='/service-points'&&request.method==='GET'){
   const postal=u.searchParams.get('postal_code'),city=short(u.searchParams.get('city'),80);
   if(!isPostal(postal))return json({message:'Code postal français à 5 chiffres requis.'},400);
