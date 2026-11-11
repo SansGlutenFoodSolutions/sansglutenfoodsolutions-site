@@ -26,3 +26,8 @@ Cette branche est une préparation **non publiée** : ne pas fusionner tant que 
 
 ## Réversibilité
 La branche ne modifie pas `main`. Tant qu'elle n'est pas fusionnée, le formulaire Colissimo/virement reste public.
+
+## Vérifications avant mise en production
+- Publier et afficher les conditions générales de vente adaptées à la vente en ligne B2C (livraison, retour, rétractation, contact et médiation), avec lien sur le parcours de commande.
+- Vérifier la conformité du choix des points relais avec le contrat Mondial Relay et tester une vraie étiquette.
+- Contrôler la configuration du déclenchement de l'e-mail vendeur et la génération de la facture.
