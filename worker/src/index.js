@@ -54,6 +54,7 @@ async function relayShippingOption(env,relay,quantity){
  return {code:String(option.code),name:short(option.name,100),carrier:String(option.carrier?.code||'mondialrelay')};
 }
 async function handleCheckout(request,env){
+ if(env.CHECKOUT_ENABLED!=='true')return json({message:'La boutique en ligne est temporairement fermée.'},503);
  if(!env.DB||!env.STRIPE_SECRET_KEY||!env.STRIPE_PRICE_ID)return json({message:'Le paiement est en cours de configuration.'},503);
  let input;try{input=await request.json();}catch{return json({message:'Données invalides.'},400);}
  const q=input.quantity,postal=input.postal_code,city=short(input.city,80);
@@ -191,7 +192,7 @@ export default {async fetch(request,env){
  const u=new URL(request.url),origin=request.headers.get('Origin');
  if(origin&&origin!==SITE&&origin!=='https://www.sansglutenfoodsolutions.com')return json({message:'Origine non autorisée.'},403);
  if(request.method==='OPTIONS')return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':origin||SITE,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, Stripe-Signature','Vary':'Origin'}});
- if(u.pathname==='/health'&&request.method==='GET')return json({status:'ok',configured:!!(env.DB&&env.STRIPE_SECRET_KEY&&env.STRIPE_PRICE_ID&&env.STRIPE_WEBHOOK_SECRET&&env.SENDCLOUD_PUBLIC_KEY&&env.SENDCLOUD_SECRET_KEY&&env.SENDCLOUD_SENDER_ADDRESS_ID)});
+ if(u.pathname==='/health'&&request.method==='GET')return json({status:'ok',configured:!!(env.DB&&env.STRIPE_SECRET_KEY&&env.STRIPE_PRICE_ID&&env.STRIPE_WEBHOOK_SECRET&&env.SENDCLOUD_PUBLIC_KEY&&env.SENDCLOUD_SECRET_KEY&&env.SENDCLOUD_SENDER_ADDRESS_ID),checkout_enabled:env.CHECKOUT_ENABLED==='true'});
  if(u.pathname==='/service-points'&&request.method==='GET'){
   const postal=u.searchParams.get('postal_code'),city=short(u.searchParams.get('city'),80);
   if(!isPostal(postal))return json({message:'Code postal français à 5 chiffres requis.'},400);
