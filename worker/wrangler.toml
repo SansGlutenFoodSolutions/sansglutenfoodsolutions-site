@@ -1,3 +1,4 @@
+# Cloudflare Worker Builds root directory: /worker (deploy command: npx wrangler deploy).
 name = "sgfs-checkout"
 main = "src/index.js"
 compatibility_date = "2026-11-11"
