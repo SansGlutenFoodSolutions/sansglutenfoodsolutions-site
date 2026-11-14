@@ -32,7 +32,7 @@ D1 conserve les coordonnées client, le point relais, les identifiants de paieme
 ## Routes
 
 - `GET /health` : statut de configuration (sans valeur de secret).
-- `GET /service-points?postal_code=13000` : points Mondial Relay en France.
+- `GET /service-points?postal_code=13000&city=Marseille` : points Mondial Relay en France. La page demande le code postal **et** la ville, car certaines recherches par code postal seul peuvent ne retourner aucun point.
 - `POST /shipping-option` : revalide l'option Sendcloud compatible.
 - `POST /checkout` : contrôle à nouveau point relais, option et prix Stripe, puis crée la session.
 - `POST /stripe-webhook` : vérifie la signature Stripe et ne traite que les paiements réussis.
