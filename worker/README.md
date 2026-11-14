@@ -7,9 +7,11 @@ Le parcours client préparé dans cette branche comprend recherche des points re
 - Carton de 6 sachets de 500 g : 43,28 € TTC.
 - Mondial Relay : 6,71 € TTC par carton ; total affiché : 49,99 € TTC par carton.
 - Expédition d'un colis de 34 × 15 × 16 cm et 3,5 kg par carton ; quantité maximale actuelle : 20.
+- La cotation Sendcloud est calculée sur **un seul carton** même pour une commande de plusieurs cartons, car chaque carton est expédié avec sa propre étiquette (pas de multicollo).
 - La commande est enregistrée dans Cloudflare D1 avant de retourner l'acheteur vers Stripe.
 - Stripe Checkout confirme le paiement via `POST /stripe-webhook` avec vérification HMAC de `Stripe-Signature`.
 - Après paiement, le Worker crée une expédition et son étiquette Sendcloud v3 par carton, puis garde les références de suivi dans D1.
+- Chaque numéro de colis est réservé en base avant l'appel d'annonce Sendcloud. Les réponses incertaines et tentatives simultanées ne déclenchent **aucune nouvelle étiquette automatique** : un contrôle manuel est nécessaire pour éviter une double facturation.
 - Le retour navigateur ne confirme jamais à lui seul un paiement. `GET /order-status?session_id=...` fournit uniquement l'état et le suivi.
 
 ## Configuration requise avant activation
