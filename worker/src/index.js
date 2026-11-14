@@ -43,7 +43,8 @@ async function relayShippingOption(env,relay,quantity){
  const body={from_address:{country_code:'FR',postal_code:env.SENDCLOUD_FROM_POSTAL_CODE||'13960',city:env.SENDCLOUD_FROM_CITY||'Sausset-les-Pins'},
   to_address:{country_code:'FR',postal_code:relay.postal_code,city:relay.city},
   to_service_point:{id:relay.id},
-  parcels:Array.from({length:quantity},()=>({weight:{value:CARTON_WEIGHT_KG,unit:'kg'},dimensions:{...DIMENSIONS_CM,unit:'cm'}})),
+  // Each carton is shipped independently: quote one parcel, not a multicollo shipment.
+  parcels:[{weight:{value:CARTON_WEIGHT_KG,unit:'kg'},dimensions:{...DIMENSIONS_CM,unit:'cm'}}],
   calculate_quotes:true};
  const r=await fetch('https://panel.sendcloud.sc/api/v3/shipping-options',{method:'POST',headers:{Authorization:sendcloudAuth(env),'Content-Type':'application/json'},body:JSON.stringify(body)});
  if(!r.ok)throw new Error('Sendcloud shipping options '+r.status);
@@ -143,12 +144,19 @@ async function announcePaidOrder(env,order){
    .bind(order.order_ref,parcel.order_number,'pending',new Date().toISOString()).run();
   const existing=await env.DB.prepare('SELECT status FROM shipments WHERE order_ref=? AND parcel_number=?').bind(order.order_ref,parcel.order_number).first();
   if(existing?.status==='created')continue;
-  if(existing?.status==='error')throw new Error('Shipment requires manual verification before retry');
+  // Reserve this parcel atomically before contacting Sendcloud. A timeout or concurrent webhook
+  // must never create a second paid label: ambiguous cases require manual reconciliation.
+  if(existing?.status!=='pending')throw new Error('Shipment requires manual verification before retry');
+  const claim=await env.DB.prepare("UPDATE shipments SET status='announcing',updated_at=? WHERE order_ref=? AND parcel_number=? AND status='pending'")
+   .bind(new Date().toISOString(),order.order_ref,parcel.order_number).run();
+  if(claim?.meta?.changes!==1)throw new Error('Shipment already being announced');
   try{
    const r=await fetch('https://panel.sendcloud.sc/api/v3/shipments/announce',{method:'POST',headers:{Authorization:sendcloudAuth(env),'Content-Type':'application/json'},body:JSON.stringify(parcel)});
    const body=await r.json();
    if(!r.ok)throw new Error('Sendcloud announcement '+r.status);
+   if(body?.errors && Object.keys(body.errors).length)throw new Error('Sendcloud carrier announcement error');
    const shipment=body?.data||body;
+   if(!shipment?.id || String(shipment.status||'').toLowerCase().includes('failed'))throw new Error('Sendcloud shipment not confirmed');
    await env.DB.prepare('UPDATE shipments SET status=?,sendcloud_id=?,tracking_number=?,tracking_url=?,label_url=?,updated_at=? WHERE order_ref=? AND parcel_number=?')
     .bind('created',String(shipment.id||''),String(shipment.tracking_number||''),String(shipment.tracking_url||''),String(shipment.label?.url||shipment.label_url||''),new Date().toISOString(),order.order_ref,parcel.order_number).run();
   }catch(e){
@@ -174,6 +182,15 @@ async function handleStripeWebhook(request,env){
  if(!session?.id)return json({message:'Session invalide.'},400);
  const order=await env.DB.prepare('SELECT * FROM orders WHERE checkout_session_id=?').bind(session.id).first();
  if(!order)return json({received:true,unmatched:true});
+ // Distinct Stripe events may refer to the same paid checkout session.
+ if(order.status==='paid_fulfilled'){
+  await env.DB.prepare('UPDATE stripe_events SET status=? WHERE event_id=?').bind('done',id).run();
+  return json({received:true,duplicate_order:true});
+ }
+ if(order.status==='paid_shipment_error'){
+  await env.DB.prepare('UPDATE stripe_events SET status=? WHERE event_id=?').bind('needs_review',id).run();
+  return json({received:true,shipment_pending_manual_review:true});
+ }
  if(session.payment_status!=='paid'){
   await env.DB.prepare('UPDATE orders SET status=?,updated_at=? WHERE order_ref=?').bind('payment_pending',new Date().toISOString(),order.order_ref).run();
   await env.DB.prepare('UPDATE stripe_events SET status=? WHERE event_id=?').bind('done',id).run();
