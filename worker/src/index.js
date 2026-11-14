@@ -57,7 +57,7 @@ async function relayShippingOption(env,relay,quantity){
 }
 async function handleCheckout(request,env){
  if(env.CHECKOUT_ENABLED!=='true')return json({message:'La boutique en ligne est temporairement fermée.'},503);
- if(!env.DB||!env.STRIPE_SECRET_KEY||!env.STRIPE_PRICE_ID)return json({message:'Le paiement est en cours de configuration.'},503);
+ if(!env.DB||!env.STRIPE_SECRET_KEY||!env.STRIPE_PRICE_ID||env.STRIPE_PRICE_ID==='DISABLED_UNTIL_LAUNCH'||!env.STRIPE_WEBHOOK_SECRET)return json({message:'Le paiement est en cours de configuration.'},503);
  let input;try{input=await request.json();}catch{return json({message:'Données invalides.'},400);}
  const q=input.quantity,postal=input.postal_code,city=short(input.city,80);
  const first=short(input.customer?.first,80),last=short(input.customer?.last,80);
@@ -109,17 +109,22 @@ async function handleCheckout(request,env){
 }
 async function verifyStripeSignature(raw,header,secret){
  if(!header||!secret)return false;
- const parts=Object.fromEntries(header.split(',').map(x=>x.split('=').map(v=>v.trim())));
- const t=Number(parts.t),sig=parts.v1;
+ const parts=header.split(',').map(x=>x.trim().split('='));
+ const t=Number(parts.find(([k])=>k==='t')?.[1]);
+ const signatures=parts.filter(([k])=>k==='v1').map(([,v])=>v);
+ const sig=signatures.find(v=>/^[a-f0-9]{64}$/.test(v||''));
  if(!Number.isFinite(t)||!sig||Math.abs(Date.now()/1000-t)>300)return false;
  const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);
  const digest=new Uint8Array(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode(t+'.'+raw)));
  const expected=Array.from(digest,b=>b.toString(16).padStart(2,'0')).join('');
- if(expected.length!==sig.length)return false;
- let diff=0;for(let i=0;i<expected.length;i++)diff|=expected.charCodeAt(i)^sig.charCodeAt(i);
- return diff===0;
+ return signatures.some(candidate=>{
+  if(candidate?.length!==expected.length)return false;
+  let diff=0;for(let i=0;i<expected.length;i++)diff|=expected.charCodeAt(i)^candidate.charCodeAt(i);
+  return diff===0;
+ });
 }
 async function announcePaidOrder(env,order){
+ if(env.FULFILLMENT_ENABLED!=='true')throw new Error('Label purchasing disabled');
  const products=Array.from({length:order.quantity},(_,i)=>({
   order_number:order.order_ref+'-'+String(i+1).padStart(2,'0'),
   // Sendcloud provides API-level deduplication for the stable per-carton identifier.
@@ -198,7 +203,8 @@ async function handleStripeWebhook(request,env){
   await env.DB.prepare('UPDATE stripe_events SET status=? WHERE event_id=?').bind('done',id).run();
   return json({received:true,pending:true});
  }
- if(Number(session.amount_total)!==order.amount_total)return json({message:'Montant invalide.'},400);
+ if(session.currency!=='eur'||Number(session.amount_total)!==order.amount_total)return json({message:'Montant invalide.'},400);
+ if(env.FULFILLMENT_ENABLED!=='true')return json({message:'Expédition automatique désactivée ; aucun achat d’étiquette.'},503);
  await env.DB.prepare('UPDATE orders SET status=?,updated_at=? WHERE order_ref=?').bind('paid',new Date().toISOString(),order.order_ref).run();
  try{await announcePaidOrder(env,order);}
  catch{await env.DB.prepare('UPDATE orders SET status=?,updated_at=? WHERE order_ref=?').bind('paid_shipment_error',new Date().toISOString(),order.order_ref).run();await env.DB.prepare('UPDATE stripe_events SET status=? WHERE event_id=?').bind('needs_review',id).run();return json({received:true,paid:true,shipment_pending:true});}
