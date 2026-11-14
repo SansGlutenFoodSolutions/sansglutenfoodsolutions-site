@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><title>Commander | Sans Gluten Food Solutions</title>
+<link rel="icon" href="https://sansglutenfoodsolutions.com/assets/sgfs-s-epi-final-20260919-224536.ico">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f8f2;color:#17352a;font:16px/1.55 system-ui,-apple-system,Arial,sans-serif}header{background:#fff;border-bottom:5px solid #03492f;text-align:center;padding:16px}header img{width:min(280px,75vw)}main{max-width:960px;margin:34px auto;padding:0 18px}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.card{background:white;border:1px solid #dae3d8;border-radius:18px;padding:24px;box-shadow:0 6px 22px #063b2210}h1,h2{color:#003c29;line-height:1.2}h1{margin-top:0}label{display:block;font-weight:650;margin:14px 0 5px}input,select,button{width:100%;font:inherit;padding:12px;border:1px solid #b9c7bb;border-radius:9px}button{background:#03492f;color:white;border:0;font-weight:700;cursor:pointer;margin-top:12px}button:disabled{opacity:.5;cursor:wait}.points{margin-top:12px;max-height:300px;overflow:auto}.point{padding:12px;border:1px solid #dce4da;border-radius:10px;margin:8px 0;display:flex;gap:10px;align-items:flex-start}.point input{width:auto;margin-top:4px}.muted{color:#5b6d61;font-size:.92rem}.price{font-size:1.1rem}.total{font-size:1.3rem;font-weight:800}.error{color:#9f1d19;min-height:1.5em}.hidden{display:none}@media(max-width:720px){.grid{grid-template-columns:1fr}}
+</style></head>
+<body><header><a href="/"><img src="https://sansglutenfoodsolutions.com/assets/sgfs-logo-horizontal-v26.png" alt="Sans Gluten Food Solutions"></a></header>
+<main><h1>Commander le Mix Universel BIO</h1><p>Carton de 6 sachets de 500 g. Sélectionnez votre point Mondial Relay avant de payer.</p>
+<div class="grid"><section class="card"><h2>Votre commande</h2>
+<label for="qty">Nombre de cartons</label><input id="qty" type="number" min="1" max="20" value="1">
+<p class="muted">Un colis de 3,5 kg par carton · livraison en Point Relais ou Locker Mondial Relay.</p>
+<h2>Votre point relais</h2><label for="postal">Code postal de destination</label><input id="postal" inputmode="numeric" maxlength="5" autocomplete="postal-code">
+<label for="city">Ville *</label><input id="city" autocomplete="address-level2">
+<button id="search" type="button">Rechercher les points relais</button><div id="points" class="points"></div>
+<label><input id="accept" type="checkbox" style="width:auto"> J’accepte la <a href='/confidentialite' target='_blank' rel='noopener'>politique de confidentialité</a> pour le traitement de ma commande et sa livraison.</label>
+</section>
+<aside class="card"><h2>Récapitulatif</h2><p class="price">Mix Universel BIO : <strong>43,28 € TTC</strong> / carton</p><p class="price">Mondial Relay : <strong>6,71 € TTC</strong> / carton</p><p class="total">Total : <span id="total">49,99 €</span> TTC</p>
+<p id="selected" class="muted">Aucun point relais sélectionné.</p>
+<label>Prénom</label><input id="first" autocomplete="given-name"><label>Nom</label><input id="last" autocomplete="family-name">
+<label>E-mail</label><input id="email" type="email" autocomplete="email"><label>Téléphone</label><input id="phone" type="tel" autocomplete="tel">
+<div id="error" class="error" role="alert"></div><button id="pay" type="button" disabled>Payer avec Stripe</button>
+<p class="muted">Paiement sécurisé par Stripe. Le montant est calculé avant le paiement.</p></aside></div></main>
+<script src="/sgfs-checkout-config.js"></script><script>
+(()=>{const api=window.SGFS_CHECKOUT_API_URL,qty=document.querySelector('#qty'),total=document.querySelector('#total'),points=document.querySelector('#points'),error=document.querySelector('#error'),pay=document.querySelector('#pay'),accept=document.querySelector('#accept');let selected=null,option=null;
+const money=n=>(n/100).toLocaleString('fr-FR',{style:'currency',currency:'EUR'});
+function recalc(){const q=Math.max(1,Math.min(20,Number(qty.value)||1));qty.value=q;total.textContent=money(4999*q);option=null;selected=null;points.innerHTML='';document.querySelector('#selected').textContent='Aucun point relais sélectionné.';validate()}
+function validate(){pay.disabled=!(selected&&option&&accept.checked&&document.querySelector('#first').value.trim()&&document.querySelector('#last').value.trim()&&document.querySelector('#email').value.includes('@')&&document.querySelector('#phone').value.trim())}
+qty.addEventListener('input',recalc);accept.addEventListener('change',validate);document.querySelectorAll('#first,#last,#email,#phone').forEach(x=>x.addEventListener('input',validate));
+document.querySelector('#search').onclick=async()=>{error.textContent='';points.innerHTML='';selected=null;option=null;validate();const postal=document.querySelector('#postal').value.trim(),city=document.querySelector('#city').value.trim();if(!/^\d{5}$/.test(postal)){error.textContent='Saisissez un code postal français à 5 chiffres.';return}if(!city){error.textContent='Saisissez également la ville pour rechercher les points relais.';return}
+try{const r=await fetch(api+'/service-points?postal_code='+encodeURIComponent(postal)+'&city='+encodeURIComponent(city));const j=await r.json();if(!r.ok)throw new Error(j.message||'Recherche indisponible');if(!j.service_points.length){points.textContent='Aucun point Mondial Relay trouvé.';return}
+j.service_points.forEach(p=>{const label=document.createElement('label');label.className='point';const radio=document.createElement('input');radio.type='radio';radio.name='relay';radio.onchange=async()=>{selected=p;option=null;document.querySelector('#selected').textContent=p.name+' — '+p.address+', '+p.postal_code+' '+p.city;error.textContent='Vérification du tarif et du service…';validate();try{const rr=await fetch(api+'/shipping-option',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({service_point_id:p.id,postal_code:postal,city,quantity:Number(qty.value)})});const jj=await rr.json();if(!rr.ok)throw new Error(jj.message);option=jj.shipping_option_code;error.textContent='';validate()}catch(e){error.textContent=e.message;selected=null;validate()}};label.append(radio,document.createTextNode(' '+p.name+' — '+p.address+', '+p.postal_code+' '+p.city+' ('+(p.kind==='locker'?'Locker':'Point Relais')+')'));points.append(label)})}catch(e){error.textContent=e.message}}
+pay.onclick=async()=>{pay.disabled=true;error.textContent='Création du paiement sécurisé…';try{const r=await fetch(api+'/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({quantity:Number(qty.value),postal_code:document.querySelector('#postal').value.trim(),city:document.querySelector('#city').value.trim(),customer:{first:document.querySelector('#first').value,last:document.querySelector('#last').value,email:document.querySelector('#email').value,phone:document.querySelector('#phone').value},service_point_id:selected.id,shipping_option_code:option})});const j=await r.json();if(!r.ok)throw new Error(j.message||'Paiement indisponible');location.assign(j.url)}catch(e){error.textContent=e.message;validate()}}
+recalc()})();
+</script></body></html>
