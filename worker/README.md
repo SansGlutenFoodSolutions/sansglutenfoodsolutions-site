@@ -11,7 +11,8 @@ Le parcours client préparé dans cette branche comprend recherche des points re
 - La commande est enregistrée dans Cloudflare D1 avant de retourner l'acheteur vers Stripe.
 - Stripe Checkout confirme le paiement via `POST /stripe-webhook` avec vérification HMAC de `Stripe-Signature`.
 - Après paiement, le Worker crée une expédition et son étiquette Sendcloud v3 par carton, puis garde les références de suivi dans D1.
-- Chaque numéro de colis est réservé en base avant l'appel d'annonce Sendcloud. Les réponses incertaines et tentatives simultanées ne déclenchent **aucune nouvelle étiquette automatique** : un contrôle manuel est nécessaire pour éviter une double facturation.
+- Chaque numéro de colis est réservé en base avant l'appel d'annonce Sendcloud. Les réponses incertaines et tentatives simultanées ne déclenchent **aucune nouvelle étiquette automatique** : un contrôle manuel est nécessaire pour éviter une double facturation. Sendcloud reçoit aussi un `external_reference_id` unique par carton pour sa propre protection contre les doublons.
+- La sélection du mode de transport utilise le filtre Sendcloud `to_service_point_id` pour ne retenir que les options compatibles avec le relais choisi.
 - Le retour navigateur ne confirme jamais à lui seul un paiement. `GET /order-status?session_id=...` fournit uniquement l'état et le suivi.
 
 ## Configuration requise avant activation
