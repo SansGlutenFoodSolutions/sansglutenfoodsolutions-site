@@ -40,7 +40,7 @@ async function findPoints(env,postal,city){
    kind:p.general_shop_type==='locker'?'locker':'point_relais',
    carrier:String(p?.carrier?.code||'mondialrelay'),country_code:'FR'}));
 }
-async function relayShippingOption(env,relay,quantity){
+async function relayShippingOption(env,relay,quantity,requestedCode=''){
  const body={from_address:{country_code:'FR',postal_code:env.SENDCLOUD_FROM_POSTAL_CODE||'13960',city:env.SENDCLOUD_FROM_CITY||'Sausset-les-Pins'},
   to_address:{country_code:'FR',postal_code:relay.postal_code,city:relay.city},
   to_service_point_id:relay.id,
@@ -52,7 +52,7 @@ async function relayShippingOption(env,relay,quantity){
  const data=(await r.json())?.data;
  if(!Array.isArray(data))throw new Error('Invalid shipping options response');
  const options=data.filter(o=>/mondial/i.test(String(o?.carrier?.name||'')+' '+String(o?.carrier?.code||'')+' '+String(o?.code||'')));
- const option=options.find(o=>o?.code);
+ const option=options.find(o=>o?.code&&(!requestedCode||String(o.code)===requestedCode));
  if(!option)throw new Error('Mondial Relay unavailable for this relay');
  return {code:String(option.code),name:short(option.name,100),carrier:String(option.carrier?.code||'mondialrelay')};
 }
@@ -115,7 +115,7 @@ async function handleCheckout(request,env){
  try{
   relay=(await findPoints(env,postal,city)).find(p=>p.id===relayId);
   if(!relay)return json({message:'Ce point relais n’est plus disponible. Sélectionnez-en un autre.'},422);
-  option=await relayShippingOption(env,relay,q);
+  option=await relayShippingOption(env,relay,q,optionCode);
   if(option.code!==optionCode)return json({message:'Le mode d’expédition a changé. Choisissez de nouveau le point relais.'},422);
  }catch{return json({message:'Mondial Relay est momentanément indisponible. Réessayez.'},503);}
  let price;
