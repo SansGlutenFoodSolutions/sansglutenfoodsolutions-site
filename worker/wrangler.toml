@@ -7,6 +7,11 @@ binding = "DB"
 database_name = "sgfs-orders"
 database_id = "cc2ee9be-c8f1-4483-8467-0731369e4687"
 
+[previews]
+[[previews.d1_databases]]
+binding = "DB"
+database_id = "cc2ee9be-c8f1-4483-8467-0731369e4687"
+
 [vars]
 CHECKOUT_ENABLED = "false"
 FULFILLMENT_ENABLED = "false"
