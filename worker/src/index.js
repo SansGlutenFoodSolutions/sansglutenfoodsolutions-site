@@ -2,6 +2,8 @@ const SITE = 'https://sansglutenfoodsolutions.com';
 const PRIVATE_SITE = 'https://sgfs-checkout.sgfs-benoit-rey.workers.dev';
 const GOODS_CENTS = 4328;
 const DELIVERY_CENTS = 671;
+// Live Stripe price verified in the SGFS account for the €43.28 carton.
+const STRIPE_PRICE_ID = 'price_1UafZw0JSFWikZEdgfPhjyD8';
 const CARTON_WEIGHT_KG = '3.500';
 const DIMENSIONS_CM = {length:'34', width:'15', height:'16'};
 
@@ -103,7 +105,7 @@ function privateLogout(){
 
 async function handleCheckout(request,env){
  if(env.CHECKOUT_ENABLED!=='true')return json({message:'La boutique en ligne est temporairement fermée.'},503);
- if(!env.DB||!env.STRIPE_SECRET_KEY||!env.STRIPE_PRICE_ID||env.STRIPE_PRICE_ID==='DISABLED_UNTIL_LAUNCH'||!env.STRIPE_WEBHOOK_SECRET)return json({message:'Le paiement est en cours de configuration.'},503);
+ if(!env.DB||!env.STRIPE_SECRET_KEY||!env.STRIPE_WEBHOOK_SECRET)return json({message:'Le paiement est en cours de configuration.'},503);
  let input;try{input=await request.json();}catch{return json({message:'Données invalides.'},400);}
  const q=input.quantity,postal=input.postal_code,city=short(input.city,80);
  const first=short(input.customer?.first,80),last=short(input.customer?.last,80);
@@ -118,11 +120,6 @@ async function handleCheckout(request,env){
   option=await relayShippingOption(env,relay,q,optionCode);
   if(option.code!==optionCode)return json({message:'Le mode d’expédition a changé. Choisissez de nouveau le point relais.'},422);
  }catch{return json({message:'Mondial Relay est momentanément indisponible. Réessayez.'},503);}
- let price;
- try{price=await stripeRequest(env,'prices/'+encodeURIComponent(env.STRIPE_PRICE_ID));}
- catch{return json({message:'Le tarif Stripe est indisponible.'},503);}
- if(!price.active||price.currency!=='eur'||price.unit_amount!==GOODS_CENTS||price.type!=='one_time'||price.tax_behavior!=='inclusive')
-  return json({message:'Le tarif du carton ne correspond pas au prix validé.'},503);
  const ref='SGFS-'+crypto.randomUUID().slice(0,12).toUpperCase();
  const name=short(first+' '+last,160),total=(GOODS_CENTS+DELIVERY_CENTS)*q;
  const params=new URLSearchParams();
@@ -131,7 +128,7 @@ async function handleCheckout(request,env){
  params.set('cancel_url',PRIVATE_SITE+'/commander/');
  params.set('automatic_tax[enabled]','true');params.set('billing_address_collection','required');
  params.set('phone_number_collection[enabled]','true');
- params.set('line_items[0][price]',env.STRIPE_PRICE_ID);params.set('line_items[0][quantity]',String(q));
+ params.set('line_items[0][price]',STRIPE_PRICE_ID);params.set('line_items[0][quantity]',String(q));
  params.set('line_items[1][price_data][currency]','eur');params.set('line_items[1][price_data][unit_amount]',String(DELIVERY_CENTS));
  params.set('line_items[1][price_data][tax_behavior]','inclusive');params.set('line_items[1][price_data][product_data][name]','Livraison Mondial Relay – 1 carton');
  params.set('line_items[1][quantity]',String(q));
@@ -285,7 +282,7 @@ export default {async fetch(request,env){
  if(['/service-points','/shipping-option','/checkout','/order-status'].includes(u.pathname)&&!await hasPrivateSession(request,env))
   return json({message:'Connectez-vous à la page privée SGFS.'},401,origin||u.origin);
  if(request.method==='OPTIONS')return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':origin||SITE,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, Stripe-Signature','Vary':'Origin'}});
- if(u.pathname==='/health'&&request.method==='GET')return json({status:'ok',configured:!!(env.DB&&env.STRIPE_SECRET_KEY&&env.STRIPE_PRICE_ID&&env.STRIPE_WEBHOOK_SECRET&&env.SENDCLOUD_PUBLIC_KEY&&env.SENDCLOUD_SECRET_KEY),checkout_enabled:env.CHECKOUT_ENABLED==='true'});
+ if(u.pathname==='/health'&&request.method==='GET')return json({status:'ok',configured:!!(env.DB&&env.STRIPE_SECRET_KEY&&env.STRIPE_WEBHOOK_SECRET&&env.SENDCLOUD_PUBLIC_KEY&&env.SENDCLOUD_SECRET_KEY),checkout_enabled:env.CHECKOUT_ENABLED==='true'});
  if(u.pathname==='/service-points'&&request.method==='GET'){
   const postal=u.searchParams.get('postal_code'),city=short(u.searchParams.get('city'),80);
   if(!isPostal(postal))return json({message:'Code postal français à 5 chiffres requis.'},400);
