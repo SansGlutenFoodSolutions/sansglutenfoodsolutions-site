@@ -268,7 +268,8 @@ async function handleOrderStatus(request,env){
 export default {async fetch(request,env){
  const u=new URL(request.url),origin=request.headers.get('Origin');
  const allowedOrigins=new Set([SITE,'https://www.sansglutenfoodsolutions.com',u.origin]);
- if(origin&&!allowedOrigins.has(origin))return json({message:'Origine non autorisée.'},403);
+ const sameOriginLogin=u.pathname==='/private-shop-login'&&request.method==='POST'&&request.headers.get('Sec-Fetch-Site')==='same-origin';
+ if(origin&&!allowedOrigins.has(origin)&&!sameOriginLogin)return json({message:'Origine non autorisée.'},403);
  if(u.pathname==='/private-shop-login')return handlePrivateLogin(request,env);
  if(u.pathname==='/private-shop-logout')return privateLogout();
  if(u.pathname==='/'&&request.method==='GET')return Response.redirect(new URL('/commander/',u).toString(),302);
