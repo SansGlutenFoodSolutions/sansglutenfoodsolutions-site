@@ -42,7 +42,7 @@ async function findPoints(env,postal,city){
 async function relayShippingOption(env,relay,quantity){
  const body={from_address:{country_code:'FR',postal_code:env.SENDCLOUD_FROM_POSTAL_CODE||'13960',city:env.SENDCLOUD_FROM_CITY||'Sausset-les-Pins'},
   to_address:{country_code:'FR',postal_code:relay.postal_code,city:relay.city},
-  to_service_point:{id:relay.id},
+  to_service_point_id:relay.id,
   // Each carton is shipped independently: quote one parcel, not a multicollo shipment.
   parcels:[{weight:{value:CARTON_WEIGHT_KG,unit:'kg'},dimensions:{...DIMENSIONS_CM,unit:'cm'}}],
   calculate_quotes:true};
@@ -122,6 +122,8 @@ async function verifyStripeSignature(raw,header,secret){
 async function announcePaidOrder(env,order){
  const products=Array.from({length:order.quantity},(_,i)=>({
   order_number:order.order_ref+'-'+String(i+1).padStart(2,'0'),
+  // Sendcloud provides API-level deduplication for the stable per-carton identifier.
+  external_reference_id:order.order_ref+'-'+String(i+1).padStart(2,'0'),
   total_order_price:{currency:'EUR',value:((GOODS_CENTS+DELIVERY_CENTS)/100).toFixed(2)},
   to_address:{name:order.customer_name,email:order.email,phone_number:order.phone,country_code:'FR',
    postal_code:order.relay_postal_code,city:order.relay_city,address_line_1:order.relay_address},
