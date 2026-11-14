@@ -1,4 +1,5 @@
 const SITE = 'https://sansglutenfoodsolutions.com';
+const PRIVATE_SITE = 'https://sgfs-checkout.sgfs-benoit-rey.workers.dev';
 const GOODS_CENTS = 4328;
 const DELIVERY_CENTS = 671;
 const CARTON_WEIGHT_KG = '3.500';
@@ -126,8 +127,8 @@ async function handleCheckout(request,env){
  const name=short(first+' '+last,160),total=(GOODS_CENTS+DELIVERY_CENTS)*q;
  const params=new URLSearchParams();
  params.set('mode','payment');params.set('client_reference_id',ref);params.set('customer_email',email);
- params.set('success_url',SITE+'/commander/succes?session_id={CHECKOUT_SESSION_ID}');
- params.set('cancel_url',SITE+'/commander');
+ params.set('success_url',PRIVATE_SITE+'/commander/succes?session_id={CHECKOUT_SESSION_ID}');
+ params.set('cancel_url',PRIVATE_SITE+'/commander/');
  params.set('automatic_tax[enabled]','true');params.set('billing_address_collection','required');
  params.set('phone_number_collection[enabled]','true');
  params.set('line_items[0][price]',env.STRIPE_PRICE_ID);params.set('line_items[0][quantity]',String(q));
