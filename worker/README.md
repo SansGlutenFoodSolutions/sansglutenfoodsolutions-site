@@ -15,16 +15,24 @@ Le parcours client préparé dans cette branche comprend recherche des points re
 - La sélection du mode de transport utilise le filtre Sendcloud `to_service_point_id` pour ne retenir que les options compatibles avec le relais choisi.
 - Le retour navigateur ne confirme jamais à lui seul un paiement. `GET /order-status?session_id=...` fournit uniquement l'état et le suivi.
 
+## Accès privé sans abonnement supplémentaire
+
+- Le Worker sert les fichiers statiques du parcours de commande depuis `public/` et bloque la page ainsi que les routes de recherche, de cotation, de paiement et de suivi sans session.
+- La connexion utilise le secret Cloudflare `PRIVATE_SHOP_PASSWORD` (mot de passe d'au moins 12 caractères) et un cookie `HttpOnly`, `Secure`, `SameSite=Strict` valable 8 heures. Le secret reste côté Worker et ne doit pas être placé dans le site statique.
+- Le site Firebase redirige `/commander` vers la page du Worker : la page statique ne doit pas être publiée directement par Firebase.
+- Pour activer cette protection, ajouter `PRIVATE_SHOP_PASSWORD` dans les secrets du Worker, puis déployer avec les assets configurés par Wrangler. Tant que ce secret manque, la page et l'API restent fermées.
+
 ## Configuration requise avant activation
 
-1. Créer la base D1 `sgfs-orders`, exécuter `migrations/0001_orders.sql`, puis copier son identifiant réel dans `wrangler.toml` et lier le binding `DB` au Worker Cloudflare.
-2. Configurer les secrets `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `SENDCLOUD_PUBLIC_KEY`, `SENDCLOUD_SECRET_KEY`. `SENDCLOUD_SENDER_ADDRESS_ID` est facultatif : sans lui, l’adresse complète SGFS enregistrée dans Sendcloud est utilisée. Garder `STRIPE_PRICE_ID` dans une variable Cloudflare non secrète.
-3. Dans Stripe, créer le webhook live `https://sgfs-checkout.sgfs-benoit-rey.workers.dev/stripe-webhook` pour `checkout.session.completed` et `checkout.session.async_payment_succeeded`, puis enregistrer son secret de signature dans Cloudflare.
-4. Confirmer que le contrat Mondial Relay Sendcloud est vérifié et que le service choisi supporte les points relais et les dimensions/poids déclarés. Les tarifs estimés Sendcloud ne remplacent pas les tarifs facturés au compte.
-5. Laisser `CHECKOUT_ENABLED=false` tant que les essais ne sont pas validés et que la boutique doit rester cachée. Seul `CHECKOUT_ENABLED=true` ouvre la création de sessions de paiement.
-6. Comparer le prix, la TVA et la ligne de livraison avec le comptable. Le prix du produit doit rester un prix Stripe one-time, EUR, 4 328 centimes, taxes incluses.
-7. Vérifier en mode Stripe test et contrat/carrier de test la recherche, les prix, les webhooks signés, les événements en double, le retour navigateur, l'étiquette et les erreurs. Ne pas créer d'étiquette réelle ni effectuer de paiement réel pendant cette recette.
-8. Garder le formulaire de commande non publié jusqu'au lancement.
+1. Déployer le Worker depuis `worker/` avec Wrangler après avoir configuré l'asset binding dans `wrangler.toml`; renseigner le secret `PRIVATE_SHOP_PASSWORD` dans Cloudflare. Ne jamais le committer au dépôt.
+2. Créer la base D1 `sgfs-orders`, exécuter `migrations/0001_orders.sql`, puis copier son identifiant réel dans `wrangler.toml` et lier le binding `DB` au Worker Cloudflare.
+3. Configurer les secrets `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `SENDCLOUD_PUBLIC_KEY`, `SENDCLOUD_SECRET_KEY`. `SENDCLOUD_SENDER_ADDRESS_ID` est facultatif : sans lui, l’adresse complète SGFS enregistrée dans Sendcloud est utilisée. Garder `STRIPE_PRICE_ID` dans une variable Cloudflare non secrète.
+4. Dans Stripe, créer le webhook live `https://sgfs-checkout.sgfs-benoit-rey.workers.dev/stripe-webhook` pour `checkout.session.completed` et `checkout.session.async_payment_succeeded`, puis enregistrer son secret de signature dans Cloudflare.
+5. Confirmer que le contrat Mondial Relay Sendcloud est vérifié et que le service choisi supporte les points relais et les dimensions/poids déclarés. Les tarifs estimés Sendcloud ne remplacent pas les tarifs facturés au compte.
+6. Laisser `CHECKOUT_ENABLED=false` tant que les essais ne sont pas validés et que la boutique doit rester cachée. Seul `CHECKOUT_ENABLED=true` ouvre la création de sessions de paiement.
+7. Comparer le prix, la TVA et la ligne de livraison avec le comptable. Le prix du produit doit rester un prix Stripe one-time, EUR, 4 328 centimes, taxes incluses.
+8. Vérifier en mode Stripe test et contrat/carrier de test la recherche, les prix, les webhooks signés, les événements en double, le retour navigateur, l'étiquette et les erreurs. Ne pas créer d'étiquette réelle ni effectuer de paiement réel pendant cette recette.
+9. Garder le formulaire de commande non publié jusqu'au lancement.
 
 ## Protection des données
 
