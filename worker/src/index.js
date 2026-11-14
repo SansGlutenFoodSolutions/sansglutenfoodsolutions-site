@@ -92,7 +92,7 @@ async function handlePrivateLogin(request,env){
  if(request.method!=='POST')return new Response('Méthode non autorisée.',{status:405});
  let form;try{form=await request.formData();}catch{return privateLoginPage('Formulaire invalide.');}
  const candidate=String(form.get('password')||'');
- if(candidate.length<12||candidate.length>256||candidate!==env.PRIVATE_SHOP_PASSWORD)return privateLoginPage('Mot de passe incorrect.');
+ if(candidate.length<10||candidate.length>256||candidate!==env.PRIVATE_SHOP_PASSWORD)return privateLoginPage('Mot de passe incorrect.');
  const expiry=Math.floor(Date.now()/1000)+PRIVATE_SESSION_SECONDS;
  const token=await privateSessionToken(env.PRIVATE_SHOP_PASSWORD,expiry);
  return new Response(null,{status:303,headers:{'Location':'/commander/','Set-Cookie':PRIVATE_COOKIE+'='+token+'; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age='+PRIVATE_SESSION_SECONDS,'Cache-Control':'no-store'}});
