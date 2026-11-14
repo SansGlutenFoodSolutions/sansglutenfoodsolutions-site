@@ -12,6 +12,12 @@ CHECKOUT_ENABLED = "false"
 FULFILLMENT_ENABLED = "false"
 STRIPE_PRICE_ID = "DISABLED_UNTIL_LAUNCH"
 
-# Secrets: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
+# Secrets: PRIVATE_SHOP_PASSWORD, STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
 # SENDCLOUD_PUBLIC_KEY, SENDCLOUD_SECRET_KEY.
 # Optional: SENDCLOUD_SENDER_ADDRESS_ID, SENDCLOUD_FROM_POSTAL_CODE, SENDCLOUD_FROM_CITY.
+
+[assets]
+# The Worker serves the checkout page only after validating its HttpOnly session cookie.
+directory = "../public"
+binding = "ASSETS"
+run_worker_first = true
