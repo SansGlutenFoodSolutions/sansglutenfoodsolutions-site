@@ -18,7 +18,7 @@ Le parcours client préparé dans cette branche comprend recherche des points re
 ## Accès privé sans abonnement supplémentaire
 
 - Le Worker sert les fichiers statiques du parcours de commande depuis `public/` et bloque la page ainsi que les routes de recherche, de cotation, de paiement et de suivi sans session.
-- La connexion utilise le secret Cloudflare `PRIVATE_SHOP_PASSWORD` (mot de passe d'au moins 12 caractères) et un cookie `HttpOnly`, `Secure`, `SameSite=Strict` valable 8 heures. Le secret reste côté Worker et ne doit pas être placé dans le site statique.
+- La connexion utilise le secret Cloudflare `PRIVATE_SHOP_PASSWORD` (mot de passe d'au moins 10 caractères) et un cookie `HttpOnly`, `Secure`, `SameSite=Strict` valable 8 heures. Le secret reste côté Worker et ne doit pas être placé dans le site statique.
 - Le site Firebase redirige `/commander` vers la page du Worker : la page statique ne doit pas être publiée directement par Firebase.
 - Pour activer cette protection, ajouter `PRIVATE_SHOP_PASSWORD` dans les secrets du Worker, puis déployer avec les assets configurés par Wrangler. Tant que ce secret manque, la page et l'API restent fermées.
 
