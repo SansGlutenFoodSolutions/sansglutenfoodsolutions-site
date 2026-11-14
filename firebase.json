@@ -10,6 +10,16 @@
     "trailingSlash": false,
     "redirects": [
       {
+        "source": "/commander",
+        "destination": "https://sgfs-checkout.sgfs-benoit-rey.workers.dev/commander/",
+        "type": 302
+      },
+      {
+        "source": "/commander/:path*",
+        "destination": "https://sgfs-checkout.sgfs-benoit-rey.workers.dev/commander/:path*",
+        "type": 302
+      },
+      {
         "source": "/defaultsite",
         "destination": "/",
         "type": 301
