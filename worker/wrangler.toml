@@ -1,0 +1,23 @@
+name = "sgfs-checkout"
+main = "src/index.js"
+compatibility_date = "2026-11-11"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sgfs-orders"
+database_id = "cc2ee9be-c8f1-4483-8467-0731369e4687"
+
+[vars]
+CHECKOUT_ENABLED = "false"
+FULFILLMENT_ENABLED = "false"
+STRIPE_PRICE_ID = "DISABLED_UNTIL_LAUNCH"
+
+# Secrets: PRIVATE_SHOP_PASSWORD, STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
+# SENDCLOUD_PUBLIC_KEY, SENDCLOUD_SECRET_KEY.
+# Optional: SENDCLOUD_SENDER_ADDRESS_ID, SENDCLOUD_FROM_POSTAL_CODE, SENDCLOUD_FROM_CITY.
+
+[assets]
+# The Worker serves the checkout page only after validating its HttpOnly session cookie.
+directory = "./static"
+binding = "ASSETS"
+run_worker_first = true
