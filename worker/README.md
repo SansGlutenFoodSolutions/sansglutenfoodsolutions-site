@@ -40,3 +40,12 @@ D1 conserve les coordonnées client, le point relais, les identifiants de paieme
 - `GET /order-status?session_id=cs_...` : état non sensible et suivi éventuel.
 
 Les secrets ne doivent jamais figurer dans le dépôt ni dans les fichiers statiques Firebase.
+
+## Vérification du 14 novembre 2026
+
+- Ajout du verrou indépendant `FULFILLMENT_ENABLED=false` : aucune annonce/étiquette Sendcloud tant que ce verrou est fermé. Un webhook payé reçoit alors HTTP 503 afin de permettre sa reprise après activation ; vérifier les événements en attente avant lancement.
+- Le checkout exige un secret webhook configuré et refuse le prix provisoire `DISABLED_UNTIL_LAUNCH`.
+- Le webhook contrôle aussi la devise EUR et accepte plusieurs signatures v1 lors de la rotation du secret Stripe.
+- Tests locaux avec réseau interdit : paiement fermé, configuration incomplète refusée, achat d’étiquette bloqué, signatures valides/multiples/altérées/expirées, bornes de quantité, totaux 1/2/20 cartons. Tous passés ; aucun appel externe.
+- Ces tests ne valident pas les comptes Live, le déploiement Cloudflare, les tables D1 distantes ni le contrat Sendcloud. Leur contrôle reste nécessaire.
+- Avant ouverture décidée par Benoît : résoudre les conflits avec main sans écraser le site public, terminer la recette en environnement test, vérifier le prix Live, les secrets, D1 et le contrat, puis activer volontairement les deux verrous et publier la page.
