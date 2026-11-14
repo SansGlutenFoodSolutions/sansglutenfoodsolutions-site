@@ -55,6 +55,51 @@ async function relayShippingOption(env,relay,quantity){
  if(!option)throw new Error('Mondial Relay unavailable for this relay');
  return {code:String(option.code),name:short(option.name,100),carrier:String(option.carrier?.code||'mondialrelay')};
 }
+
+const PRIVATE_COOKIE = 'sgfs_private_shop';
+const PRIVATE_SESSION_SECONDS = 8 * 60 * 60;
+function cookieValue(request,name){
+ const raw=request.headers.get('Cookie')||'';
+ for(const part of raw.split(';')){
+  const [key,...rest]=part.trim().split('=');
+  if(key===name)return rest.join('=');
+ }
+ return '';
+}
+async function privateSessionToken(password,expiry){
+ const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),{name:'HMAC',hash:'SHA-256'},false,['sign']);
+ const bytes=new Uint8Array(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode('sgfs-private-shop:'+expiry)));
+ const sig=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
+ return expiry+'.'+sig;
+}
+async function hasPrivateSession(request,env){
+ if(!env.PRIVATE_SHOP_PASSWORD)return false;
+ const token=cookieValue(request,PRIVATE_COOKIE),[expText,sig]=token.split('.');
+ const exp=Number(expText);
+ if(!Number.isSafeInteger(exp)||exp<=Math.floor(Date.now()/1000)||!/^[a-f0-9]{64}$/.test(sig||''))return false;
+ const expected=(await privateSessionToken(env.PRIVATE_SHOP_PASSWORD,exp)).split('.')[1];
+ let diff=0;for(let i=0;i<64;i++)diff|=expected.charCodeAt(i)^sig.charCodeAt(i);
+ return diff===0;
+}
+function privateLoginPage(message=''){
+ const safe=message.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ return new Response(`<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><title>Accès privé | SGFS</title><style>*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f7f8f2;color:#17352a;font:16px/1.5 system-ui,sans-serif}.card{width:min(440px,calc(100% - 32px));padding:28px;background:#fff;border:1px solid #dbe3d7;border-radius:18px;box-shadow:0 8px 28px #003c2918}h1{color:#003c29;font-size:25px}label{display:block;font-weight:700;margin:16px 0 6px}input,button{width:100%;padding:13px;border-radius:9px;font:inherit}input{border:1px solid #b9c7bb}button{margin-top:14px;background:#03492f;border:0;color:#fff;font-weight:750;cursor:pointer}.error{color:#9f1d19;min-height:1.5em}</style><main class="card"><h1>Accès privé SGFS</h1><p>Cette page de commande est réservée à Benoît.</p><form method="post" action="/private-shop-login"><label for="password">Mot de passe</label><input id="password" name="password" type="password" autocomplete="current-password" required autofocus><button type="submit">Ouvrir la page privée</button></form><p class="error" role="alert">${safe}</p></main></html>`,{status:message?401:200,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store','X-Robots-Tag':'noindex, nofollow, noarchive','Referrer-Policy':'no-referrer'}});
+}
+async function handlePrivateLogin(request,env){
+ if(!env.PRIVATE_SHOP_PASSWORD)return new Response('Accès privé non configuré.',{status:503,headers:{'Cache-Control':'no-store'}});
+ if(request.method==='GET')return privateLoginPage();
+ if(request.method!=='POST')return new Response('Méthode non autorisée.',{status:405});
+ let form;try{form=await request.formData();}catch{return privateLoginPage('Formulaire invalide.');}
+ const candidate=String(form.get('password')||'');
+ if(candidate.length<12||candidate.length>256||candidate!==env.PRIVATE_SHOP_PASSWORD)return privateLoginPage('Mot de passe incorrect.');
+ const expiry=Math.floor(Date.now()/1000)+PRIVATE_SESSION_SECONDS;
+ const token=await privateSessionToken(env.PRIVATE_SHOP_PASSWORD,expiry);
+ return new Response(null,{status:303,headers:{'Location':'/commander/','Set-Cookie':PRIVATE_COOKIE+'='+token+'; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age='+PRIVATE_SESSION_SECONDS,'Cache-Control':'no-store'}});
+}
+function privateLogout(){
+ return new Response(null,{status:303,headers:{'Location':'/commander/','Set-Cookie':PRIVATE_COOKIE+'=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0','Cache-Control':'no-store'}});
+}
+
 async function handleCheckout(request,env){
  if(env.CHECKOUT_ENABLED!=='true')return json({message:'La boutique en ligne est temporairement fermée.'},503);
  if(!env.DB||!env.STRIPE_SECRET_KEY||!env.STRIPE_PRICE_ID||env.STRIPE_PRICE_ID==='DISABLED_UNTIL_LAUNCH'||!env.STRIPE_WEBHOOK_SECRET)return json({message:'Le paiement est en cours de configuration.'},503);
@@ -221,7 +266,22 @@ async function handleOrderStatus(request,env){
 }
 export default {async fetch(request,env){
  const u=new URL(request.url),origin=request.headers.get('Origin');
- if(origin&&origin!==SITE&&origin!=='https://www.sansglutenfoodsolutions.com')return json({message:'Origine non autorisée.'},403);
+ const allowedOrigins=new Set([SITE,'https://www.sansglutenfoodsolutions.com',u.origin]);
+ if(origin&&!allowedOrigins.has(origin))return json({message:'Origine non autorisée.'},403);
+ if(u.pathname==='/private-shop-login')return handlePrivateLogin(request,env);
+ if(u.pathname==='/private-shop-logout')return privateLogout();
+ if(u.pathname==='/'&&request.method==='GET')return Response.redirect(new URL('/commander/',u).toString(),302);
+ if(u.pathname==='/commander'||u.pathname.startsWith('/commander/')){
+  if(!await hasPrivateSession(request,env))return privateLoginPage();
+  if(!env.ASSETS)return new Response('Assets non configurés.',{status:503});
+  return env.ASSETS.fetch(request);
+ }
+ if(u.pathname.startsWith('/assets/')||u.pathname==='/sgfs-checkout-config.js'){
+  if(!env.ASSETS)return new Response('Assets non configurés.',{status:503});
+  return env.ASSETS.fetch(request);
+ }
+ if(['/service-points','/shipping-option','/checkout','/order-status'].includes(u.pathname)&&!await hasPrivateSession(request,env))
+  return json({message:'Connectez-vous à la page privée SGFS.'},401,origin||u.origin);
  if(request.method==='OPTIONS')return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':origin||SITE,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, Stripe-Signature','Vary':'Origin'}});
  if(u.pathname==='/health'&&request.method==='GET')return json({status:'ok',configured:!!(env.DB&&env.STRIPE_SECRET_KEY&&env.STRIPE_PRICE_ID&&env.STRIPE_WEBHOOK_SECRET&&env.SENDCLOUD_PUBLIC_KEY&&env.SENDCLOUD_SECRET_KEY),checkout_enabled:env.CHECKOUT_ENABLED==='true'});
  if(u.pathname==='/service-points'&&request.method==='GET'){
