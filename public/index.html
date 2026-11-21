@@ -513,33 +513,28 @@ body.translated-rtl {
 </div>
 </section>
 <section class="contact-section" id="echantillons">
-<div class="contact-heading">
-<p class="eyebrow">Échantillons payants · Mix Universel BIO sans gluten 500 g</p>
-<h2>Commander.</h2>
-<p><strong>Le Mix Universel n'est pas encore commercialisé au grand public.</strong> Les demandes actuelles concernent uniquement des échantillons payants. La vente générale du sachet 500 g est prévue fin 2026 / début 2027. Pour une question directe : <a href="mailto:contact@sansglutenfoodsolutions.com">contact@sansglutenfoodsolutions.com</a>.</p>
+<div class="contact-heading" id="formulaire-pro" style="scroll-margin-top:110px">
+<p class="eyebrow">Professionnels · Mix Universel BIO sans gluten</p>
+<h2>Présentez-nous votre projet.</h2>
+<p>Restaurateurs, revendeurs et distributeurs : demandez nos tarifs ou un devis. Ce formulaire est réservé aux professionnels disposant d'un SIRET. Les champs marqués * sont obligatoires.</p>
 </div>
-<form action="https://formsubmit.co/contact@sansglutenfoodsolutions.com" class="contact-form" id="leadForm" method="POST">
-<input name="_subject" type="hidden" value="Nouvelle demande – Sans Gluten Food Solutions"/>
-<input name="_template" type="hidden" value="table"/>
-<input name="_captcha" type="hidden" value="false"/>
-<input name="_next" type="hidden" value="https://sansglutenfoodsolutions.com/merci?v=40"/>
-<input name="_url" type="hidden" value="https://sansglutenfoodsolutions.com/"/>
-<div class="form-grid">
-<div class="field"><label for="firstName">Prénom *</label><input autocomplete="given-name" id="firstName" maxlength="60" name="firstName" required=""/></div>
-<div class="field"><label for="lastName">Nom *</label><input autocomplete="family-name" id="lastName" maxlength="60" name="lastName" required=""/></div>
-<div class="field"><label for="email">E-mail *</label><input autocomplete="email" id="email" maxlength="160" name="email" required="" type="email"/></div>
-<div class="field"><label for="phone">Téléphone</label><input autocomplete="tel" id="phone" maxlength="30" name="phone" type="tel"/></div>
-<div class="field"><label for="activity">Votre demande *</label><select id="activity" name="activity" required=""><option value="">Sélectionner</option><option>Échantillon payant – Mix Universel 500 g</option><option>Être informé de la sortie des recettes</option><option>Demande professionnelle / référencement</option><option>Distribution / grossiste</option><option>Autre</option></select></div>
-<div class="field"><label for="volume">Nombre d'échantillons / volume envisagé</label><select id="volume" name="volume"><option value="">À définir</option><option>1 échantillon</option><option>2 à 5 échantillons</option><option>6 à 20 échantillons</option><option>Plus de 20 échantillons</option><option>Projet professionnel</option></select></div>
-<div class="field"><label for="company">Entreprise <span>(facultatif)</span></label><input autocomplete="organization" id="company" maxlength="120" name="company"/></div>
-<div class="field"><label for="country">Pays *</label><select id="country" name="country" required=""><option selected="" value="France">France</option><option>Belgique</option><option>Luxembourg</option><option>Suisse</option><option>Espagne</option><option>Italie</option><option>Allemagne</option><option>Portugal</option><option>Pays-Bas</option><option>Autre pays européen</option></select></div>
-<div class="field"><label for="postalCode">Code postal *</label><input autocomplete="postal-code" id="postalCode" maxlength="12" name="postalCode" required=""/></div>
-<div class="field field-full"><label for="message">Votre message *</label><textarea id="message" maxlength="1500" name="message" placeholder="Exemple : je souhaite recevoir un échantillon payant du Mix Universel 500 g pour réaliser des essais." required=""></textarea></div>
-<div class="honeypot"><label for="website">Site web</label><input autocomplete="off" id="website" name="website" tabindex="-1"/></div>
-<div class="field field-full"><button class="submit-button" id="submitButton" type="submit">Envoyer ma demande d'échantillon</button><div aria-live="polite" class="form-status" id="formStatus"></div></div>
-</div>
-<p class="legal-note">Les demandes France et Europe sont étudiées au cas par cas. Les informations transmises sont utilisées uniquement pour répondre à votre demande. Elles sont transmises via notre service d’envoi de formulaire afin de notifier Sans Gluten Food Solutions par e-mail. Les échantillons sont payants ; aucun achat grand public du sachet 500 g n'est proposé à ce jour.</p>
-</form>
+<style>
+.sgfs-pro-form{max-width:870px;background:#fff;border:1px solid #d9e5dd;border-radius:20px;padding:28px;margin:25px 0;box-shadow:0 8px 25px #003d2910}.sgfs-pro-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.sgfs-pro-form label{display:block;font-weight:650;margin-bottom:6px}.sgfs-pro-field{margin-bottom:18px}.sgfs-pro-form input:not([type=checkbox]),.sgfs-pro-form select,.sgfs-pro-form textarea{width:100%;border:1px solid #a9bbad;border-radius:10px;padding:12px;font:inherit;background:white;color:#173c2a}.sgfs-pro-form button{background:#085638;color:white;border:0;border-radius:12px;padding:15px 28px;font:inherit;font-weight:800;cursor:pointer}.sgfs-pro-form small{color:#536d60}.sgfs-pro-form .consent{display:flex;gap:10px;align-items:start}.sgfs-pro-form .consent input{margin-top:6px}.sgfs-pro-form .consent label{font-weight:400}@media(max-width:650px){.sgfs-pro-grid{grid-template-columns:1fr}.sgfs-pro-form{padding:18px}}
+</style>
+<form style="margin:25px auto" class="sgfs-pro-form" action="https://formsubmit.co/contact@sansglutenfoodsolutions.com" method="POST" id="sgfsProForm">
+<input type="hidden" name="_subject" value="Nouvelle demande professionnelle SGFS - SIRET requis"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false">
+<div class="sgfs-pro-grid"><div class="sgfs-pro-field"><label for="proCompany">Raison sociale *</label><input id="proCompany" name="Raison sociale" required maxlength="150" autocomplete="organization"></div>
+<div class="sgfs-pro-field"><label for="proSiret">SIRET (14 chiffres) *</label><input id="proSiret" name="SIRET" required type="text" inputmode="numeric" maxlength="14" minlength="14" pattern="[0-9]{14}" title="Saisissez exactement les 14 chiffres de votre SIRET, sans espaces." autocomplete="off"><small>Obligatoire pour envoyer la demande. Sans espaces ni ponctuation.</small></div></div>
+<div class="sgfs-pro-grid"><div class="sgfs-pro-field"><label for="proFirst">Prénom du contact *</label><input id="proFirst" name="Prénom" required autocomplete="given-name"></div><div class="sgfs-pro-field"><label for="proLast">Nom du contact *</label><input id="proLast" name="Nom" required autocomplete="family-name"></div></div>
+<div class="sgfs-pro-grid"><div class="sgfs-pro-field"><label for="proEmail">E-mail professionnel *</label><input id="proEmail" name="email" type="email" required autocomplete="email"></div><div class="sgfs-pro-field"><label for="proPhone">Téléphone *</label><input id="proPhone" name="Téléphone" type="tel" required autocomplete="tel"></div></div>
+<div class="sgfs-pro-grid"><div class="sgfs-pro-field"><label for="proBusiness">Type d'activité *</label><select id="proBusiness" name="Activité" required><option value="">Choisir une activité</option><option>Restaurant / pizzeria</option><option>Boulangerie / pâtisserie</option><option>Épicerie / magasin spécialisé</option><option>Revendeur / distributeur</option><option>Grossiste</option><option>Autre activité professionnelle</option></select></div>
+<div class="sgfs-pro-field"><label for="proType">Objet de la demande *</label><select id="proType" name="Objet" required><option value="">Choisir un objet</option><option>Recevoir les tarifs professionnels</option><option>Commander un carton de 6 sachets</option><option>Commander plusieurs cartons</option><option>Projet de distribution ou de partenariat</option></select></div></div>
+<div class="sgfs-pro-grid"><div class="sgfs-pro-field"><label for="proPost">Code postal *</label><input id="proPost" name="Code postal" required maxlength="12"></div><div class="sgfs-pro-field"><label for="proCity">Ville *</label><input id="proCity" name="Ville" required></div></div>
+<div class="sgfs-pro-grid"><div class="sgfs-pro-field"><label for="proQty">Quantité envisagée (cartons de 6)</label><input id="proQty" name="Quantité envisagée en cartons" type="number" min="1" step="1" placeholder="Ex. 5"></div><div class="sgfs-pro-field"><label for="proWebsite">Site internet (facultatif)</label><input id="proWebsite" name="Site internet" type="url" placeholder="https://"></div></div>
+<div class="sgfs-pro-field"><label for="proMessage">Précisions sur votre demande *</label><textarea id="proMessage" name="Message" rows="4" required placeholder="Présentez votre activité, vos besoins et votre projet."></textarea></div>
+<div class="sgfs-pro-field consent"><input type="checkbox" id="proConsent" required><label for="proConsent">J'accepte que Sans Gluten Food Solutions utilise les informations transmises pour traiter ma demande professionnelle et me répondre. *</label></div>
+<button type="submit">Envoyer ma demande professionnelle</button><p><small>Ce formulaire ne déclenche ni commande ferme ni paiement. Un devis pourra vous être adressé après étude.</small></p>
+<input name="_next" type="hidden" value="https://sansglutenfoodsolutions.com/merci?v=40"/><p><small>Les informations sont transmises via notre service de formulaire pour traiter votre demande et vous répondre par e-mail.</small></p></form>
 </section>
 </main>
 
